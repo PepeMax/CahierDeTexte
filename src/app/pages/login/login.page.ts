@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NavController, MenuController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,7 @@ import {NavController, MenuController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  constructor(public navCtrl: NavController, public menu: MenuController) { }
+  constructor(public navCtrl: NavController, public menu: MenuController,     public trans: TranslateService,) { }
 
   ngOnInit() {
     this.menu.enable(false);

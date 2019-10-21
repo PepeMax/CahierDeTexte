@@ -17,7 +17,7 @@
         "VERSION": "Version : "
     },
     "HOMEWORK": {
-        "TITLE": "Y à quoi à faire ..."
+        "TITLE": "Y'à quoi à faire..."
         
     },
     "HOME": {
@@ -29,5 +29,12 @@
 
     "PLANNING": {
         "TITLE": "Planning de la semaine"
+    },
+
+    "LOGIN": {
+        "TITLE": "Connecte-toi !",
+        "H4": "Vous êtes :",
+        "STUDENT": "Élève",
+        "PROF": "Professeur"
     }
 }
