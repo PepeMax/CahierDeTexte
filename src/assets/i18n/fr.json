@@ -1,0 +1,33 @@
+{
+
+    "COMMON": {
+        "MONEY": "€",
+        "CLOSE": "Fermer",
+        "RETURN": "Retour",
+        "CANCEL": "Annuler",
+        "VALIDATE": "Valider",
+        "MODIFY": "Modifier",
+        "YES": "Oui",
+        "NO": "Non",
+        "FROM": "du ",
+        "TO": "au ",
+        "AT": "à",
+        "OK": "OK",
+        "NVERSION": "1.0.0",
+        "VERSION": "Version : "
+    },
+    "HOMEWORK": {
+        "TITLE": "Y à quoi à faire ..."
+        
+    },
+    "HOME": {
+        "TITLE": "Le Récap"
+    },
+    "NEWHOMEWORK": {
+        "TITLE": "Nouveau devoir"
+    },
+
+    "PLANNING": {
+        "TITLE": "Planning de la semaine"
+    }
+}

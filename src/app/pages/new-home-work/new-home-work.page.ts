@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-new-home-work',
@@ -7,7 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewHomeWorkPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    public trans: TranslateService,
+    public navCtrl: NavController,
+  ) { }
+
+  Fonction1() {
+    this.navCtrl.navigateForward("/login")
+  }
+
+  Fonction2() {
+    this.navCtrl.navigateForward("/planning")
+  }
 
   ngOnInit() {
   }

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-home-work',
-  templateUrl: './home-work.page.html',
-  styleUrls: ['./home-work.page.scss'],
+  selector: 'app-planning',
+  templateUrl: './planning.page.html',
+  styleUrls: ['./planning.page.scss'],
 })
-export class HomeWorkPage implements OnInit {
+export class PlanningPage implements OnInit {
 
   constructor(
     public trans: TranslateService,
