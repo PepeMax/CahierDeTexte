@@ -1,5 +1,7 @@
 {
   "name": "CahierDeTexte",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
