@@ -35,6 +35,8 @@
         "TITLE": "Connecte-toi !",
         "H4": "Vous êtes :",
         "STUDENT": "Élève",
-        "PROF": "Professeur"
+        "PROF": "Professeur",
+        "MSG_STUDENT": "Eh bienvenue wesh",
+        "MSG_PROF": "Bienvenue professeur !"
     }
 }
