@@ -6,27 +6,32 @@
 
 <ion-content>
 
-  <br>
-  <br>
+  <ion-grid>
 
-  <ion-text color="primary">
-    <h4>{{'LOGIN.H4' | translate }}</h4>
-  </ion-text>
+    <ion-row justify-content-center>
+      <ion-text color="medium">
+        <h4>{{'LOGIN.H4' | translate }}</h4>
+      </ion-text>
+    </ion-row>
 
-  <br>
-  <br>
-  <br>
-  <br>
+    <br>
 
-  <ion-button (click)="goHome()" (click)="confirmLoginStudent()">
-    <ion-icon name="arrow-dropright"></ion-icon>
-    &nbsp;&nbsp;&nbsp; {{'LOGIN.STUDENT' | translate }}
-  </ion-button>
-  <br>
-  <br>
-  <ion-button (click)="goHome()" (click)="confirmLoginProf()">
-    <ion-icon name="arrow-dropright"></ion-icon>
-    &nbsp;&nbsp;&nbsp; {{'LOGIN.PROF' | translate }}
-  </ion-button>
-  
-  </ion-content>
+    <ion-row justify-content-center>
+      <ion-button color="medium" (click)="confirmLoginStudent()">
+        <ion-icon name="arrow-dropright"></ion-icon>
+        &nbsp;&nbsp;&nbsp; {{'LOGIN.STUDENT' | translate }}
+      </ion-button>
+    </ion-row>
+
+    <br>
+
+    <ion-row justify-content-center>
+      <ion-button color="medium" (click)="confirmLoginProf()">
+        <ion-icon name="arrow-dropright"></ion-icon>
+        &nbsp;&nbsp;&nbsp; {{'LOGIN.PROF' | translate }}
+      </ion-button>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
