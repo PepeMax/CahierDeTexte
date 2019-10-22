@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {NavController, MenuController, ToastController} from '@ionic/angular';
-import { TranslateService} from '@ngx-translate/core';
+import { NavController, ToastController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -9,20 +9,15 @@ import { TranslateService} from '@ngx-translate/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor(public navCtrl: NavController, public menu: MenuController, public trans: TranslateService, 
+  constructor(
+    public navCtrl: NavController,
+    public trans: TranslateService,
     public toastController: ToastController) { }
 
   ngOnInit() {
-    this.menu.enable(false);
   }
 
-  goHome(){
-    this.navCtrl.navigateRoot('/nav/home');
-    this.menu.enable(true);
-    this.menu.close();
-  }
-
-  async confirmLoginStudent(){
+  async confirmLoginStudent() {
     this.navCtrl.navigateBack('/nav/home')
     const toast = await this.toastController.create({
       message: 'Eh bienvenue wesh',
@@ -31,12 +26,12 @@ export class LoginPage implements OnInit {
     toast.present();
   }
 
-    async confirmLoginProf(){
-      this.navCtrl.navigateBack('/nav/home')
-      const toast = await this.toastController.create({
-        message: 'Bienvenue professeur !',
-        duration: 2000
-      });
-      toast.present();
+  async confirmLoginProf() {
+    this.navCtrl.navigateBack('/nav/home')
+    const toast = await this.toastController.create({
+      message: 'Bienvenue professeur !',
+      duration: 2000
+    });
+    toast.present();
   }
 }

@@ -1,5 +1,4 @@
 {
-
     "COMMON": {
         "MONEY": "€",
         "CLOSE": "Fermer",
@@ -18,7 +17,6 @@
     },
     "HOMEWORK": {
         "TITLE": "Y'à quoi à faire..."
-        
     },
     "HOME": {
         "TITLE": "Le Récap"
@@ -26,11 +24,9 @@
     "NEWHOMEWORK": {
         "TITLE": "Nouveau devoir"
     },
-
     "PLANNING": {
         "TITLE": "Planning de la semaine"
     },
-
     "LOGIN": {
         "TITLE": "Connecte-toi !",
         "H4": "Vous êtes :",
