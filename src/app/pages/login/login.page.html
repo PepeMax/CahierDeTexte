@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>CONNEXION</ion-title>
+    <ion-title>{{'LOGIN.TITLE' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,7 +10,7 @@
   <br>
 
   <ion-text color="primary">
-    <h4>Vous êtes :</h4>
+    <h4>{{'LOGIN.H4' | translate }}</h4>
   </ion-text>
 
   <br>
@@ -20,13 +20,13 @@
 
   <ion-button (click)="goHome()">
     <ion-icon name="arrow-dropright"></ion-icon>
-    &nbsp;&nbsp;&nbsp; Élève
+    &nbsp;&nbsp;&nbsp; {{'LOGIN.STUDENT' | translate }}
   </ion-button>
   <br>
   <br>
   <ion-button (click)="goHome()">
     <ion-icon name="arrow-dropright"></ion-icon>
-    &nbsp;&nbsp;&nbsp; Professeur
+    &nbsp;&nbsp;&nbsp; {{'LOGIN.PROF' | translate }}
   </ion-button>
   
   </ion-content>
