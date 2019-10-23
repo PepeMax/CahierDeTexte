@@ -1,6 +1,5 @@
 {
     "COMMON": {
-        "MONEY": "€",
         "CLOSE": "Fermer",
         "RETURN": "Retour",
         "CANCEL": "Annuler",
@@ -9,11 +8,12 @@
         "YES": "Oui",
         "NO": "Non",
         "FROM": "du ",
-        "TO": "au ",
-        "AT": "à",
+        "TO": "Pour le ",
         "OK": "OK",
-        "NVERSION": "1.0.0",
-        "VERSION": "Version : "
+        "SUBJECT": "Matière : ",
+        
+        "VERSION": "Version : ",
+        "NVERSION": "1.0.0"
     },
     "HOMEWORK": {
         "TITLE": "Y'à quoi à faire..."
@@ -32,6 +32,10 @@
         "H4": "Vous êtes :",
         "STUDENT": "Élève",
         "PROF": "Professeur",
+        "LOGPROF": "Connexion professeur",
+        "LOGSTUD": "Connexion éléve",
+        "USERNAME": "Nom d'utilisateur",
+        "PASSWORD": "Mot de passe",
         "MSG_STUDENT": "Eh bienvenue wesh",
         "MSG_PROF": "Bienvenue professeur !"
     },
