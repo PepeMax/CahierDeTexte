@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-settings',
@@ -10,14 +11,23 @@ export class SettingsPage implements OnInit {
 
   constructor(
     public navCtrl: NavController,
-
-    ) { }
+    public trans: TranslateService,
+    public toastController: ToastController) { }
 
   ngOnInit() {
   }
 
   goHome() {
     this.navCtrl.navigateRoot("/nav/home");
+  }
+
+  async confirmSettings() {
+    this.navCtrl.navigateRoot('/nav/home')
+    const toast = await this.toastController.create({
+      message: 'C\'est carré chef',
+      duration: 2000
+    });
+    toast.present();
   }
 
 }
