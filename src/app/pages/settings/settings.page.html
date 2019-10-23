@@ -1,6 +1,7 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{'SETTINGS.TITLE' | translate}}</ion-title>
+      <ion-button fill="clear" (click)=goAdmin()></ion-button>
+      <ion-title>{{'SETTINGS.TITLE' | translate}}</ion-title>
     <ion-button color="dark" slot="start" fill="clear" (click)="goHome()">
         <ion-icon name="arrow-dropleft"></ion-icon>
       </ion-button>
@@ -11,5 +12,68 @@
 </ion-header>
 
 <ion-content>
+ 
+    <br>
+    <ion-text color="dark">
+        <h4>Maxime Denost</h4>
+      </ion-text>
 
-</ion-content>
+  
+      <br>
+      <ion-list *ngIf="buttonClickedNewND">
+          <ion-label position="floating" color="primary">Nom d'utilisateur :</ion-label>
+          <ion-input></ion-input>
+     </ion-list>
+
+     <div class="center">
+       <ion-button *ngIf="!buttonClickedNewND" size="small" fill="clear" (click)="onButtonClickNewND()">
+         changer de nom
+       </ion-button>
+     </div>
+     <div class="center">
+       <ion-button *ngIf="buttonClickedNewND" size="small" fill="clear" (click)="onButtonClickNewND()">
+         <ion-icon name="remove-circle-outline"></ion-icon>
+       </ion-button>
+       <ion-button *ngIf="buttonClickedNewND" size="small" fill="clear" (click)="onButtonClickNewND()">
+         <ion-icon name="checkmark-circle-outline"></ion-icon>
+       </ion-button>
+     </div>
+
+     <ion-list *ngIf="buttonClickedNewPWD">
+         <ion-label position="floating" color="primary">Mot de passe :</ion-label>
+         <ion-input></ion-input>
+         <ion-label position="floating" color="primary">Confirmer mot de passe :</ion-label>
+         <ion-input></ion-input>
+    </ion-list>
+
+    <div class="center">
+      <ion-button *ngIf="!buttonClickedNewPWD" size="small" fill="clear" (click)="onButtonClickNewPWD()">
+       changer de mot de passe
+      </ion-button>
+    </div>
+    <div class="center">
+      <ion-button *ngIf="buttonClickedNewPWD" size="small" fill="clear" (click)="onButtonClickNewPWD()">
+        <ion-icon name="remove-circle-outline"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="buttonClickedNewPWD" size="small" fill="clear" (click)="onButtonClickNewPWD()">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+      </ion-button>
+    </div>
+
+      <ion-list>
+          <ion-item lines="full">
+            <ion-list-header>Langue</ion-list-header>
+          </ion-item>
+          <ion-item lines="full">
+            <ion-select placeholder="FR/EN">
+              <ion-select-option value="fr">Français</ion-select-option>
+              <ion-select-option value="en">English</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+
+  </ion-content>
+  
+  <footer class="ion-text-center">
+    <ion-button fill="clear" (click)="Fonction1()">Se déconnecter</ion-button>
+  </footer>

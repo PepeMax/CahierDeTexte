@@ -21,13 +21,31 @@ export class SettingsPage implements OnInit {
     this.navCtrl.navigateRoot("/nav/home");
   }
 
+  Fonction1() {
+    this.navCtrl.navigateForward("/login")
+  }
+
+  goAdmin() {
+    this.navCtrl.navigateRoot("/planning");
+  }
+
   async confirmSettings() {
-    this.navCtrl.navigateRoot('/nav/home')
+    this.navCtrl.navigateBack('/nav/home')
     const toast = await this.toastController.create({
       message: 'C\'est carré chef',
       duration: 2000
     });
     toast.present();
+  }
+
+  public buttonClickedNewND: boolean = false;
+  public onButtonClickNewND() {
+    this.buttonClickedNewND = !this.buttonClickedNewND;
+  }
+
+  public buttonClickedNewPWD: boolean = false;
+  public onButtonClickNewPWD() {
+    this.buttonClickedNewPWD = !this.buttonClickedNewPWD;
   }
 
 }
