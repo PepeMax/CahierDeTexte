@@ -1,8 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Settings</ion-title>
+    <ion-title>{{'SETTINGS.TITLE' | translate}}</ion-title>
     <ion-button color="dark" slot="start" fill="clear" (click)="goHome()">
         <ion-icon name="arrow-dropleft"></ion-icon>
+      </ion-button>
+      <ion-button color="success" slot="end" fill="clear" (click)="confirmSettings()">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
       </ion-button>
   </ion-toolbar>
 </ion-header>

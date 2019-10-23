@@ -34,5 +34,8 @@
         "PROF": "Professeur",
         "MSG_STUDENT": "Eh bienvenue wesh",
         "MSG_PROF": "Bienvenue professeur !"
+    },
+    "SETTINGS": {
+        "TITLE": "Paramètres"
     }
 }

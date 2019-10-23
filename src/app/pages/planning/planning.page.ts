@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController, ToastController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -9,10 +10,15 @@ import { TranslateService } from '@ngx-translate/core';
 export class PlanningPage implements OnInit {
 
   constructor(
+    public navCtrl: NavController,
     public trans: TranslateService,
-  ) { }
+    public toastController: ToastController) { }
 
   ngOnInit() {
+  }
+
+  goReturn() {
+    this.navCtrl.navigateRoot("/nav/newhomework");
   }
 
 }
