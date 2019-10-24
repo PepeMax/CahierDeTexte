@@ -14,10 +14,6 @@ export class NewHomeWorkPage implements OnInit {
     public navCtrl: NavController,
   ) { }
 
-  Fonction1() {
-    this.navCtrl.navigateForward("/login")
-  }
-
   Fonction2() {
     this.navCtrl.navigateForward("/planning")
   }

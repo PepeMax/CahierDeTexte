@@ -33,7 +33,7 @@
         "STUDENT": "Élève",
         "PROF": "Professeur",
         "LOGPROF": "Connexion professeur",
-        "LOGSTUD": "Connexion éléve",
+        "LOGSTUD": "Connexion élève",
         "USERNAME": "Nom d'utilisateur",
         "PASSWORD": "Mot de passe",
         "MSG_STUDENT": "Eh bienvenue wesh",
