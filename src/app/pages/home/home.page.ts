@@ -10,7 +10,7 @@ import { Storage } from '@ionic/storage';
 })
 export class HomePage implements OnInit {
 
-  public nameProf;
+  public name;
 
   constructor(
     public trans: TranslateService,
@@ -20,7 +20,7 @@ export class HomePage implements OnInit {
   ) { }
 
   async ngOnInit() {
-    this.nameProf = JSON.parse(await this.storage.get('nameProf'));
+    this.name = JSON.parse(await this.storage.get('name'));
   }
 
   goSettings() {
