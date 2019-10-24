@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, ToastController, AlertController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,9 @@ export class LoginPage implements OnInit {
     public navCtrl: NavController,
     public trans: TranslateService,
     public alertController: AlertController,
-    public toastController: ToastController) { }
+    public toastController: ToastController,
+    public storage: Storage,
+    ) { }
 
   ngOnInit() {
   }
@@ -55,12 +58,12 @@ export class LoginPage implements OnInit {
         }, {
           text: this.trans.instant('COMMON.OK'),
           handler: (alertData) => {
-            console.log('set mail');
-            let str = "Nom : " + alertData.name + "<br>";
-            str += "Mot de passe : " + alertData.password + "<br>";
-            console.log(JSON.stringify(alertData));
+            this.storage.set('nameProf', JSON.stringify(alertData.name));
+            this.storage.set('pwdProf' , JSON.stringify(alertData.password));
+            console.log(alertData.name);
+            console.log(alertData.password);
             this.okRegister(this.trans.instant('LOGIN.MSG_PROF'));
-            this.navCtrl.navigateForward('/nav/home');
+            this.navCtrl.navigateForward('/nav/home')
           }
         }
       ]
@@ -94,9 +97,6 @@ export class LoginPage implements OnInit {
         }, {
           text: this.trans.instant('COMMON.OK'),
           handler: (alertData) => {
-            console.log('set mail');
-            let str = "Nom : " + alertData.name + "<br>";
-            str += "Mot de passe : " + alertData.password + "<br>";
             console.log(JSON.stringify(alertData));
             this.okRegister(this.trans.instant('LOGIN.MSG_STUDENT'));
             this.navCtrl.navigateForward('/nav/home');
