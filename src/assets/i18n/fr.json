@@ -40,6 +40,18 @@
         "MSG_PROF": "Bienvenue professeur !"
     },
     "SETTINGS": {
-        "TITLE": "Paramètres"
-    }
+        "TITLE": "Paramètres",
+        "NIGHT": "Mode nuit",
+        "LANGUAGE": "Langue",
+        "FR": "Français",
+        "EN": "English",
+        "FR_EN": "FR / EN",
+        "CHANGE_ND": "Changer de nom",
+        "CHANGE_PWD": "Changer de mot de passe",
+        "ND": "Nom d'utilisateur :",
+        "DISCONNECT": "Se déconnecter",
+        "POPUP": "C'est carré chef",
+        "STATUS_STUD": "Vous êtes l'élève :",
+        "STATUS_PROF": "Vous êtes le professeur :"
+    }                            
 }

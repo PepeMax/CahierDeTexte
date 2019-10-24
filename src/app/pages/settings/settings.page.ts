@@ -45,8 +45,9 @@ export class SettingsPage implements OnInit {
   async confirmSettings() {
     this.navCtrl.navigateBack('/nav/home')
     const toast = await this.toastController.create({
-      message: 'C\'est carré chef',
-      duration: 2000
+      message: this.trans.instant('SETTINGS.POPUP'),
+      duration: 2000,
+      cssClass: 'toast'
     });
     toast.present();
   }

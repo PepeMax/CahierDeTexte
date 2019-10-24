@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
     const toast = await this.toastController.create({
       message: val,
       duration: 2000,
-      cssClass: 'test',
+      cssClass: 'toast',
     });
     toast.present();
   }
