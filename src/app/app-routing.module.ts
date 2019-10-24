@@ -9,9 +9,6 @@ const routes: Routes = [
   { path: 'planning', loadChildren: './pages/planning/planning.module#PlanningPageModule' },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'settings', loadChildren: './pages/settings/settings.module#SettingsPageModule' }
-
-
-
 ];
 @NgModule({
   imports: [
