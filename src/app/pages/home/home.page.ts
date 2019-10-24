@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NavController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-home',
@@ -9,13 +10,17 @@ import { NavController } from '@ionic/angular';
 })
 export class HomePage implements OnInit {
 
+  public nameProf;
+
   constructor(
     public trans: TranslateService,
     public navCtrl: NavController,
+    public storage: Storage,
 
   ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.nameProf = JSON.parse(await this.storage.get('nameProf'));
   }
 
   goSettings() {
