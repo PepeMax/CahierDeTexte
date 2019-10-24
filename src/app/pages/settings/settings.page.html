@@ -1,15 +1,66 @@
 <ion-header>
   <ion-toolbar>
+    <!-- <ion-button fill="clear" (click)=goAdmin()></ion-button> -->
     <ion-title>{{'SETTINGS.TITLE' | translate}}</ion-title>
-    <ion-button color="dark" slot="start" fill="clear" (click)="goHome()">
-        <ion-icon name="arrow-dropleft"></ion-icon>
-      </ion-button>
-      <ion-button color="success" slot="end" fill="clear" (click)="confirmSettings()">
-        <ion-icon name="checkmark-circle-outline"></ion-icon>
-      </ion-button>
+    <ion-button color="dark" slot="start" fill="clear" (click)="goBack()">
+      <ion-icon name="arrow-dropleft"></ion-icon>
+    </ion-button>
+    <ion-button color="success" slot="end" fill="clear" (click)="confirmSettings()">
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <ion-grid>
+    <ion-row justify-content-center>
+      <p *ngIf="!isprof">{{'SETTINGS.STUD' | translate}}</p>
+      <p *ngIf="isprof">{{'SETTINGS.PROF' | translate}}</p>
+    </ion-row>
+    <ion-row justify-content-center>
+      <h4>{{name}}</h4>
+    </ion-row>
+    <br>
+    <ion-row justify-content-center>
+      <ion-button size="small" fill="clear" (click)="onButtonClickNewND()">
+        changer de nom
+      </ion-button>
+      <ion-button size="small" fill="clear" (click)="onButtonClickNewPWD()">
+        changer de mot de passe
+      </ion-button>
+    </ion-row>
+    <br>
+    <ion-row *ngIf="buttonClickedNewND">
+      <ion-item>
+        <ion-label position="stacked">Changer de nom d'utuilisateur</ion-label>
+        <ion-input [(ngModel)]="changeName" required="true"></ion-input>
+      </ion-item>
+    </ion-row>
+    <br>
+    <ion-row *ngIf="buttonClickedNewPWD">
+      <ion-item>
+        <ion-label position="stacked">Changer de mot de passe</ion-label>
+        <ion-input [(ngModel)]="changePassword" required="true"></ion-input>
+      </ion-item>
+    </ion-row>
+    <br>
+    <ion-row>
+      <ion-item size="full">
+        <ion-label>Langue</ion-label>
+        <ion-select placeholder="FR/EN">
+          <ion-select-option value="fr">Français</ion-select-option>
+          <ion-select-option value="en">English</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-row>
+
+    <ion-row>
+      <ion-button color="medium" class="buttonAdmin">Accès admin</ion-button>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+<footer class="ion-text-center">
+  <ion-button fill="clear" (click)="disconnect()">Se déconnecter</ion-button>
+</footer>

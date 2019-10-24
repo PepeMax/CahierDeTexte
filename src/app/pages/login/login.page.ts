@@ -18,9 +18,11 @@ export class LoginPage implements OnInit {
     public alertController: AlertController,
     public toastController: ToastController,
     public storage: Storage,
-    ) { }
+  ) { }
 
   ngOnInit() {
+    this.storage.clear();
+
   }
 
   async okRegister(val) {
@@ -58,8 +60,9 @@ export class LoginPage implements OnInit {
         }, {
           text: this.trans.instant('COMMON.OK'),
           handler: (alertData) => {
-            this.storage.set('nameProf', JSON.stringify(alertData.name));
-            this.storage.set('pwdProf' , JSON.stringify(alertData.password));
+            this.storage.set('name', JSON.stringify(alertData.name));
+            this.storage.set('pwd', JSON.stringify(alertData.password));
+            this.storage.set('isProf', true);            
             console.log(alertData.name);
             console.log(alertData.password);
             this.okRegister(this.trans.instant('LOGIN.MSG_PROF'));
@@ -97,7 +100,11 @@ export class LoginPage implements OnInit {
         }, {
           text: this.trans.instant('COMMON.OK'),
           handler: (alertData) => {
-            console.log(JSON.stringify(alertData));
+            this.storage.set('name', JSON.stringify(alertData.name));
+            this.storage.set('pwd', JSON.stringify(alertData.password));
+            this.storage.set('isProf', false);
+            console.log(alertData.name);
+            console.log(alertData.password);
             this.okRegister(this.trans.instant('LOGIN.MSG_STUDENT'));
             this.navCtrl.navigateForward('/nav/home');
           }
