@@ -14,6 +14,13 @@
 <ion-content>
 
   <ion-grid>
+    <br>
+    <ion-row justify-content-center>
+      <ion-avatar>
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+    </ion-row>
+    <br>
     <ion-row justify-content-center>
       <p *ngIf="!isprof">{{'SETTINGS.STATUS_STUD' | translate}}</p>
       <p *ngIf="isprof">{{'SETTINGS.STATUS_PROF' | translate}}</p>
@@ -21,13 +28,12 @@
     <ion-row justify-content-center>
       <h4>{{name}}</h4>
     </ion-row>
-    <br>
     <ion-row justify-content-center>
-      <ion-button size="small" fill="clear" (click)="onButtonClickNewND()">
-          {{'SETTINGS.CHANGE_ND' | translate}}
+      <ion-button class="testtest" size="small" fill="clear" (click)="onButtonClickNewND()">
+        {{'SETTINGS.CHANGE_ND' | translate}}
       </ion-button>
-      <ion-button size="small" fill="clear" (click)="onButtonClickNewPWD()">
-          {{'SETTINGS.CHANGE_PWD' | translate}}
+      <ion-button class="testtest" size="small" fill="clear" (click)="onButtonClickNewPWD()">
+        {{'SETTINGS.CHANGE_PWD' | translate}}
       </ion-button>
     </ion-row>
     <br>
@@ -46,7 +52,7 @@
     </ion-row>
     <br>
     <ion-row>
-      <ion-item size="full">
+      <ion-item class="item-select">
         <ion-label>{{'SETTINGS.LANGUAGE' | translate}}</ion-label>
         <ion-select placeholder="{{'SETTINGS.FR_EN' | translate}}">
           <ion-select-option value="fr">{{'SETTINGS.FR' | translate}}</ion-select-option>
