@@ -16,9 +16,4 @@ export class PlanningPage implements OnInit {
 
   ngOnInit() {
   }
-
-  goReturn() {
-    this.navCtrl.navigateRoot("/nav/newhomework");
-  }
-
 }
