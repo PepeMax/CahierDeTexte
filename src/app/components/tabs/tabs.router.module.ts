@@ -38,6 +38,16 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'planning',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../../pages/planning/planning.module').then(m => m.PlanningPageModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/login',
         pathMatch: 'full'

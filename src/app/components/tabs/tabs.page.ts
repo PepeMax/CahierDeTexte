@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-tabs',
@@ -7,6 +8,15 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  public isProf: boolean = false;
+
+  constructor(
+    public storage: Storage,
+  ) {}
+
+  async ngOnInit() {
+    this.isProf = JSON.parse(await this.storage.get('isProf'));
+    console.log("salut")
+  }
 
 }
