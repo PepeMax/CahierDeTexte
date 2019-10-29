@@ -17,6 +17,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
+import { FirebaseService } from './services/firebase.service';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -46,6 +47,7 @@ export function createTranslateLoader(http: HttpClient) {
     DocumentViewer,
     File,
     FileOpener,
+    FirebaseService
   ],
   bootstrap: [AppComponent]
 })

@@ -5,7 +5,66 @@
 </ion-header>
 
 <ion-content>
-  
-  <ion-button (click)="Fonction2()">go planning</ion-button>
 
+  <ion-grid>
+    <ion-row>
+      <ion-item>
+        <ion-label position="stacked">{{'NEWHOMEWORK.NAME_HOMEWORK' | translate}}<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input [(ngModel)]="newHomeWork.name_events" required="true"></ion-input>
+      </ion-item>
+    </ion-row>
+
+    <br><br>
+
+    <ion-row>
+      <ion-item>
+        <ion-label>{{'NEWHOMEWORK.TYPE_HOMEWORK' | translate}}<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-select [(ngModel)]="newHomeWork.type_homework" placeholder="Devoirs, évaluations, ...">
+          <ion-select-option value="devoirs">{{'NEWHOMEWORK.HOMEWORK' | translate}}</ion-select-option>
+          <ion-select-option value="eval">{{'NEWHOMEWORK.EVAL' | translate}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-row>
+
+    <br><br>
+
+    <ion-row>
+      <ion-item>
+        <ion-label>{{'NEWHOMEWORK.GIVEN_DATE' | translate}}<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-datetime [(ngModel)]="newHomeWork.givedate_homework" placeholder="01-01-0000" displayFormat="DD MMMM YYYY"
+          monthNames="Janvier, Février, Mars, Avril, Mai, Juin, Juillet, Aout, Septembre, Octobre, Novembre, Décembre">
+        </ion-datetime>
+      </ion-item>
+    </ion-row>
+
+    <br><br>
+
+    <ion-row>
+      <ion-item>
+        <ion-label>{{'NEWHOMEWORK.TO_DO_DATE' | translate}}<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-datetime [(ngModel)]="newHomeWork.fordate_homework" placeholder="02-01-0000" displayFormat="DD MMMM YYYY"
+          [value]="today"
+          monthNames="Janvier, Février, Mars, Avril, Mai, Juin, Juillet, Aout, Septembre, Octobre, Novembre, Décembre">
+        </ion-datetime>
+      </ion-item>
+    </ion-row>
+
+    <br><br>
+
+    <ion-row>
+      <ion-item>
+        <ion-label position="stacked">{{'NEWHOMEWORK.INFO_HOMEWORK' | translate}}</ion-label>
+        <ion-input [(ngModel)]="newHomeWork.infos_homework"></ion-input>
+      </ion-item>
+    </ion-row>
+  </ion-grid>
+
+  <div class="new_events">
+    <ion-button (click)=cancel()>{{'COMMON.CANCEL' | translate}}</ion-button>
+    <ion-button (click)="submit()">{{'NEWHOMEWORK.NEW_HOMEWORK' | translate}}</ion-button>
+  </div>
 </ion-content>
