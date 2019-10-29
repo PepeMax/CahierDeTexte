@@ -11,7 +11,6 @@
         "TO": "Pour le ",
         "OK": "OK",
         "SUBJECT": "Matière : ",
-        
         "VERSION": "Version : ",
         "NVERSION": "1.0.0"
     },
@@ -22,7 +21,15 @@
         "TITLE": "Le Récap"
     },
     "NEWHOMEWORK": {
-        "TITLE": "Nouveau devoir"
+        "TITLE": "Nouveau devoir :",
+        "NAME_HOMEWORK": "Nom :",
+        "TYPE_HOMEWORK": "Type de devoir :",
+        "GIVEN_DATE": "Devoir donné le  :",
+        "TO_DO_DATE": "Devoir à faire pour :",
+        "INFO_HOMEWORK": "Infos :",
+        "HOMEWORK": "Devoir",
+        "EVAL": "Eval",
+        "NEW_HOMEWORK": "Ajouter le devoir"
     },
     "PLANNING": {
         "TITLE": "Planning de la semaine"
@@ -53,5 +60,5 @@
         "POPUP": "C'est carré chef",
         "STATUS_STUD": "Vous êtes l'élève :",
         "STATUS_PROF": "Vous êtes le professeur :"
-    }                            
+    }
 }

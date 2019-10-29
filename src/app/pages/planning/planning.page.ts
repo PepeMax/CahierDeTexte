@@ -12,7 +12,7 @@ import { FileOpener } from '@ionic-native/file-opener/ngx';
 })
 export class PlanningPage implements OnInit {
 
-  public readonly docObject = {src : 'Planning.pdf', title: 'Planning de la semaine'};
+  public readonly docObject = { src: 'Planning.pdf', title: 'Planning de la semaine' };
 
   constructor(
     public navCtrl: NavController,
@@ -25,6 +25,11 @@ export class PlanningPage implements OnInit {
   ) { }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter() {
+    this.onClickOpenPdfItem(this.docObject);
+    this.navCtrl.navigateRoot('/nav/home');
   }
 
   onClickOpenPdfItem(documentation) {
