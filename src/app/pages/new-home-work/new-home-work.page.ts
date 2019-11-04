@@ -32,7 +32,7 @@ export class NewHomeWorkPage implements OnInit {
   }
 
   cancel() {
-    this.navCtrl.navigateForward("/planning")
+    this.navCtrl.navigateForward("/nav/home")
   }
 
   async presentToast() {
