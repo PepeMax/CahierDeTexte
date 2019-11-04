@@ -23,12 +23,12 @@
     "NEWHOMEWORK": {
         "TITLE": "Nouveau devoir :",
         "NAME_HOMEWORK": "Nom :",
-        "TYPE_HOMEWORK": "Type de devoir :",
-        "GIVEN_DATE": "Devoir donné le  :",
-        "TO_DO_DATE": "Devoir à faire pour :",
-        "INFO_HOMEWORK": "Infos :",
+        "TYPE_HOMEWORK": "Type :",
+        "GIVEN_DATE": "Travail donné le :",
+        "TO_DO_DATE": "Travail à faire pour :",
+        "INFO_HOMEWORK": "Informations supplémentaires :",
         "HOMEWORK": "Devoir",
-        "EVAL": "Eval",
+        "EVAL": "Évaluation",
         "NEW_HOMEWORK": "Ajouter le devoir"
     },
     "PLANNING": {
