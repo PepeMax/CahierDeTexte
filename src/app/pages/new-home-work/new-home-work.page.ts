@@ -16,7 +16,7 @@ export class NewHomeWorkPage implements OnInit {
   public newHomeWork: any = {
     name_homework: '',
     type_homework: '',
-    givedate_homework: '',
+    givedate_homework: this.today,
     fordate_homework: '',
     infos_homework: ''
   }
