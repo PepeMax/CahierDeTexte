@@ -28,12 +28,13 @@ export class LoginPage implements OnInit {
     this.storage.clear();
   }
 
-  login(email, password) {
+  login(email, password, msg) {
     this.authService.login(email, password)
             .then(res => {
               console.log(res);
               this.errorMessage = "";
               this.navCtrl.navigateRoot('/nav/home')
+              this.okRegister(this.trans.instant(msg));
             }, err => {
               this.errorMessage = err.message;
             })
@@ -80,8 +81,7 @@ export class LoginPage implements OnInit {
             this.storage.set('name', JSON.stringify(alertData.name));
             this.storage.set('pwd', JSON.stringify(alertData.password));
             this.storage.set('isProf', true);            
-            this.login(alertData.email, alertData.password);            
-            this.okRegister(this.trans.instant('LOGIN.MSG_PROF'));
+            this.login(alertData.email, alertData.password, 'LOGIN.MSG_PROF');
           }
         }
       ]
@@ -117,8 +117,7 @@ export class LoginPage implements OnInit {
             this.storage.set('name', JSON.stringify(alertData.email));
             this.storage.set('pwd', JSON.stringify(alertData.password));
             this.storage.set('isProf', false);
-            this.login(alertData.email, alertData.password);
-            this.okRegister(this.trans.instant('LOGIN.MSG_STUDENT'));
+            this.login(alertData.email, alertData.password, 'LOGIN.MSG_STUDENT');
           }
         }
       ]
