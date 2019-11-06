@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, ToastController, AlertController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,17 +13,34 @@ export class LoginPage implements OnInit {
 
   toatsvalue = this.trans.instant('ACCOUNT_REQUEST.REGISTER_REQUEST');
 
+  errorMessage: string = '';
+
   constructor(
     public navCtrl: NavController,
     public trans: TranslateService,
     public alertController: AlertController,
     public toastController: ToastController,
     public storage: Storage,
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {
     this.storage.clear();
+  }
 
+  login(email, password) {
+    this.authService.login(email, password)
+            .then(res => {
+              console.log(res);
+              this.errorMessage = "";
+              this.navCtrl.navigateRoot('/nav/home')
+            }, err => {
+              this.errorMessage = err.message;
+            })
+  }
+
+  logout() {
+    this.authService.logout()
   }
 
   async okRegister(val) {
@@ -39,9 +57,9 @@ export class LoginPage implements OnInit {
       header: this.trans.instant('LOGIN.LOGPROF'),
       inputs: [
         {
-          name: 'name',
+          name: 'email',
           type: 'text',
-          placeholder: this.trans.instant('LOGIN.USERNAME')
+          placeholder: this.trans.instant('LOGIN.MAIL')
         },
         {
           name: 'password',
@@ -55,7 +73,6 @@ export class LoginPage implements OnInit {
           role: 'cancel',
           cssClass: 'secondary',
           handler: () => {
-            console.log('Annulé');
           }
         }, {
           text: this.trans.instant('COMMON.OK'),
@@ -63,10 +80,8 @@ export class LoginPage implements OnInit {
             this.storage.set('name', JSON.stringify(alertData.name));
             this.storage.set('pwd', JSON.stringify(alertData.password));
             this.storage.set('isProf', true);            
-            console.log(alertData.name);
-            console.log(alertData.password);
+            this.login(alertData.email, alertData.password);            
             this.okRegister(this.trans.instant('LOGIN.MSG_PROF'));
-            this.navCtrl.navigateForward('/nav/home')
           }
         }
       ]
@@ -79,9 +94,9 @@ export class LoginPage implements OnInit {
       header: this.trans.instant('LOGIN.LOGSTUD'),
       inputs: [
         {
-          name: 'name',
+          name: 'email',
           type: 'text',
-          placeholder: this.trans.instant('LOGIN.USERNAME')
+          placeholder: this.trans.instant('LOGIN.MAIL')
         },
         {
           name: 'password',
@@ -95,18 +110,15 @@ export class LoginPage implements OnInit {
           role: 'cancel',
           cssClass: 'secondary',
           handler: () => {
-            console.log('Annulé');
           }
         }, {
           text: this.trans.instant('COMMON.OK'),
           handler: (alertData) => {
-            this.storage.set('name', JSON.stringify(alertData.name));
+            this.storage.set('name', JSON.stringify(alertData.email));
             this.storage.set('pwd', JSON.stringify(alertData.password));
             this.storage.set('isProf', false);
-            console.log(alertData.name);
-            console.log(alertData.password);
+            this.login(alertData.email, alertData.password);
             this.okRegister(this.trans.instant('LOGIN.MSG_STUDENT'));
-            this.navCtrl.navigateForward('/nav/home');
           }
         }
       ]
