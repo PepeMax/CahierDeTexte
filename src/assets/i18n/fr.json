@@ -41,7 +41,7 @@
         "PROF": "Professeur",
         "LOGPROF": "Connexion professeur",
         "LOGSTUD": "Connexion élève",
-        "USERNAME": "Nom d'utilisateur",
+        "MAIL": "Adresse mail",
         "PASSWORD": "Mot de passe",
         "MSG_STUDENT": "Eh bienvenue wesh",
         "MSG_PROF": "Bienvenue professeur !"

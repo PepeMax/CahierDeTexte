@@ -17,11 +17,18 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
-import { FirebaseService } from './services/firebase.service';
+
+//FireBase
+import { environment } from 'src/environments/environment';
+import { AuthService } from './services/auth.service';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import * as firebase from 'firebase';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+
+firebase.initializeApp(environment.firebase);
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,15 +46,17 @@ export function createTranslateLoader(http: HttpClient) {
     }),
     AppRoutingModule,
     IonicStorageModule.forRoot(),
+    AngularFireAuthModule,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
     DocumentViewer,
     File,
     FileOpener,
-    FirebaseService
+    AuthService,
+
   ],
   bootstrap: [AppComponent]
 })
