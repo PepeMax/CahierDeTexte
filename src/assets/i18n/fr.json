@@ -10,12 +10,21 @@
         "FROM": "du ",
         "TO": "Pour le ",
         "OK": "OK",
+        "ERROR": "Erreur",
         "SUBJECT": "Matière : ",
         "VERSION": "Version : ",
-        "NVERSION": "1.0.0"
+        "NVERSION": "1.0.0",
+        "FIREBASE_ADD_HOME-WORK_SUCCESFULLY": "Le devoir à bien été ajouté",
+        "FIREBASE_ADD_HOME-WORK_FAIL": "Le devoir n'as pas pu être ajouté"
     },
     "HOMEWORK": {
-        "TITLE": "Y'à quoi à faire..."
+        "TITLE": "Y'à quoi à faire...",
+        "NAME": "Nom : ",
+        "TYPE": "Type:", 
+        "FOR_DATE": "Pour le : ",
+        "GIVE_DATE": "Donner le : " ,
+        "INFOS": "Description du devoir : "
+
     },
     "HOME": {
         "TITLE": "Le Récap"
@@ -26,7 +35,7 @@
         "TYPE_HOMEWORK": "Type :",
         "GIVEN_DATE": "Travail donné le :",
         "TO_DO_DATE": "Travail à faire pour :",
-        "INFO_HOMEWORK": "Informations supplémentaires :",
+        "INFO_HOMEWORK": "Description :",
         "HOMEWORK": "Devoir",
         "EVAL": "Évaluation",
         "NEW_HOMEWORK": "Ajouter le devoir"
@@ -44,7 +53,13 @@
         "MAIL": "Adresse mail",
         "PASSWORD": "Mot de passe",
         "MSG_STUDENT": "Eh bienvenue wesh",
-        "MSG_PROF": "Bienvenue professeur !"
+        "MSG_PROF": "Bienvenue professeur !",
+        "FORGET_PASSWORD": "Mot de passe oublié ?",
+        "CHANGE_PASSWORD": "Change votre mot de passe",
+        "ERROR_MAIL_INVALID": "\nAdresse mail invalide",
+        "ERROR_PASSWORD_INVALID": "\nMot de passe invalide",
+        "ERROR_USER_NOT_FOUND": "\nUtilisateur introuvable",
+        "ERROR_MESSAGE": "\nVeuillez réessayer"
     },
     "SETTINGS": {
         "TITLE": "Paramètres",

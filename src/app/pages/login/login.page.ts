@@ -3,6 +3,7 @@ import { NavController, ToastController, AlertController } from '@ionic/angular'
 import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
+import { HandleErrorService } from 'src/app/services/handle-error.service';
 
 @Component({
   selector: 'app-login',
@@ -13,8 +14,6 @@ export class LoginPage implements OnInit {
 
   toatsvalue = this.trans.instant('ACCOUNT_REQUEST.REGISTER_REQUEST');
 
-  errorMessage: string = '';
-
   constructor(
     public navCtrl: NavController,
     public trans: TranslateService,
@@ -22,6 +21,7 @@ export class LoginPage implements OnInit {
     public toastController: ToastController,
     public storage: Storage,
     private authService: AuthService,
+    private handleError: HandleErrorService
   ) { }
 
   ngOnInit() {
@@ -30,23 +30,24 @@ export class LoginPage implements OnInit {
 
   login(email, password, msg) {
     this.authService.login(email, password)
-            .then(res => {
-              console.log(res);
-              this.errorMessage = "";
-              this.navCtrl.navigateRoot('/nav/home')
-              this.okRegister(this.trans.instant(msg));
-            }, err => {
-              this.errorMessage = err.message;
-            })
+      .then(res => {
+        console.log(res);
+        this.navCtrl.navigateRoot('/nav/home')
+        this.createToast(this.trans.instant(msg));
+      }, async err => {
+        const alert = await this.alertController.create({
+          header: this.trans.instant('COMMON.ERROR'),
+          message: this.handleError.handleError(err) + this.trans.instant('LOGIN.ERROR_MESSAGE'),
+          cssClass: 'error_login',
+          buttons: ['OK']
+        });
+        await alert.present();
+      })
   }
 
-  logout() {
-    this.authService.logout()
-  }
-
-  async okRegister(val) {
+  async createToast(msg) {
     const toast = await this.toastController.create({
-      message: val,
+      message: msg,
       duration: 2000,
       cssClass: 'toast',
     });
@@ -78,9 +79,9 @@ export class LoginPage implements OnInit {
         }, {
           text: this.trans.instant('COMMON.OK'),
           handler: (alertData) => {
-            this.storage.set('name', JSON.stringify(alertData.name));
+            this.storage.set('email', JSON.stringify(alertData.email));
             this.storage.set('pwd', JSON.stringify(alertData.password));
-            this.storage.set('isProf', true);            
+            this.storage.set('isProf', true);
             this.login(alertData.email, alertData.password, 'LOGIN.MSG_PROF');
           }
         }
@@ -114,10 +115,38 @@ export class LoginPage implements OnInit {
         }, {
           text: this.trans.instant('COMMON.OK'),
           handler: (alertData) => {
-            this.storage.set('name', JSON.stringify(alertData.email));
+            this.storage.set('email', JSON.stringify(alertData.email));
             this.storage.set('pwd', JSON.stringify(alertData.password));
             this.storage.set('isProf', false);
             this.login(alertData.email, alertData.password, 'LOGIN.MSG_STUDENT');
+          }
+        }
+      ]
+    });
+    await alert.present();
+  }
+
+  async resetPassword() {
+    const alert = await this.alertController.create({
+      header: this.trans.instant('LOGIN.CHANGE_PASSWORD'),
+      inputs: [
+        {
+          name: 'email',
+          type: 'text',
+          placeholder: this.trans.instant('LOGIN.MAIL')
+        },
+      ],
+      buttons: [
+        {
+          text: this.trans.instant('COMMON.CANCEL'),
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+          }
+        }, {
+          text: this.trans.instant('COMMON.OK'),
+          handler: (alertData) => {
+            this.authService.resetPassword(alertData.email)
           }
         }
       ]

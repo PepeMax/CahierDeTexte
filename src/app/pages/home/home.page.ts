@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,6 @@ export class HomePage implements OnInit {
     public trans: TranslateService,
     public navCtrl: NavController,
     public storage: Storage,
-
   ) { }
 
   async ngOnInit() {

@@ -20,6 +20,7 @@ export class NewHomeWorkPage implements OnInit {
     fordate_homework: '',
     infos_homework: ''
   }
+  
   constructor(
     public trans: TranslateService,
     public navCtrl: NavController,
@@ -37,7 +38,7 @@ export class NewHomeWorkPage implements OnInit {
 
   async presentToast() {
     const toast = await this.toastController.create({
-      message: 'L&apos;événement à bien été ajouté',
+      message: this.trans.instant('COMMON.FIREBASE_ADD_HOME-WORK_SUCCESFULLY'),
       duration: 2000
     });
     toast.present();
@@ -65,7 +66,7 @@ export class NewHomeWorkPage implements OnInit {
         this.cancel();
       });
     let events: any[] = JSON.parse(await this.storage.get('events'));
-    this.firebase.AddEventsOnServer(events);
+    this.firebase.addOnFireBase(events);
   }
 
 }
