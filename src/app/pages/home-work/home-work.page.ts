@@ -10,7 +10,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class HomeWorkPage implements OnInit {
 
-  public homework;
+  public homeworks;
 
   constructor(
     public trans: TranslateService,
@@ -25,7 +25,7 @@ export class HomeWorkPage implements OnInit {
     this.firebase.getFromFireBase()
       .subscribe((events) => {
         console.log(events);
-        this.homework = events
+        this.homeworks = events
       });
   }
 
