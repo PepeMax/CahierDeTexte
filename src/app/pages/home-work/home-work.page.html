@@ -5,15 +5,24 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-title>Pour le 02/02</ion-card-title>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card *ngFor="let cahier_de_texte of homework;let i = index;"">
+    <ion-card-title>{{'HOMEWORK.FOR_DATE' | translate}} {{homework?.fordate_homework | date: 'dd/MM/yy'}}</ion-card-title>
     <ion-card-content>
 
-      <ion-list>
-        Professeur : Mme Java <br>
-        Matière : Java <br>
-        A faire : Terminer les exos sur Codenvy<br>
-      </ion-list>
+        <ion-list>
+            <p>{{'HOMEWORK.NAME' | translate}} {{homework?.name_homework}}</p>
+            <p>{{'HOMEWORK.TYPE' | translate}} {{homework.type_homework}}</p>
+            <p>{{'HOMEWORK.GIVE_DATE' | translate}} {{homework.givedate_homework| date: 'dd/MM/yy'}}</p>
+
+            <p>{{'HOMEWORK.INFOS' | translate}} {{homework.infos_homework}} </p>
+          </ion-list>
+      
     </ion-card-content>
   </ion-card>
+
 </ion-content>
