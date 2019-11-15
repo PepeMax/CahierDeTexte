@@ -55,39 +55,40 @@ export class LoginPage implements OnInit {
   }
 
   async logProf() {
-    const alert = await this.alertController.create({
-      header: this.trans.instant('LOGIN.LOGPROF'),
-      inputs: [
-        {
-          name: 'email',
-          type: 'text',
-          placeholder: this.trans.instant('LOGIN.MAIL')
-        },
-        {
-          name: 'password',
-          type: 'text',
-          placeholder: this.trans.instant('LOGIN.PASSWORD')
-        },
-      ],
-      buttons: [
-        {
-          text: this.trans.instant('COMMON.CANCEL'),
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: () => {
-          }
-        }, {
-          text: this.trans.instant('COMMON.OK'),
-          handler: (alertData) => {
-            this.storage.set('email', JSON.stringify(alertData.email));
-            this.storage.set('pwd', JSON.stringify(alertData.password));
-            this.storage.set('isProf', true);
-            this.login(alertData.email, alertData.password, 'LOGIN.MSG_PROF');
-          }
-        }
-      ]
-    });
-    await alert.present();
+    // const alert = await this.alertController.create({
+    //   header: this.trans.instant('LOGIN.LOGPROF'),
+    //   inputs: [
+    //     {
+    //       name: 'email',
+    //       type: 'text',
+    //       placeholder: this.trans.instant('LOGIN.MAIL')
+    //     },
+    //     {
+    //       name: 'password',
+    //       type: 'text',
+    //       placeholder: this.trans.instant('LOGIN.PASSWORD')
+    //     },
+    //   ],
+    //   buttons: [
+    //     {
+    //       text: this.trans.instant('COMMON.CANCEL'),
+    //       role: 'cancel',
+    //       cssClass: 'secondary',
+    //       handler: () => {
+    //       }
+    //     }, {
+    //       text: this.trans.instant('COMMON.OK'),
+    //       handler: (alertData) => {
+    //         this.storage.set('email', JSON.stringify(alertData.email));
+    //         this.storage.set('pwd', JSON.stringify(alertData.password));
+    //         this.storage.set('isProf', true);
+    //         this.login(alertData.email, alertData.password, 'LOGIN.MSG_PROF');
+    //       }
+    //     }
+    //   ]
+    // });
+    // await alert.present();
+    this.createToast("Nique bien ta mère, t'es pas un prof sale bâtard. Bisoux")
   }
 
   async logStud() {
