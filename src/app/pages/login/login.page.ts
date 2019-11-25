@@ -26,12 +26,14 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.storage.clear();
+    this.authService.logout();
   }
 
   login(email, password, msg) {
     this.authService.login(email, password)
       .then(res => {
         console.log(res);
+        this.authService.getInfoUser();
         this.navCtrl.navigateRoot('/nav/home')
         this.createToast(this.trans.instant(msg));
       }, async err => {
@@ -79,8 +81,6 @@ export class LoginPage implements OnInit {
         }, {
           text: this.trans.instant('COMMON.OK'),
           handler: (alertData) => {
-            this.storage.set('email', JSON.stringify(alertData.email));
-            this.storage.set('pwd', JSON.stringify(alertData.password));
             this.storage.set('isProf', true);
             this.login(alertData.email, alertData.password, 'LOGIN.MSG_PROF');
           }
@@ -115,8 +115,6 @@ export class LoginPage implements OnInit {
         }, {
           text: this.trans.instant('COMMON.OK'),
           handler: (alertData) => {
-            this.storage.set('email', JSON.stringify(alertData.email));
-            this.storage.set('pwd', JSON.stringify(alertData.password));
             this.storage.set('isProf', false);
             this.login(alertData.email, alertData.password, 'LOGIN.MSG_STUDENT');
           }

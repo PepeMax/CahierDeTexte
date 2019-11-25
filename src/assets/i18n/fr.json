@@ -69,11 +69,25 @@
         "EN": "English",
         "FR_EN": "FR / EN",
         "CHANGE_ND": "Changer de nom",
+        "CHANGE_ND_SUB_HEADER": "Votre nom actuelle : ",
         "CHANGE_PWD": "Changer de mot de passe",
         "ND": "Nom d'utilisateur :",
         "DISCONNECT": "Se déconnecter",
         "POPUP": "C'est carré chef",
         "STATUS_STUD": "Vous êtes l'élève :",
-        "STATUS_PROF": "Vous êtes le professeur :"
+        "STATUS_PROF": "Vous êtes le professeur :",
+        "USERNAME": "Nom d'utilisateur"
+    },
+    "ERRORS": {
+        "ERROR_MESSAGE": "\nVeuillez réessayer",
+        
+        "ERROR_MAIL_INVALID": "\nAdresse mail invalide",
+        "ERROR_PASSWORD_INVALID": "\nMot de passe invalide",
+        "ERROR_USER_NOT_FOUND": "\nUtilisateur introuvable",
+        "ERROR_USER_DISABLED": "\nL'utilisateur est désactivé",
+        "ERROR_INVALID_USER_TOKEN": "\nVotre utilisateur appartient à un autre projet firebase",
+        "ERROR_USER_TOKEN_EXPIRED": "\nVotre jeton à mettre à jour est expiré",
+        "ERROR_NULL_USER": "\nLe nom d'utilisateur est nul",
+        "ERROR_TENANT_ID_MISMATCH": "\nL'ID ne correspondant"
     }
 }

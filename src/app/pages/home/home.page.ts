@@ -4,6 +4,9 @@ import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
 
+
+import * as firebase from 'firebase/app';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -17,14 +20,26 @@ export class HomePage implements OnInit {
     public trans: TranslateService,
     public navCtrl: NavController,
     public storage: Storage,
+    public auth: AuthService 
   ) { }
 
   async ngOnInit() {
-    this.name = JSON.parse(await this.storage.get('name'));
   }
 
-  goSettings() {
+  async goSettings() {
     this.navCtrl.navigateForward("/settings")
+
+  }
+
+  GetUserInfos() {
+    this.auth.getInfoUser()
+  }
+
+  ChangeID() {
+    var user = firebase.auth().currentUser;
+    return user.updateProfile({
+      photoURL: "#"
+    })
   }
 
 }

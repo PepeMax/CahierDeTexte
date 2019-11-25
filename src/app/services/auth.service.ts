@@ -3,6 +3,9 @@ import { Storage } from '@ionic/storage';
 
 import * as firebase from 'firebase/app';
 import { HandleErrorService } from './handle-error.service';
+import { AlertController, NavController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +14,15 @@ export class AuthService {
 
   constructor(
     public storage: Storage,
-    public handleErr: HandleErrorService
+    public handleError: HandleErrorService,
+    public alertController : AlertController,
+    public trans: TranslateService,
+    public navCtrl: NavController
   ) { }
 
   public erreur;
   public userID;
+  public userInfo;
 
   login(email, password) {
     return new Promise<any>((resolve, reject) => {
@@ -24,32 +31,29 @@ export class AuthService {
           res => resolve(res),
           err => reject(err))
     })
+    
   }
 
   userDetails() {
     this.userID = JSON.stringify(firebase.auth().currentUser);
     this.userID = JSON.parse(this.userID)
     console.log(this.userID.uid)
-    // switch (this.userID.uid) {
 
-    //   case "auth/invalid-email": {
-    //     console.log("mail invalide")
-    //     break;
-    //   }
-    //   case "auth/user-not-found": {
-    //     console.log("utiliseur ntrouvable"); 
-    //     break;
-    //   }
-    //   default: {
-    //     break;
-    //   }
+  }
 
-    // }
+  getInfoUser() {
+    console.log(firebase.auth().currentUser)
+    this.userInfo = JSON.stringify(firebase.auth().currentUser);
+    this.userInfo = JSON.parse(this.userInfo)
+    console.log(this.userInfo.displayName)
+    return this.userInfo.displayName
   }
 
   logout() {
     firebase.auth().signOut();
   }
+
+  //Change user's settings
 
   resetPassword(mail) {
     firebase.auth().sendPasswordResetEmail(mail)
@@ -57,7 +61,27 @@ export class AuthService {
         console.log("envoyé");
       })
       .catch((error) => {
-        console.log(this.handleErr.handleError(error))
+        console.log(this.handleError.handleError(error))
       });
+  }
+
+  async updateProfile(newUser): Promise<any> {
+    var user = firebase.auth().currentUser;
+    return user.updateProfile({
+      displayName: newUser
+    })
+    .then( () => {
+      //this.username = newUser;
+      return newUser;
+    })
+    .catch(async err => {
+      const alert = await this.alertController.create({
+        header: this.trans.instant('COMMON.ERROR'),
+        message: this.handleError.handleError(err) + this.trans.instant('LOGIN.ERROR_MESSAGE'),
+        cssClass: 'error_login',
+        buttons: ['OK']
+      });
+      await alert.present();
+    });  
   }
 }
