@@ -15,7 +15,8 @@
         "VERSION": "Version : ",
         "NVERSION": "1.0.0",
         "FIREBASE_ADD_HOME-WORK_SUCCESFULLY": "Le devoir à bien été ajouté",
-        "FIREBASE_ADD_HOME-WORK_FAIL": "Le devoir n'as pas pu être ajouté"
+        "FIREBASE_ADD_HOME-WORK_FAIL": "Le devoir n'as pas pu être ajouté",
+        "WAITING": "Veuillez patienter"
     },
     "HOMEWORK": {
         "TITLE": "Y'à quoi à faire...",
@@ -24,7 +25,6 @@
         "FOR_DATE": "Pour le : ",
         "GIVE_DATE": "Donner le : " ,
         "INFOS": "Description du devoir : "
-
     },
     "HOME": {
         "TITLE": "Le Récap"
@@ -81,6 +81,9 @@
     "ERRORS": {
         "ERROR_MESSAGE": "\nVeuillez réessayer",
         
+        "ERROR_IS_NOT_PROF": "\nCe compte appartient à un professeur",
+        "ERROR_IS_PROF": "\nCe compte appartient à un élève",
+
         "ERROR_MAIL_INVALID": "\nAdresse mail invalide",
         "ERROR_PASSWORD_INVALID": "\nMot de passe invalide",
         "ERROR_USER_NOT_FOUND": "\nUtilisateur introuvable",

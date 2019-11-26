@@ -24,14 +24,13 @@ export class AuthService {
   public userID;
   public userInfo;
 
-  login(email, password) {
+  login(email, password): Promise<any> {
     return new Promise<any>((resolve, reject) => {
       firebase.auth().signInWithEmailAndPassword(email, password)
         .then(
           res => resolve(res),
           err => reject(err))
     })
-    
   }
 
   userDetails() {
@@ -41,12 +40,21 @@ export class AuthService {
 
   }
 
-  getInfoUser() {
+  getUserName() {
     console.log(firebase.auth().currentUser)
     this.userInfo = JSON.stringify(firebase.auth().currentUser);
     this.userInfo = JSON.parse(this.userInfo)
-    console.log(this.userInfo.displayName)
     return this.userInfo.displayName
+  }
+
+  returnIsProf() {
+    this.userInfo = JSON.stringify(firebase.auth().currentUser);
+    this.userInfo = JSON.parse(this.userInfo)
+    if (this.userInfo.photoURL === "#") {
+      return true
+    } else {
+      return false
+    }
   }
 
   logout() {

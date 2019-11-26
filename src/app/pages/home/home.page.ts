@@ -32,7 +32,8 @@ export class HomePage implements OnInit {
   }
 
   GetUserInfos() {
-    this.auth.getInfoUser()
+    // this.auth.getUserName()
+    this.auth.returnIsProf()
   }
 
   ChangeID() {

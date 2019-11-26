@@ -26,7 +26,7 @@ export class SettingsPage implements OnInit {
   ) { }
 
   async ngOnInit() {
-    this.username = this.authService.getInfoUser();
+    // this.username = this.authService.getInfoUser();
     this.isprof = JSON.parse(await this.storage.get('isProf'));
 
   }
