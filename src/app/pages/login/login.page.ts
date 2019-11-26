@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
     public storage: Storage,
     private authService: AuthService,
     private handleError: HandleErrorService,
-    public loadingController: LoadingController 
+    public loadingController: LoadingController
   ) { }
 
   ngOnInit() {
@@ -85,18 +85,18 @@ export class LoginPage implements OnInit {
           handler: (alertData) => {
             this.storage.set('isProf', true);
             this.authService.login(alertData.email, alertData.password)
-            .then(() => {
-              if (this.authService.returnIsProf() == true) {
-                this.authService.getUserName();
-                this.navCtrl.navigateRoot('/nav/home')
-                this.createLoading(this.trans.instant('COMMON.WAITING'))
-                this.createToast(this.trans.instant('LOGIN.MSG_PROF'));
-              } else {
-                this.createAllert(this.trans.instant('COMMON.ERROR'), this.trans.instant('ERRORS.ERROR_IS_PROF') + this.trans.instant('LOGIN.ERROR_MESSAGE'));
-                this.authService.logout();
-              }
-            })
-            .catch(async err => {
+              .then(() => {
+                if (this.authService.returnIsProf() == true) {
+                  this.authService.getUserName();
+                  this.navCtrl.navigateRoot('/nav/home')
+                  this.createLoading(this.trans.instant('COMMON.WAITING'))
+                  this.createToast(this.trans.instant('LOGIN.MSG_PROF'));
+                } else {
+                  this.createAllert(this.trans.instant('COMMON.ERROR'), this.trans.instant('ERRORS.ERROR_IS_PROF') + this.trans.instant('LOGIN.ERROR_MESSAGE'));
+                  this.authService.logout();
+                }
+              })
+              .catch(async err => {
                 const alert = await this.alertController.create({
                   header: this.trans.instant('COMMON.ERROR'),
                   message: this.handleError.handleError(err) + this.trans.instant('LOGIN.ERROR_MESSAGE'),
@@ -139,18 +139,18 @@ export class LoginPage implements OnInit {
           handler: (alertData) => {
             this.storage.set('isProf', true);
             this.authService.login(alertData.email, alertData.password)
-            .then(() => {
-              if (this.authService.returnIsProf() == false) {
-                this.authService.getUserName();
-                this.navCtrl.navigateRoot('/nav/home')
-                this.createLoading(this.trans.instant('COMMON.WAITING'))
-                this.createToast(this.trans.instant('LOGIN.MSG_STUDENT'));
-              } else {
-                this.createAllert(this.trans.instant('COMMON.ERROR'), this.trans.instant('ERRORS.ERROR_IS_NOT_PROF') + this.trans.instant('LOGIN.ERROR_MESSAGE'));
-                this.authService.logout();
-              }
-            })
-            .catch(async err => {
+              .then(() => {
+                if (this.authService.returnIsProf() == false) {
+                  this.authService.getUserName();
+                  this.navCtrl.navigateRoot('/nav/home')
+                  this.createLoading(this.trans.instant('COMMON.WAITING'))
+                  this.createToast(this.trans.instant('LOGIN.MSG_STUDENT'));
+                } else {
+                  this.createAllert(this.trans.instant('COMMON.ERROR'), this.trans.instant('ERRORS.ERROR_IS_NOT_PROF') + this.trans.instant('LOGIN.ERROR_MESSAGE'));
+                  this.authService.logout();
+                }
+              })
+              .catch(async err => {
                 const alert = await this.alertController.create({
                   header: this.trans.instant('COMMON.ERROR'),
                   message: this.handleError.handleError(err) + this.trans.instant('LOGIN.ERROR_MESSAGE'),

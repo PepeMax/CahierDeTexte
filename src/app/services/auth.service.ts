@@ -15,7 +15,7 @@ export class AuthService {
   constructor(
     public storage: Storage,
     public handleError: HandleErrorService,
-    public alertController : AlertController,
+    public alertController: AlertController,
     public trans: TranslateService,
     public navCtrl: NavController
   ) { }
@@ -78,18 +78,17 @@ export class AuthService {
     return user.updateProfile({
       displayName: newUser
     })
-    .then( () => {
-      //this.username = newUser;
-      return newUser;
-    })
-    .catch(async err => {
-      const alert = await this.alertController.create({
-        header: this.trans.instant('COMMON.ERROR'),
-        message: this.handleError.handleError(err) + this.trans.instant('LOGIN.ERROR_MESSAGE'),
-        cssClass: 'error_login',
-        buttons: ['OK']
+      .then(() => {
+        return newUser;
+      })
+      .catch(async err => {
+        const alert = await this.alertController.create({
+          header: this.trans.instant('COMMON.ERROR'),
+          message: this.handleError.handleError(err) + this.trans.instant('LOGIN.ERROR_MESSAGE'),
+          cssClass: 'error_login',
+          buttons: ['OK']
+        });
+        await alert.present();
       });
-      await alert.present();
-    });  
   }
 }

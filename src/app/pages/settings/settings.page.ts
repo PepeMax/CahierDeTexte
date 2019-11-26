@@ -21,7 +21,7 @@ export class SettingsPage implements OnInit {
     public trans: TranslateService,
     public toastController: ToastController,
     public storage: Storage,
-    public alertController : AlertController,
+    public alertController: AlertController,
     private authService: AuthService
   ) { }
 
@@ -76,9 +76,9 @@ export class SettingsPage implements OnInit {
           text: this.trans.instant('COMMON.OK'),
           handler: (alertData) => {
             this.authService.updateProfile(alertData.username)
-            .then(newuser => {
-              this.username = newuser;
-            });
+              .then(newuser => {
+                this.username = newuser;
+              });
           }
         }
       ]
