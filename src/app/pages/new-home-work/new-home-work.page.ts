@@ -10,7 +10,7 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['./new-home-work.page.scss'],
 })
 export class NewHomeWorkPage implements OnInit {
-  
+
   today = new Date().toISOString();
 
   public newHomeWork: any = {
@@ -20,7 +20,7 @@ export class NewHomeWorkPage implements OnInit {
     fordate_homework: '',
     infos_homework: ''
   }
-  
+
   constructor(
     public trans: TranslateService,
     public navCtrl: NavController,

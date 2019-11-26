@@ -20,7 +20,7 @@ export class HomePage implements OnInit {
     public trans: TranslateService,
     public navCtrl: NavController,
     public storage: Storage,
-    public auth: AuthService 
+    public auth: AuthService
   ) { }
 
   async ngOnInit() {
@@ -28,11 +28,10 @@ export class HomePage implements OnInit {
 
   async goSettings() {
     this.navCtrl.navigateForward("/settings")
-
   }
 
   GetUserInfos() {
-    this.auth.getInfoUser()
+    this.auth.returnIsProf()
   }
 
   ChangeID() {

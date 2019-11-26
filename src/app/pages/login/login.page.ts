@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ToastController, AlertController } from '@ionic/angular';
+import { NavController, ToastController, AlertController, LoadingController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
@@ -21,30 +21,13 @@ export class LoginPage implements OnInit {
     public toastController: ToastController,
     public storage: Storage,
     private authService: AuthService,
-    private handleError: HandleErrorService
+    private handleError: HandleErrorService,
+    public loadingController: LoadingController
   ) { }
 
   ngOnInit() {
     this.storage.clear();
     this.authService.logout();
-  }
-
-  login(email, password, msg) {
-    this.authService.login(email, password)
-      .then(res => {
-        console.log(res);
-        this.authService.getInfoUser();
-        this.navCtrl.navigateRoot('/nav/home')
-        this.createToast(this.trans.instant(msg));
-      }, async err => {
-        const alert = await this.alertController.create({
-          header: this.trans.instant('COMMON.ERROR'),
-          message: this.handleError.handleError(err) + this.trans.instant('LOGIN.ERROR_MESSAGE'),
-          cssClass: 'error_login',
-          buttons: ['OK']
-        });
-        await alert.present();
-      })
   }
 
   async createToast(msg) {
@@ -54,6 +37,25 @@ export class LoginPage implements OnInit {
       cssClass: 'toast',
     });
     toast.present();
+  }
+
+  async createAllert(textheader, textmessage) {
+    const alert = await this.alertController.create({
+      header: textheader,
+      message: textmessage,
+      buttons: ['OK']
+    });
+    await alert.present();
+  }
+
+  async createLoading(textmessage, css?) {
+    const loading = await this.loadingController.create({
+      spinner: "crescent",
+      duration: 2500,
+      message: textmessage,
+      cssClass: css,
+    })
+    return await loading.present();
   }
 
   async logProf() {
@@ -82,7 +84,27 @@ export class LoginPage implements OnInit {
           text: this.trans.instant('COMMON.OK'),
           handler: (alertData) => {
             this.storage.set('isProf', true);
-            this.login(alertData.email, alertData.password, 'LOGIN.MSG_PROF');
+            this.authService.login(alertData.email, alertData.password)
+              .then(() => {
+                if (this.authService.returnIsProf() == true) {
+                  this.authService.getUserName();
+                  this.navCtrl.navigateRoot('/nav/home')
+                  this.createLoading(this.trans.instant('COMMON.WAITING'))
+                  this.createToast(this.trans.instant('LOGIN.MSG_PROF'));
+                } else {
+                  this.createAllert(this.trans.instant('COMMON.ERROR'), this.trans.instant('ERRORS.ERROR_IS_PROF') + this.trans.instant('LOGIN.ERROR_MESSAGE'));
+                  this.authService.logout();
+                }
+              })
+              .catch(async err => {
+                const alert = await this.alertController.create({
+                  header: this.trans.instant('COMMON.ERROR'),
+                  message: this.handleError.handleError(err) + this.trans.instant('LOGIN.ERROR_MESSAGE'),
+                  cssClass: 'error_login',
+                  buttons: ['OK']
+                });
+                await alert.present();
+              });
           }
         }
       ]
@@ -115,8 +137,28 @@ export class LoginPage implements OnInit {
         }, {
           text: this.trans.instant('COMMON.OK'),
           handler: (alertData) => {
-            this.storage.set('isProf', false);
-            this.login(alertData.email, alertData.password, 'LOGIN.MSG_STUDENT');
+            this.storage.set('isProf', true);
+            this.authService.login(alertData.email, alertData.password)
+              .then(() => {
+                if (this.authService.returnIsProf() == false) {
+                  this.authService.getUserName();
+                  this.navCtrl.navigateRoot('/nav/home')
+                  this.createLoading(this.trans.instant('COMMON.WAITING'))
+                  this.createToast(this.trans.instant('LOGIN.MSG_STUDENT'));
+                } else {
+                  this.createAllert(this.trans.instant('COMMON.ERROR'), this.trans.instant('ERRORS.ERROR_IS_NOT_PROF') + this.trans.instant('LOGIN.ERROR_MESSAGE'));
+                  this.authService.logout();
+                }
+              })
+              .catch(async err => {
+                const alert = await this.alertController.create({
+                  header: this.trans.instant('COMMON.ERROR'),
+                  message: this.handleError.handleError(err) + this.trans.instant('LOGIN.ERROR_MESSAGE'),
+                  cssClass: 'error_login',
+                  buttons: ['OK']
+                });
+                await alert.present();
+              });
           }
         }
       ]
