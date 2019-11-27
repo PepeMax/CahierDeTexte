@@ -25,6 +25,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import * as firebase from 'firebase';
 
 import { HandleErrorService } from './services/handle-error.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthGuardService } from './services/auth-guard.service';
+import { ComponentsModule } from './components/components.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -39,6 +42,8 @@ firebase.initializeApp(environment.firebase);
     BrowserModule,
     IonicModule.forRoot(),
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -49,6 +54,7 @@ firebase.initializeApp(environment.firebase);
     AppRoutingModule,
     IonicStorageModule.forRoot(),
     AngularFireAuthModule,
+    ComponentsModule,
   ],
   providers: [
     StatusBar,
@@ -58,6 +64,7 @@ firebase.initializeApp(environment.firebase);
     File,
     FileOpener,
     AuthService,
+    AuthGuardService,
     HandleErrorService
 
   ],

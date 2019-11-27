@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { SignupComponent } from './components/auth/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -8,7 +9,10 @@ const routes: Routes = [
   },
   { path: 'planning', loadChildren: './pages/planning/planning.module#PlanningPageModule' },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
-  { path: 'settings', loadChildren: './pages/settings/settings.module#SettingsPageModule' }
+  { path: 'settings', loadChildren: './pages/settings/settings.module#SettingsPageModule' },
+  { path: 'slides', loadChildren: './pages/slides/slides.module#SlidesPageModule' },
+  { path: 'homelogin', loadChildren: './pages/homelogin/homelogin.module#HomeloginPageModule' },
+
 ];
 @NgModule({
   imports: [
@@ -17,3 +21,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

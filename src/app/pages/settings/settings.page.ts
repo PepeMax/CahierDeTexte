@@ -26,7 +26,7 @@ export class SettingsPage implements OnInit {
   ) { }
 
   async ngOnInit() {
-    // this.username = this.authService.getInfoUser();
+    this.username = this.authService.getUserName();
     this.isprof = JSON.parse(await this.storage.get('isProf'));
 
   }
@@ -36,7 +36,7 @@ export class SettingsPage implements OnInit {
   }
 
   disconnect() {
-    this.authService.logout();
+    this.authService.signOutUser();
     this.navCtrl.navigateRoot("/login");
   }
 
@@ -86,8 +86,33 @@ export class SettingsPage implements OnInit {
     await alert.present();
   }
 
-  public resetPassword(mail) {
-    this.authService.resetPassword(mail);
+  public async resetPassword() {
+    const alert = await this.alertController.create({
+      header: this.trans.instant('LOGIN.CHANGE_PASSWORD'),
+      inputs: [
+        {
+          name: 'email',
+          type: 'text',
+          placeholder: this.trans.instant('LOGIN.MAIL')
+        },
+      ],
+      buttons: [
+        {
+          text: this.trans.instant('COMMON.CANCEL'),
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+          }
+        }, {
+          text: this.trans.instant('COMMON.OK'),
+          handler: (alertData) => {
+            this.authService.resetPassword(alertData.email)
+          }
+        }
+      ]
+    });
+    await alert.present();
   }
+
 
 }

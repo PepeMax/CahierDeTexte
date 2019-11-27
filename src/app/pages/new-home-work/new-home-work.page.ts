@@ -12,6 +12,7 @@ import { Storage } from '@ionic/storage';
 export class NewHomeWorkPage implements OnInit {
 
   today = new Date().toISOString();
+  public homeworks;
 
   public newHomeWork: any = {
     name_homework: '',
@@ -26,7 +27,7 @@ export class NewHomeWorkPage implements OnInit {
     public navCtrl: NavController,
     public toastController: ToastController,
     public storage: Storage,
-    public firebase: FirebaseService
+    public firebase: FirebaseService,
   ) { }
 
   ngOnInit() {
@@ -45,18 +46,18 @@ export class NewHomeWorkPage implements OnInit {
   }
 
   async submit() {
-    let oldEvents: any[] = JSON.parse(await this.storage.get('events'));
 
-    if (oldEvents !== null) {
-      oldEvents.push(this.newHomeWork);
+    let oldHomework: any[] = JSON.parse(await this.storage.get('homework'));
+    if (oldHomework !== null) {
+      oldHomework.push(this.newHomeWork);
     } else {
-      oldEvents = [];
-      oldEvents.push(this.newHomeWork);
+      oldHomework = [];
+      oldHomework.push(this.newHomeWork);
     }
 
-    await this.storage.set('events', JSON.stringify(oldEvents))
-      .then(events => {
-        console.log(events);
+    await this.storage.set('homework', JSON.stringify(oldHomework))
+      .then(homework => {
+        console.log(homework);
       })
       .catch(error => {
         console.error(error);
@@ -65,8 +66,8 @@ export class NewHomeWorkPage implements OnInit {
         this.presentToast();
         this.cancel();
       });
-    let events: any[] = JSON.parse(await this.storage.get('events'));
-    this.firebase.addOnFireBase(events);
+    let homework: any[] = JSON.parse(await this.storage.get('homework'));
+    this.firebase.addOnFireBase(homework);
   }
 
 }

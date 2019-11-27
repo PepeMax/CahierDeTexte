@@ -24,13 +24,36 @@ export class AuthService {
   public userID;
   public userInfo;
 
-  login(email, password): Promise<any> {
-    return new Promise<any>((resolve, reject) => {
-      firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(
-          res => resolve(res),
-          err => reject(err))
-    })
+  signInUser(email: string, password: string): Promise<any> {
+    return new Promise<any>(
+      (resolve, reject) => {
+        firebase.auth().signInWithEmailAndPassword(email, password)
+          .then(() => {
+            resolve();
+          },
+            (error) => {
+              reject(error);
+            });
+      });
+  }
+
+  createNewUser(email: string, password: string) {
+    return new Promise(
+      (resolve, reject) => {
+        firebase.auth().createUserWithEmailAndPassword(email, password).then(
+          () => {
+            resolve();
+          },
+          (error) => {
+            reject(error);
+          }
+        );
+      }
+    );
+}
+
+  signOutUser() {
+    firebase.auth().signOut();
   }
 
   userDetails() {
@@ -57,9 +80,16 @@ export class AuthService {
     }
   }
 
-  logout() {
-    firebase.auth().signOut();
+  returnIsNewUser() {
+    this.userInfo = JSON.stringify(firebase.auth().currentUser);
+    this.userInfo = JSON.parse(this.userInfo)
+    if (this.userInfo.emailVerified == false) {
+      return true
+    } else {
+      return false
+    }
   }
+
 
   //Change user's settings
 
