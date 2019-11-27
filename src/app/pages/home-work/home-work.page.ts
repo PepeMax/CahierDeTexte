@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { FirebaseService } from 'src/app/services/firebase.service';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-home-work',
@@ -14,7 +14,7 @@ export class HomeWorkPage implements OnInit {
 
   constructor(
     public trans: TranslateService,
-    public firebase: FirebaseService
+    public firebase: FirebaseService,
   ) { }
 
   ngOnInit() {

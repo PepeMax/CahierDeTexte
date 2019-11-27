@@ -33,3 +33,13 @@
   white-space: pre-wrap;
   text-align: center;
 }
+
+.alert-modal {
+  --height: 38%;
+  @media screen and (min-width: 960px) {
+    --width: 41%;
+  }
+  @media screen and (max-width: 960px) {
+    --width: 80%;
+  }
+}
