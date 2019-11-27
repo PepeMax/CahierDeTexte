@@ -3,8 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
-
-
+import { AlertController } from '@ionic/angular';
 import * as firebase from 'firebase/app';
 
 @Component({
@@ -20,7 +19,8 @@ export class HomePage implements OnInit {
     public trans: TranslateService,
     public navCtrl: NavController,
     public storage: Storage,
-    public auth: AuthService
+    public auth : AuthService,
+    public alertController: AlertController
   ) { }
 
   async ngOnInit() {
@@ -28,6 +28,28 @@ export class HomePage implements OnInit {
 
   async goSettings() {
     this.navCtrl.navigateForward("/settings")
+  }  
+  async disconnect() {
+    const alert = await this.alertController.create({
+      header: this.trans.instant('HOME.DISCONNECT'),
+      message: this.trans.instant('HOME.CONFIRM_DISCONNECT'),
+      buttons: [
+        {
+          text: this.trans.instant('COMMON.CANCEL'),
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+          }
+        }, {
+          text: this.trans.instant('COMMON.VALIDATE'),
+          handler: () => {
+            this.navCtrl.navigateRoot("/login");
+            this.auth.signOutUser();
+          }
+        }
+      ]
+    });
+    await alert.present();
   }
 
   GetUserInfos() {
@@ -40,5 +62,4 @@ export class HomePage implements OnInit {
       photoURL: "#"
     })
   }
-
 }

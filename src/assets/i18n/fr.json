@@ -27,7 +27,9 @@
         "INFOS": "Description du devoir : "
     },
     "HOME": {
-        "TITLE": "Le Récap"
+        "TITLE": "Le Récap",
+        "DISCONNECT": "Déconnexion",
+        "CONFIRM_DISCONNECT": "Voulez-vous vraiment vous déconnecter ?"
     },
     "NEWHOMEWORK": {
         "TITLE": "Nouveau devoir :",
@@ -72,7 +74,6 @@
         "CHANGE_ND_SUB_HEADER": "Votre nom actuelle : ",
         "CHANGE_PWD": "Changer de mot de passe",
         "ND": "Nom d'utilisateur :",
-        "DISCONNECT": "Se déconnecter",
         "POPUP": "C'est carré chef",
         "STATUS_STUD": "Vous êtes l'élève :",
         "STATUS_PROF": "Vous êtes le professeur :",
