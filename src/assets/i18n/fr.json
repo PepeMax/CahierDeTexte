@@ -18,7 +18,9 @@
         "TITLE": "Y'à quoi à faire..."
     },
     "HOME": {
-        "TITLE": "Le Récap"
+        "TITLE": "Le Récap",
+        "DISCONNECT": "Déconnexion",
+        "CONFIRM_DISCONNECT": "Voulez-vous vraiment vous déconnecter ?"
     },
     "NEWHOMEWORK": {
         "TITLE": "Nouveau devoir :",
@@ -26,7 +28,7 @@
         "TYPE_HOMEWORK": "Type :",
         "GIVEN_DATE": "Travail donné le :",
         "TO_DO_DATE": "Travail à faire pour :",
-        "INFO_HOMEWORK": "Informations supplémentaires :",
+        "INFO_HOMEWORK": "Description :",
         "HOMEWORK": "Devoir",
         "EVAL": "Évaluation",
         "NEW_HOMEWORK": "Ajouter le devoir"
@@ -56,7 +58,6 @@
         "CHANGE_ND": "Changer de nom",
         "CHANGE_PWD": "Changer de mot de passe",
         "ND": "Nom d'utilisateur :",
-        "DISCONNECT": "Se déconnecter",
         "POPUP": "C'est carré chef",
         "STATUS_STUD": "Vous êtes l'élève :",
         "STATUS_PROF": "Vous êtes le professeur :"
