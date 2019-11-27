@@ -11,7 +11,7 @@
       <ion-item>
         <ion-label position="stacked">{{'NEWHOMEWORK.NAME_HOMEWORK' | translate}}<ion-text color="danger">*</ion-text>
         </ion-label>
-        <ion-input [(ngModel)]="newHomeWork.name_events" required="true"></ion-input>
+        <ion-input [(ngModel)]="newHomeWork.name_homework" required="true"></ion-input>
       </ion-item>
     </ion-row>
 
@@ -46,7 +46,7 @@
     <ion-row>
       <ion-item>
         <ion-label position="stacked">{{'NEWHOMEWORK.INFO_HOMEWORK' | translate}}</ion-label>
-        <ion-input [(ngModel)]="newHomeWork.infos_homework"></ion-input>
+        <ion-textarea [(ngModel)]="newHomeWork.infos_homework"></ion-textarea>
       </ion-item>
     </ion-row>
   </ion-grid>

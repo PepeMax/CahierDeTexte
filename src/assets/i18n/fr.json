@@ -10,12 +10,21 @@
         "FROM": "du ",
         "TO": "Pour le ",
         "OK": "OK",
+        "ERROR": "Erreur",
         "SUBJECT": "Matière : ",
         "VERSION": "Version : ",
-        "NVERSION": "1.0.0"
+        "NVERSION": "1.0.0",
+        "FIREBASE_ADD_HOME-WORK_SUCCESFULLY": "Le devoir à bien été ajouté",
+        "FIREBASE_ADD_HOME-WORK_FAIL": "Le devoir n'as pas pu être ajouté",
+        "WAITING": "Veuillez patienter"
     },
     "HOMEWORK": {
-        "TITLE": "Y'à quoi à faire..."
+        "TITLE": "Y'à quoi à faire...",
+        "NAME": "Nom : ",
+        "TYPE": "Type:", 
+        "FOR_DATE": "Pour le : ",
+        "GIVE_DATE": "Donner le : " ,
+        "INFOS": "Description du devoir : "
     },
     "HOME": {
         "TITLE": "Le Récap",
@@ -46,7 +55,13 @@
         "MAIL": "Adresse mail",
         "PASSWORD": "Mot de passe",
         "MSG_STUDENT": "Eh bienvenue wesh",
-        "MSG_PROF": "Bienvenue professeur !"
+        "MSG_PROF": "Bienvenue professeur !",
+        "FORGET_PASSWORD": "Mot de passe oublié ?",
+        "CHANGE_PASSWORD": "Change votre mot de passe",
+        "ERROR_MAIL_INVALID": "\nAdresse mail invalide",
+        "ERROR_PASSWORD_INVALID": "\nMot de passe invalide",
+        "ERROR_USER_NOT_FOUND": "\nUtilisateur introuvable",
+        "ERROR_MESSAGE": "\nVeuillez réessayer"
     },
     "SETTINGS": {
         "TITLE": "Paramètres",
@@ -56,10 +71,27 @@
         "EN": "English",
         "FR_EN": "FR / EN",
         "CHANGE_ND": "Changer de nom",
+        "CHANGE_ND_SUB_HEADER": "Votre nom actuelle : ",
         "CHANGE_PWD": "Changer de mot de passe",
         "ND": "Nom d'utilisateur :",
         "POPUP": "C'est carré chef",
         "STATUS_STUD": "Vous êtes l'élève :",
-        "STATUS_PROF": "Vous êtes le professeur :"
+        "STATUS_PROF": "Vous êtes le professeur :",
+        "USERNAME": "Nom d'utilisateur"
+    },
+    "ERRORS": {
+        "ERROR_MESSAGE": "\nVeuillez réessayer",
+        
+        "ERROR_IS_NOT_PROF": "\nCe compte appartient à un professeur",
+        "ERROR_IS_PROF": "\nCe compte appartient à un élève",
+
+        "ERROR_MAIL_INVALID": "\nAdresse mail invalide",
+        "ERROR_PASSWORD_INVALID": "\nMot de passe invalide",
+        "ERROR_USER_NOT_FOUND": "\nUtilisateur introuvable",
+        "ERROR_USER_DISABLED": "\nL'utilisateur est désactivé",
+        "ERROR_INVALID_USER_TOKEN": "\nVotre utilisateur appartient à un autre projet firebase",
+        "ERROR_USER_TOKEN_EXPIRED": "\nVotre jeton à mettre à jour est expiré",
+        "ERROR_NULL_USER": "\nLe nom d'utilisateur est nul",
+        "ERROR_TENANT_ID_MISMATCH": "\nL'ID ne correspondant"
     }
 }

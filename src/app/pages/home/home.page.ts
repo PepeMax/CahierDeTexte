@@ -3,8 +3,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
-import { typeWithParameters } from '@angular/compiler/src/render3/util';
 import { AlertController } from '@ionic/angular';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-home',
@@ -21,17 +21,14 @@ export class HomePage implements OnInit {
     public storage: Storage,
     public auth : AuthService,
     public alertController: AlertController
-
   ) { }
 
   async ngOnInit() {
-    this.name = JSON.parse(await this.storage.get('name'));
   }
 
-  goSettings() {
+  async goSettings() {
     this.navCtrl.navigateForward("/settings")
-  }
-  
+  }  
   async disconnect() {
     const alert = await this.alertController.create({
       header: this.trans.instant('HOME.DISCONNECT'),
@@ -47,11 +44,22 @@ export class HomePage implements OnInit {
           text: this.trans.instant('COMMON.VALIDATE'),
           handler: () => {
             this.navCtrl.navigateRoot("/login");
-            this.storage.clear();
+            this.auth.signOutUser();
           }
         }
       ]
     });
     await alert.present();
+  }
+
+  GetUserInfos() {
+    this.auth.returnIsProf()
+  }
+
+  ChangeID() {
+    var user = firebase.auth().currentUser;
+    return user.updateProfile({
+      photoURL: "#"
+    })
   }
 }

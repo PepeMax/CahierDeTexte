@@ -24,6 +24,8 @@ import { AuthService } from './services/auth.service';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import * as firebase from 'firebase';
 
+import { HandleErrorService } from './services/handle-error.service';
+
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -56,6 +58,7 @@ firebase.initializeApp(environment.firebase);
     File,
     FileOpener,
     AuthService,
+    HandleErrorService
 
   ],
   bootstrap: [AppComponent]
