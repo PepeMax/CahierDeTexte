@@ -49,14 +49,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/login',
+        redirectTo: '/homelogin',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/homelogin',
     pathMatch: 'full'
   }
 ];
