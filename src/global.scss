@@ -25,6 +25,17 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+@font-face {
+  font-family: 'Booster';
+  src: url('./theme/Booster.ttf');
+  font-weight: 200;
+  font-style: normal;
+}
+
+:root {
+  --ion-font-family: Booster;
+}
+
 .toast {
   text-align: center;
 }
@@ -35,7 +46,7 @@
 }
 
 .alert-modal {
-  --height: 38%;
+  --height: 50%;
   @media screen and (min-width: 960px) {
     --width: 41%;
   }

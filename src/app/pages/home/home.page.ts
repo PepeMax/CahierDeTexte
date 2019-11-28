@@ -5,6 +5,7 @@ import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
 import { AlertController } from '@ionic/angular';
 import * as firebase from 'firebase/app';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,8 @@ export class HomePage implements OnInit {
     public trans: TranslateService,
     public navCtrl: NavController,
     public storage: Storage,
-    public auth : AuthService,
+    private authService : AuthService,
+    private userService: UserService,
     public alertController: AlertController
   ) { }
 
@@ -44,7 +46,7 @@ export class HomePage implements OnInit {
           text: this.trans.instant('COMMON.VALIDATE'),
           handler: () => {
             this.navCtrl.navigateRoot("/login");
-            this.auth.signOutUser();
+            this.authService.signOutUser();
           }
         }
       ]
@@ -53,7 +55,7 @@ export class HomePage implements OnInit {
   }
 
   GetUserInfos() {
-    this.auth.returnIsProf()
+    this.userService.getInfoUser()
   }
 
   ChangeID() {

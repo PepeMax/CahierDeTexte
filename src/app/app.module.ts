@@ -28,6 +28,7 @@ import { HandleErrorService } from './services/handle-error.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuardService } from './services/auth-guard.service';
 import { ComponentsModule } from './components/components.module';
+import { SlidesPage } from './pages/slides/slides.page';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -65,7 +66,8 @@ firebase.initializeApp(environment.firebase);
     FileOpener,
     AuthService,
     AuthGuardService,
-    HandleErrorService
+    HandleErrorService,
+    SlidesPage,
 
   ],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NavController, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-userinfos',
@@ -11,11 +12,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class UserinfosComponent implements OnInit {
 
   setUserInfosForm: FormGroup;
+  errorMessage: string;
 
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private navCtrl: NavController,
+    private loadingCtrl: LoadingController,
   ) { }
 
   ngOnInit() {
@@ -28,4 +31,30 @@ export class UserinfosComponent implements OnInit {
       displayName: ['', [Validators.required, Validators.minLength(3), Validators.pattern('[a-zA-Z ]*')]],
     });
   }
+
+  async onSubmit() {
+    const status = this.setUserInfosForm.get('status').value;
+    const displayName = this.setUserInfosForm.get('displayName').value;
+
+    const loading = await this.loadingCtrl.create({
+      backdropDismiss: false,
+      spinner: "crescent",
+    });
+    loading.present();
+    
+    // this.authService.createNewUser(email, password)
+    //   .then(() => {
+    //     this.authService.signInUser(email, password)
+    //       .then(() => {
+    //         loading.dismiss();
+    //         this.modalCtrl.dismiss();
+    //         this.Slide.nextSlide();
+    //         // this.navCtrl.navigateRoot('/nav/home');
+    //       },
+    //         (error) => {
+    //           this.errorMessage = error;
+    //         });
+    //   });
+  }
+
 }
