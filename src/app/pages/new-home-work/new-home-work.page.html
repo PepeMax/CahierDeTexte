@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
     <ion-title>{{'NEWHOMEWORK.TITLE' | translate}}</ion-title>
   </ion-toolbar>
@@ -9,7 +9,8 @@
   <ion-grid>
     <ion-row>
       <ion-item>
-        <ion-label position="stacked">{{'NEWHOMEWORK.MATTER' | translate}}<ion-text color="danger">{{'COMMON.STARS' | translate}}</ion-text>
+        <ion-label position="stacked">{{'NEWHOMEWORK.MATTER' | translate}}<ion-text color="danger">
+            {{'COMMON.STARS' | translate}}</ion-text>
         </ion-label>
         <ion-input [(ngModel)]="newHomeWork.name_homework" required="true"></ion-input>
       </ion-item>
@@ -32,7 +33,8 @@
 
     <ion-row>
       <ion-item>
-        <ion-label>{{'NEWHOMEWORK.TO_DO_DATE' | translate}}<ion-text color="danger">{{'COMMON.STARS' | translate}}</ion-text>
+        <ion-label>{{'NEWHOMEWORK.TO_DO_DATE' | translate}}<ion-text color="danger">{{'COMMON.STARS' | translate}}
+          </ion-text>
         </ion-label>
         <ion-datetime [(ngModel)]="newHomeWork.fordate_homework" placeholder="02-09-19" displayFormat="DD MMMM YYYY"
           [value]="today"
