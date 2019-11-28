@@ -11,7 +11,7 @@
       <ion-item>
         <ion-label position="stacked">{{'NEWHOMEWORK.MATTER' | translate}}<ion-text color="danger">{{'COMMON.STARS' | translate}}</ion-text>
         </ion-label>
-        <ion-input [(ngModel)]="newHomeWork.name" required="true"></ion-input>
+        <ion-input [(ngModel)]="newHomeWork.name_homework" required="true"></ion-input>
       </ion-item>
     </ion-row>
 
@@ -21,7 +21,7 @@
       <ion-item>
         <ion-label>{{'NEWHOMEWORK.TYPE' | translate}}<ion-text color="danger">{{'COMMON.STARS' | translate}}</ion-text>
         </ion-label>
-        <ion-select [(ngModel)]="newHomeWork.type" placeholder="">
+        <ion-select [(ngModel)]="newHomeWork.type_homework" placeholder="">
           <ion-select-option value="devoir">{{'NEWHOMEWORK.HOMEWORK' | translate}}</ion-select-option>
           <ion-select-option value="eval">{{'NEWHOMEWORK.EVAL' | translate}}</ion-select-option>
         </ion-select>
@@ -34,7 +34,7 @@
       <ion-item>
         <ion-label>{{'NEWHOMEWORK.TO_DO_DATE' | translate}}<ion-text color="danger">{{'COMMON.STARS' | translate}}</ion-text>
         </ion-label>
-        <ion-datetime [(ngModel)]="newHomeWork.to_do_date" placeholder="02-09-19" displayFormat="DD MMMM YYYY"
+        <ion-datetime [(ngModel)]="newHomeWork.fordate_homework" placeholder="02-09-19" displayFormat="DD MMMM YYYY"
           [value]="today"
           monthNames="Janvier, Février, Mars, Avril, Mai, Juin, Juillet, Août, Septembre, Octobre, Novembre, Décembre">
         </ion-datetime>
