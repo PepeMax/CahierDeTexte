@@ -16,7 +16,8 @@
         "NVERSION": "1.0.0",
         "FIREBASE_ADD_HOME-WORK_SUCCESFULLY": "Le devoir à bien été ajouté",
         "FIREBASE_ADD_HOME-WORK_FAIL": "Le devoir n'as pas pu être ajouté",
-        "WAITING": "Veuillez patienter"
+        "WAITING": "Veuillez patienter",
+        "STARS": " *"
     },
     "HOMEWORK": {
         "TITLE": "Y'à quoi à faire...",
@@ -33,14 +34,15 @@
     },
     "NEWHOMEWORK": {
         "TITLE": "Nouveau devoir :",
-        "NAME_HOMEWORK": "Nom :",
-        "TYPE_HOMEWORK": "Type :",
+        "NAME": "Nom :",
+        "MATTER": "Matière :",
+        "TYPE": "Type :",
         "GIVEN_DATE": "Travail donné le :",
         "TO_DO_DATE": "Travail à faire pour :",
-        "INFO_HOMEWORK": "Description :",
+        "INFO": "Description :",
         "HOMEWORK": "Devoir",
         "EVAL": "Évaluation",
-        "NEW_HOMEWORK": "Ajouter le devoir"
+        "NEW": "Ajouter le devoir"
     },
     "PLANNING": {
         "TITLE": "Planning de la semaine"
@@ -79,6 +81,19 @@
         "STATUS_PROF": "Vous êtes le professeur :",
         "USERNAME": "Nom d'utilisateur"
     },
+
+    "SLIDES": {
+        "TITLE": "TITRE SLIDE 1",
+        "TITLE1": "TITRE SLIDE 1",
+        "TITLE2": "TITRE SLIDE 2",
+        "TITLE3": "Créer un compte",
+        "TITLE4": "Un dernier petit effort !",
+        "TEXT1": "TEXTE SLIDE 1",
+        "TEXT2": "TEXTE SLIDE 2",
+        "TEXT3": "TEXTE SLIDE 3",
+        "TEXT4": "TEXTE SLIDE 4"
+    },
+
     "ERRORS": {
         "ERROR_MESSAGE": "\nVeuillez réessayer",
         

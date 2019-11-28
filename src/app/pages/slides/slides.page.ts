@@ -3,6 +3,8 @@ import { ComponentsService } from 'src/app/services/components.service';
 import { ModalController } from '@ionic/angular';
 import { SignupComponent } from 'src/app/components/auth/signup/signup.component';
 import { UserinfosComponent } from 'src/app/components/userinfos/userinfos.component';
+
+import { TranslateService } from '@ngx-translate/core';
 import { IonSlides} from '@ionic/angular';
 
 
@@ -17,7 +19,8 @@ export class SlidesPage implements OnInit {
 
   constructor(
     private components: ComponentsService,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    public trans: TranslateService,
   ) { }
 
   ngOnInit() {
