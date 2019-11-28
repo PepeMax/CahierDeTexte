@@ -14,18 +14,18 @@
         "SUBJECT": "Matière : ",
         "VERSION": "Version : ",
         "NVERSION": "1.0.0",
-        "FIREBASE_ADD_HOME-WORK_SUCCESFULLY": "Le devoir à bien été ajouté",
+        "FIREBASE_ADD_HOME-WORK_SUCCESFULLY": "Devoir ajouté avec succès !",
         "FIREBASE_ADD_HOME-WORK_FAIL": "Le devoir n'as pas pu être ajouté",
         "WAITING": "Veuillez patienter",
         "STARS": " *"
     },
     "HOMEWORK": {
         "TITLE": "Y'à quoi à faire...",
-        "NAME": "Nom : ",
-        "TYPE": "Type:", 
-        "FOR_DATE": "Pour le : ",
+        "MATTER": "Matière : ",
+        "TYPE": "Type : ", 
+        "FOR_DATE": "Semaine du  : ",
         "GIVE_DATE": "Donner le : " ,
-        "INFOS": "Description du devoir : "
+        "INFOS": "Description  : "
     },
     "HOME": {
         "TITLE": "Le Récap",
@@ -42,7 +42,19 @@
         "INFO": "Description :",
         "HOMEWORK": "Devoir",
         "EVAL": "Évaluation",
-        "NEW": "Ajouter le devoir"
+        "NEW": "Ajouter le devoir",
+        "SI1": "SI1 - M. GARRIDO F",
+        "SI2": "SI2 - M. GIORGI Pascal",
+        "SI3": "SI3 - Mme. CYBULA SORNETTE E",
+        "SI4": "SI4 - Mme. BERGER H",
+        "PPE1": "PPE - Mme. CLERMONT E",
+        "PPE2": "PPE - M. RABUSSIER B",
+        "EMD1": "EMD - M. MEULEBROUCK Bertrand",
+        "EMD2": "EMD - Mme. FORGES Catherine",
+        "MATHSALGO": "Maths Algo - M. MAJNANI A",
+        "MATHS": "Mathématiques - M. RAYMOND D",
+        "ANGLAIS": "Anglais - Mme. NEBOUT Nelly",
+        "FRANCAIS": "Français - Mme. ARNAULD DE SARTRE Virginie"
     },
     "PLANNING": {
         "TITLE": "Planning de la semaine"
@@ -59,7 +71,7 @@
         "MSG_STUDENT": "Eh bienvenue wesh",
         "MSG_PROF": "Bienvenue professeur !",
         "FORGET_PASSWORD": "Mot de passe oublié ?",
-        "CHANGE_PASSWORD": "Change votre mot de passe",
+        "CHANGE_PASSWORD": "Changer de mot de passe",
         "ERROR_MAIL_INVALID": "\nAdresse mail invalide",
         "ERROR_PASSWORD_INVALID": "\nMot de passe invalide",
         "ERROR_USER_NOT_FOUND": "\nUtilisateur introuvable",
