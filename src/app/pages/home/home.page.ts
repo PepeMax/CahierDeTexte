@@ -28,9 +28,6 @@ export class HomePage implements OnInit {
   async ngOnInit() {
   }
 
-  async goSettings() {
-    this.navCtrl.navigateForward("/settings")
-  }  
   async disconnect() {
     const alert = await this.alertController.create({
       header: this.trans.instant('HOME.DISCONNECT'),
@@ -45,8 +42,8 @@ export class HomePage implements OnInit {
         }, {
           text: this.trans.instant('COMMON.VALIDATE'),
           handler: () => {
-            this.navCtrl.navigateRoot("/login");
             this.authService.signOutUser();
+            this.navCtrl.navigateRoot("/homelogin");
           }
         }
       ]

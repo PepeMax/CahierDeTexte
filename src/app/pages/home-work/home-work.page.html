@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
     <ion-title>{{'HOMEWORK.TITLE' | translate }}</ion-title>
   </ion-toolbar>
@@ -11,17 +11,18 @@
   </ion-refresher>
 
   <ion-card *ngFor="let homework of homeworks;let i = index;">
-    <ion-card-title>{{'HOMEWORK.FOR_DATE' | translate}} {{homework.fordate_homework | date: 'dd/MM/yy'}}</ion-card-title>
+    <ion-card-title>{{'HOMEWORK.FOR_DATE' | translate}} {{homework.fordate_homework | date: 'dd/MM/yy'}}
+    </ion-card-title>
     <ion-card-content>
 
-        <ion-list>
-            <p>{{'HOMEWORK.NAME' | translate}} {{homework.name_homework}}</p>
-            <p>{{'HOMEWORK.TYPE' | translate}} {{homework.type_homework}}</p>
-            <p>{{'HOMEWORK.GIVE_DATE' | translate}} {{homework.givedate_homework| date: 'dd/MM/yy'}}</p>
+      <ion-list>
+        <p>{{'HOMEWORK.NAME' | translate}} {{homework.name_homework}}</p>
+        <p>{{'HOMEWORK.TYPE' | translate}} {{homework.type_homework}}</p>
+        <p>{{'HOMEWORK.GIVE_DATE' | translate}} {{homework.givedate_homework| date: 'dd/MM/yy'}}</p>
 
-            <p>{{'HOMEWORK.INFOS' | translate}} {{homework.infos_homework}} </p>
-          </ion-list>
-      
+        <p>{{'HOMEWORK.INFOS' | translate}} {{homework.infos_homework}} </p>
+      </ion-list>
+
     </ion-card-content>
   </ion-card>
 
