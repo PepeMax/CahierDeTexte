@@ -5,6 +5,7 @@ import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
 import { HandleErrorService } from 'src/app/services/handle-error.service';
 import { ComponentsService } from 'src/app/services/components.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -22,6 +23,7 @@ export class LoginPage implements OnInit {
     public alertController: AlertController,
     //Services
     private authService: AuthService,
+    private userService: UserService,
     private handleError: HandleErrorService,
     private components: ComponentsService
   ) { }
@@ -59,11 +61,11 @@ export class LoginPage implements OnInit {
             this.storage.set('isProf', true);
             this.authService.signInUser(alertData.email, alertData.password)
               .then(() => {
-                if (this.authService.returnIsProf() == true) {
-                  if (this.authService.returnIsNewUser() == true) {
+                if (this.userService.returnIsProf() == true) {
+                  if (this.userService.returnIsNewUser() == true) {
                     this.navCtrl.navigateRoot('/slides')
                   }
-                  this.authService.getUserName();
+                  this.userService.getUserName();
                   this.navCtrl.navigateRoot('/nav/home')
                   this.components.createLoading(this.trans.instant('COMMON.WAITING'))
                   this.components.createToast(this.trans.instant('LOGIN.MSG_PROF'));
@@ -116,8 +118,8 @@ export class LoginPage implements OnInit {
             this.storage.set('isProf', true);
             this.authService.signInUser(alertData.email, alertData.password)
               .then(() => {
-                if (this.authService.returnIsProf() == false) {
-                  this.authService.getUserName();
+                if (this.userService.returnIsProf() == false) {
+                  this.userService.getUserName();
                   this.navCtrl.navigateRoot('/nav/home')
                   this.components.createLoading(this.trans.instant('COMMON.WAITING'))
                   this.components.createToast(this.trans.instant('LOGIN.MSG_STUDENT'));

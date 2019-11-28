@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
-import { NavController } from '@ionic/angular';
+import { NavController, LoadingController, ModalController } from '@ionic/angular';
+import { SlidesPage } from 'src/app/pages/slides/slides.page';
 
 @Component({
   selector: 'app-signup',
@@ -17,6 +18,9 @@ export class SignupComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private navCtrl: NavController,
+    private loadingCtrl: LoadingController,
+    private modalCtrl: ModalController,
+    private Slide: SlidesPage
   ) { }
 
   ngOnInit() {
@@ -30,17 +34,27 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  async onSubmit() {
+
     const email = this.signupForm.get('email').value;
     const password = this.signupForm.get('password').value;
 
-    this.authService.createNewUser(email, password).then(
-      () => {
-        this.navCtrl.navigateRoot('/home');
-      },
-      (error) => {
-        this.errorMessage = error;
-      }
-    );
+    const loading = await this.loadingCtrl.create({
+      backdropDismiss: false,
+      spinner: "crescent",
+    });
+    loading.present();
+    this.authService.createNewUser(email, password)
+      .then(() => {
+        this.authService.signInUser(email, password)
+          .then(() => {
+            loading.dismiss();
+            this.modalCtrl.dismiss();
+          });
+        },
+        (error) => {
+          this.errorMessage = error;
+          loading.dismiss();
+        });
   }
 }
