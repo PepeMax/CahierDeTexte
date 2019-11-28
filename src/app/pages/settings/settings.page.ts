@@ -3,6 +3,7 @@ import { NavController, ToastController, AlertController } from '@ionic/angular'
 import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-settings',
@@ -22,11 +23,12 @@ export class SettingsPage implements OnInit {
     public toastController: ToastController,
     public storage: Storage,
     public alertController: AlertController,
-    private authService: AuthService
+    private authService: AuthService,
+    private userService: UserService
   ) { }
 
   async ngOnInit() {
-    this.username = this.authService.getUserName();
+    this.username = this.userService.getUserName();
     this.isprof = JSON.parse(await this.storage.get('isProf'));
 
   }

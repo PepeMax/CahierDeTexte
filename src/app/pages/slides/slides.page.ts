@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ComponentsService } from 'src/app/services/components.service';
 import { ModalController } from '@ionic/angular';
 import { SignupComponent } from 'src/app/components/auth/signup/signup.component';
 import { UserinfosComponent } from 'src/app/components/userinfos/userinfos.component';
+
 import { TranslateService } from '@ngx-translate/core';
+import { IonSlides} from '@ionic/angular';
+
 
 @Component({
   selector: 'app-slides',
@@ -12,6 +15,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class SlidesPage implements OnInit {
   
+  @ViewChild('Slide',  { static: true }) startSlide: IonSlides;
+
   constructor(
     private components: ComponentsService,
     private modalCtrl: ModalController,
@@ -138,7 +143,10 @@ export class SlidesPage implements OnInit {
       cssClass: 'alert-modal',
     });
     alert.present();
+  }
 
+  nextSlide() {
+    this.startSlide.slideNext();
   }
 
 }
