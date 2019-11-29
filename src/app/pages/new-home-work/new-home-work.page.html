@@ -53,8 +53,10 @@
     </ion-row>
   </ion-grid>
 
+
   <div class="new_events">
-    <ion-button (click)=cancel()>{{'COMMON.CANCEL' | translate}}</ion-button>
-    <ion-button (click)="submit()">{{'NEWHOMEWORK.NEW' | translate}}</ion-button>
+    <ion-button color="danger" (click)=cancel()>{{'COMMON.CANCEL' | translate}}</ion-button>
+    <ion-button color="success" (click)="submit()">{{'NEWHOMEWORK.NEW' | translate}}</ion-button>
   </div>
+
 </ion-content>

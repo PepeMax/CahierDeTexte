@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ToastController, AlertController, LoadingController } from '@ionic/angular';
+import { NavController, ToastController, AlertController, LoadingController, MenuController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
@@ -21,6 +21,7 @@ export class LoginPage implements OnInit {
     public trans: TranslateService,
     public storage: Storage,
     public alertController: AlertController,
+    public menu: MenuController,
     //Services
     private authService: AuthService,
     private userService: UserService,
@@ -170,6 +171,11 @@ export class LoginPage implements OnInit {
       ]
     });
     await alert.present();
+  }
+
+  goRegister(){
+    this.navCtrl.navigateRoot('/slides');
+    this.menu.close();
   }
 
 }

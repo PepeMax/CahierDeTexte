@@ -49,15 +49,12 @@
     <ion-row>
       <ion-item class="item-select">
         <ion-label>{{'SETTINGS.LANGUAGE' | translate}}</ion-label>
-        <ion-select placeholder="{{'SETTINGS.FR_EN' | translate}}">
+        <ion-select interface="action-sheet" cancelText="Annuler" placeholder="{{'SETTINGS.FR_EN' | translate}}">
           <ion-select-option value="fr">{{'SETTINGS.FR' | translate}}</ion-select-option>
           <ion-select-option value="en">{{'SETTINGS.EN' | translate}}</ion-select-option>
         </ion-select>
       </ion-item>
     </ion-row>
-
-    <ion-row>
-      <ion-button color="medium" class="buttonAdmin"></ion-button>
-    </ion-row>
   </ion-grid>
+ 
 </ion-content>

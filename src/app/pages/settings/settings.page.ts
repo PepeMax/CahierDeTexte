@@ -116,5 +116,4 @@ export class SettingsPage implements OnInit {
     await alert.present();
   }
 
-
 }
