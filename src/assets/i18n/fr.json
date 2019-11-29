@@ -25,9 +25,9 @@
     "HOMEWORK": {
         "TITLE": "Y'à quoi à faire...",
         "MATTER": "Matière : ",
-        "TYPE": "Type : ", 
+        "TYPE": "Type : ",
         "FOR_DATE": "Semaine du  : ",
-        "GIVE_DATE": "Donner le : " ,
+        "GIVE_DATE": "Donner le : ",
         "INFOS": "Description  : "
     },
     "HOME": {
@@ -98,7 +98,6 @@
         "STATUS_PROF": "Vous êtes le professeur :",
         "USERNAME": "Nom d'utilisateur"
     },
-
     "SLIDES": {
         "TITLE": "TITRE SLIDE 1",
         "TITLE1": "TITRE SLIDE 1",
@@ -110,13 +109,10 @@
         "TEXT3": "TEXTE SLIDE 3",
         "TEXT4": "TEXTE SLIDE 4"
     },
-
     "ERRORS": {
         "ERROR_MESSAGE": "\nVeuillez réessayer",
-        
         "ERROR_IS_NOT_PROF": "\nCe compte appartient à un professeur",
         "ERROR_IS_PROF": "\nCe compte appartient à un élève",
-
         "ERROR_MAIL_INVALID": "\nAdresse mail invalide",
         "ERROR_PASSWORD_INVALID": "\nMot de passe invalide",
         "ERROR_USER_NOT_FOUND": "\nUtilisateur introuvable",
