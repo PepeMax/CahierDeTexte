@@ -68,6 +68,8 @@
         "LOGSTUD": "Connexion élève",
         "MAIL": "Adresse mail",
         "PASSWORD": "Mot de passe",
+        "NOT_SIGNUP": "Vous ne possédez pas de compte ?",
+        "SIGNUP": "S'enregistrer",
         "MSG_STUDENT": "Eh bienvenue wesh",
         "MSG_PROF": "Bienvenue professeur !",
         "FORGET_PASSWORD": "Mot de passe oublié ?",
