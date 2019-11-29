@@ -4,42 +4,35 @@
 <ion-content>
 
   <ion-grid>
-
     <ion-row justify-content-center>
       <ion-text color="medium">
         <h4>{{'LOGIN.H4' | translate }}</h4>
       </ion-text>
     </ion-row>
-
     <br>
-
     <ion-row justify-content-center>
       <ion-button color="medium" (click)="logStud()">
         <ion-icon name="arrow-dropright"></ion-icon>
         &nbsp;&nbsp;&nbsp; {{'LOGIN.STUDENT' | translate }}
       </ion-button>
     </ion-row>
-
     <br>
-
     <ion-row justify-content-center>
       <ion-button color="medium" (click)="logProf()">
         <ion-icon name="arrow-dropright"></ion-icon>
         &nbsp;&nbsp;&nbsp; {{'LOGIN.PROF' | translate }}
       </ion-button>
     </ion-row>
-
     <br>
-
     <ion-row justify-content-center>
       <ion-text color='primary' (click)='resetPassword()'>{{'LOGIN.FORGET_PASSWORD' | translate}}</ion-text>
     </ion-row>
-
   </ion-grid>
-  
+
 </ion-content>
 
-<footer class="ion-text-center">
-  <ion-label>{{'LOGIN.NOT_SIGNUP' | translate}}</ion-label><ion-label (click)="goRegister()" color= "primary">&nbsp;&nbsp;{{'LOGIN.SIGNUP' | translate}}</ion-label>
-</footer>
-
+<ion-footer class="ion-text-center">
+  <ion-label>{{'LOGIN.NOT_SIGNUP' | translate}}</ion-label>
+  <br>
+  <ion-label (click)="goRegister()" color="primary">&nbsp;&nbsp;{{'LOGIN.SIGNUP' | translate}}</ion-label>
+</ion-footer>
