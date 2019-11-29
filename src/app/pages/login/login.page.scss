@@ -3,8 +3,8 @@ ion-content {
 }
 
 ion-grid {
-  position: relative;
-  top: 25%;
+  margin-top: 50vh;
+  transform: translateY(-50%);
 }
 
 ion-footer {

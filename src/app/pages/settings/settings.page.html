@@ -55,6 +55,13 @@
         </ion-select>
       </ion-item>
     </ion-row>
+    <ion-row >
+      <ion-item class="item-select">
+        <ion-label>Dark Mode</ion-label>
+        <ion-toggle *ngIf="darkMode" [(ngModel)]="darkMode" (ionChange)="changeDarkMode()" checked color="dark"></ion-toggle>
+        <ion-toggle *ngIf="!darkMode" [(ngModel)]="darkMode" (ionChange)="changeDarkMode()" color="dark"></ion-toggle>
+      </ion-item>
+    </ion-row>
   </ion-grid>
  
 </ion-content>

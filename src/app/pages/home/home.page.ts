@@ -25,7 +25,11 @@ export class HomePage implements OnInit {
     public alertController: AlertController
   ) { }
 
-  async ngOnInit() {
+  ngOnInit() {
+  }
+
+  goSettings() {
+    this.navCtrl.navigateForward('/settings')
   }
 
   async disconnect() {
@@ -52,7 +56,7 @@ export class HomePage implements OnInit {
   }
 
   GetUserInfos() {
-    this.userService.getInfoUser()
+    this.userService.userDetails()
   }
 
   ChangeID() {
