@@ -1,39 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>homelogin</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
 
-    <ion-grid>
+  <ion-grid >
+      <ion-row class="ion-justify-content-center">
+        <ion-button color="primary" (click)="goLogin()">
+          <ion-icon name="arrow-dropright"></ion-icon>
+          &nbsp;&nbsp;&nbsp; {{'COMMON.SIGNIN' | translate }}
+        </ion-button>
+      </ion-row>
+      <br>
+      <ion-row class="ion-justify-content-center">
+        <ion-button color="primary" (click)="registerAccount()">
+          <ion-icon name="arrow-dropright"></ion-icon>
+          &nbsp;&nbsp;&nbsp; {{'COMMON.SIGNUP' | translate }}
+        </ion-button>
+      </ion-row>
 
-        <ion-row justify-content-center>
-          <ion-text color="medium">
-            <h4>Page d'accueil</h4>
-          </ion-text>
-        </ion-row>
-    
-        <br>
-    
-        <ion-row justify-content-center>
-          <ion-button color="primary" (click)="goLogin()">
-            <ion-icon name="arrow-dropright"></ion-icon>
-            &nbsp;&nbsp;&nbsp; Se connecter
-          </ion-button>
-        </ion-row>
-    
-        <br>
-    
-        <ion-row justify-content-center>
-          <ion-button color="primary" (click)="registerAccount()">
-            <ion-icon name="arrow-dropright"></ion-icon>
-            &nbsp;&nbsp;&nbsp; S'enregistrer
-          </ion-button>
-        </ion-row>
-        
-        <br>
-    
-      </ion-grid>
+  </ion-grid>
 
 </ion-content>
+<ion-footer no-border>
+  <ion-img src="https://cdn.pixabay.com/photo/2014/04/02/10/26/grass-303857_960_720.png"></ion-img>
+</ion-footer>

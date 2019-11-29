@@ -1,8 +1,9 @@
-ion-content {
-    text-align: center;
-  }
-  
-  ion-grid {
-    position: relative;
-    top: 25%;
-  }
+//centrer verticalement
+ion-grid {
+  margin-top: 50vh;
+  transform: translateY(-50%);
+}
+
+ion-header {
+
+}

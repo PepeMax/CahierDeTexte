@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
     <ion-title>{{'NEWHOMEWORK.TITLE' | translate}}</ion-title>
   </ion-toolbar>
@@ -6,55 +6,53 @@
 
 <ion-content>
 
-  <ion-list>
-    <ion-list-header>Nouveau devoir :</ion-list-header>
+  <ion-grid>
+    <ion-row>
+      <ion-item>
+        <ion-label position="stacked">{{'NEWHOMEWORK.MATTER' | translate}}<ion-text color="danger">
+            {{'COMMON.STARS' | translate}}</ion-text>
+        </ion-label>
+        <ion-input [(ngModel)]="newHomeWork.name_homework" required="true"></ion-input>
+      </ion-item>
+    </ion-row>
 
-    <ion-item>
-      <ion-label class="mat">{{'NEWHOMEWORK.MATTER' | translate}}</ion-label>
-      <ion-select class="sel" [(ngModel)]="newHomeWork.name_homework" required="true" okText="Valider" cancelText="Annuler">
-        <ion-select-option value="si1">{{'NEWHOMEWORK.SI1' | translate}}</ion-select-option>
-        <ion-select-option value="si2">{{'NEWHOMEWORK.SI2' | translate}}</ion-select-option>
-        <ion-select-option value="si3">{{'NEWHOMEWORK.SI3' | translate}}</ion-select-option>
-        <ion-select-option value="si4">{{'NEWHOMEWORK.SI4' | translate}}</ion-select-option>
-        <ion-select-option value="ppe1">{{'NEWHOMEWORK.PPE1' | translate}}</ion-select-option>
-        <ion-select-option value="ppe2">{{'NEWHOMEWORK.PPE2' | translate}}</ion-select-option>
-        <ion-select-option value="emd1">{{'NEWHOMEWORK.EMD1' | translate}}</ion-select-option>
-        <ion-select-option value="emd2">{{'NEWHOMEWORK.EMD2' | translate}}</ion-select-option>
-        <ion-select-option value="mathsalgo">{{'NEWHOMEWORK.MATHSALGO' | translate}}</ion-select-option>
-        <ion-select-option value="maths">{{'NEWHOMEWORK.MATHS' | translate}}</ion-select-option>
-        <ion-select-option value="anglais">{{'NEWHOMEWORK.ANGLAIS' | translate}}</ion-select-option>
-        <ion-select-option value="français">{{'NEWHOMEWORK.FRANCAIS' | translate}}</ion-select-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
+    <br><br>
 
-  <ion-list>
-    <ion-item>
-      <ion-label>{{'NEWHOMEWORK.TYPE' | translate}}</ion-label>
-      <ion-select class="sel" [(ngModel)]="newHomeWork.type_homework" placeholder="Devoir / Eval" okText="Valider"
-        cancelText="Annuler">
-        <ion-select-option value="devoir">{{'NEWHOMEWORK.HOMEWORK' | translate}}</ion-select-option>
-        <ion-select-option value="eval">{{'NEWHOMEWORK.EVAL' | translate}}</ion-select-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
+    <ion-row>
+      <ion-item>
+        <ion-label>{{'NEWHOMEWORK.TYPE' | translate}}<ion-text color="danger">{{'COMMON.STARS' | translate}}</ion-text>
+        </ion-label>
+        <ion-select [(ngModel)]="newHomeWork.type_homework" placeholder="">
+          <ion-select-option value="devoir">{{'NEWHOMEWORK.HOMEWORK' | translate}}</ion-select-option>
+          <ion-select-option value="eval">{{'NEWHOMEWORK.EVAL' | translate}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-row>
 
-  <ion-item>
-    <ion-label>{{'NEWHOMEWORK.TO_DO_DATE' | translate}}</ion-label>
-    <ion-datetime [(ngModel)]="newHomeWork.fordate_homework" placeholder="02-09-19" displayFormat="DD MMMM YYYY"
-      [value]="today"
-      monthNames="Janvier, Février, Mars, Avril, Mai, Juin, Juillet, Août, Septembre, Octobre, Novembre, Décembre">
-    </ion-datetime>
-  </ion-item>
+    <br><br>
 
-  <br><br>
+    <ion-row>
+      <ion-item>
+        <ion-label>{{'NEWHOMEWORK.TO_DO_DATE' | translate}}<ion-text color="danger">{{'COMMON.STARS' | translate}}
+          </ion-text>
+        </ion-label>
+        <ion-datetime [(ngModel)]="newHomeWork.fordate_homework" placeholder="02-09-19" displayFormat="DD MMMM YYYY"
+          [value]="today"
+          monthNames="Janvier, Février, Mars, Avril, Mai, Juin, Juillet, Août, Septembre, Octobre, Novembre, Décembre">
+        </ion-datetime>
+      </ion-item>
+    </ion-row>
 
-  <ion-item>
-    <ion-label position="stacked">{{'NEWHOMEWORK.INFO' | translate}}</ion-label>
-    <ion-textarea [(ngModel)]="newHomeWork.infos_homework"></ion-textarea>
-  </ion-item>
+    <br><br>
 
-  <br><br>
+    <ion-row>
+      <ion-item>
+        <ion-label position="stacked">{{'NEWHOMEWORK.INFO' | translate}}</ion-label>
+        <ion-textarea [(ngModel)]="newHomeWork.infos_homework"></ion-textarea>
+      </ion-item>
+    </ion-row>
+  </ion-grid>
+
 
   <div class="new_events">
     <ion-button color="danger" (click)=cancel()>{{'COMMON.CANCEL' | translate}}</ion-button>
