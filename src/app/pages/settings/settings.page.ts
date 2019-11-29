@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
+import { enableDarkTheme } from 'src/app/components/helpers/utils';
 
 @Component({
   selector: 'app-settings',
@@ -16,6 +17,7 @@ export class SettingsPage implements OnInit {
   public isprof;
   public buttonClickedNewND: boolean = false;
   public email;
+  public darkMode: boolean;
 
   constructor(
     public navCtrl: NavController,
@@ -28,9 +30,15 @@ export class SettingsPage implements OnInit {
   ) { }
 
   async ngOnInit() {
+    this.storage.get('valueDarkMode').then(value => this.darkMode = value);
     this.username = this.userService.getUserName();
     this.isprof = JSON.parse(await this.storage.get('isProf'));
 
+  }
+
+  changeDarkMode() {
+    this.storage.set('valueDarkMode', this.darkMode);
+    enableDarkTheme(this.darkMode);
   }
 
   goBack() {
