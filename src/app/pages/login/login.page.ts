@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ToastController, AlertController, LoadingController, MenuController } from '@ionic/angular';
+import { NavController, ToastController, AlertController, LoadingController, ModalController,  } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
 import { HandleErrorService } from 'src/app/services/handle-error.service';
 import { ComponentsService } from 'src/app/services/components.service';
 import { UserService } from 'src/app/services/user.service';
+import { SigninProfComponent } from 'src/app/components/auth/signinprof/signinprof.component';
+import { SigninStudentComponent } from 'src/app/components/auth/signinstudent/signinstudent.component';
 
 @Component({
   selector: 'app-login',
@@ -21,128 +23,161 @@ export class LoginPage implements OnInit {
     public trans: TranslateService,
     public storage: Storage,
     public alertController: AlertController,
-    public menu: MenuController,
+    private modalCtrl: ModalController,
     //Services
     private authService: AuthService,
     private userService: UserService,
     private handleError: HandleErrorService,
     private components: ComponentsService
+
   ) { }
 
   ngOnInit() {
     this.authService.signOutUser();
   }
 
-  async logProf() {
-    const alert = await this.alertController.create({
-      header: this.trans.instant('LOGIN.LOGPROF'),
-      inputs: [
-        {
-          name: 'email',
-          type: 'email',
-          placeholder: this.trans.instant('LOGIN.MAIL')
-        },
-        {
-          name: 'password',
-          type: 'password',
-          placeholder: this.trans.instant('LOGIN.PASSWORD')
-        },
-      ],
-      buttons: [
-        {
-          text: this.trans.instant('COMMON.CANCEL'),
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: () => {
-          }
-        }, {
-          text: this.trans.instant('COMMON.OK'),
-          handler: (alertData) => {
-            this.storage.set('isProf', true);
-            this.authService.signInUser(alertData.email, alertData.password)
-              .then(() => {
-                if (this.userService.returnIsProf() == true) {
-                  if (this.userService.returnIsNewUser() == true) {
-                    this.navCtrl.navigateRoot('/slides')
-                  }
-                  this.userService.getUserName();
-                  this.navCtrl.navigateRoot('/nav/home')
-                  this.components.createLoading(this.trans.instant('COMMON.WAITING'))
-                  this.components.createToast(this.trans.instant('LOGIN.MSG_PROF'));
-                } else {
-                  this.components.createAllert(this.trans.instant('COMMON.ERROR'), this.trans.instant('ERRORS.ERROR_IS_PROF') + this.trans.instant('LOGIN.ERROR_MESSAGE'));
-                  this.authService.signOutUser();
-                }
-              })
-              .catch(async err => {
-                const alert = await this.alertController.create({
-                  header: this.trans.instant('COMMON.ERROR'),
-                  message: this.handleError.handleError(err) + this.trans.instant('LOGIN.ERROR_MESSAGE'),
-                  cssClass: 'error_login',
-                  buttons: ['OK']
-                });
-                await alert.present();
-              });
-          }
+  async signInStud() {
+    const alert = await this.modalCtrl.create({
+      component: SigninStudentComponent,
+      componentProps: {
+        message: {
+          button: {
+            validate: 'COMMON.OK'
+          },
+          content: 'CONTRIBUTION_PAGE.POP_UP_RETURN_PAYMENT'
         }
-      ]
+      },
+      cssClass: 'alert-modal',
     });
-    await alert.present();
+    alert.present();
   }
 
-  async logStud() {
-    const alert = await this.alertController.create({
-      header: this.trans.instant('LOGIN.LOGSTUD'),
-      inputs: [
-        {
-          name: 'email',
-          type: 'text',
-          placeholder: this.trans.instant('LOGIN.MAIL')
-        },
-        {
-          name: 'password',
-          type: 'text',
-          placeholder: this.trans.instant('LOGIN.PASSWORD')
-        },
-      ],
-      buttons: [
-        {
-          text: this.trans.instant('COMMON.CANCEL'),
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: () => {
-          }
-        }, {
-          text: this.trans.instant('COMMON.OK'),
-          handler: (alertData) => {
-            this.storage.set('isProf', true);
-            this.authService.signInUser(alertData.email, alertData.password)
-              .then(() => {
-                if (this.userService.returnIsProf() == false) {
-                  this.userService.getUserName();
-                  this.navCtrl.navigateRoot('/nav/home')
-                  this.components.createLoading(this.trans.instant('COMMON.WAITING'))
-                  this.components.createToast(this.trans.instant('LOGIN.MSG_STUDENT'));
-                } else {
-                  this.components.createAllert(this.trans.instant('COMMON.ERROR'), this.trans.instant('ERRORS.ERROR_IS_NOT_PROF') + this.trans.instant('LOGIN.ERROR_MESSAGE'));
-                  this.authService.signOutUser();
-                }
-              })
-              .catch(async err => {
-                const alert = await this.alertController.create({
-                  header: this.trans.instant('COMMON.ERROR'),
-                  message: this.handleError.handleError(err) + this.trans.instant('LOGIN.ERROR_MESSAGE'),
-                  cssClass: 'error_login',
-                  buttons: ['OK']
-                });
-                await alert.present();
-              });
-          }
+  async signInProf() {
+    const alert = await this.modalCtrl.create({
+      component: SigninProfComponent,
+      componentProps: {
+        message: {
+          button: {
+            validate: 'COMMON.OK'
+          },
+          content: 'CONTRIBUTION_PAGE.POP_UP_RETURN_PAYMENT'
         }
-      ]
+      },
+      cssClass: 'alert-modal',
     });
-    await alert.present();
+    alert.present();
   }
+
+  // async logProf() {
+  //   const alert = await this.alertController.create({
+  //     header: this.trans.instant('LOGIN.LOGPROF'),
+  //     inputs: [
+  //       {
+  //         name: 'email',
+  //         type: 'email',
+  //         placeholder: this.trans.instant('LOGIN.MAIL')
+  //       },
+  //       {
+  //         name: 'password',
+  //         type: 'password',
+  //         placeholder: this.trans.instant('LOGIN.PASSWORD')
+  //       },
+  //     ],
+  //     buttons: [
+  //       {
+  //         text: this.trans.instant('COMMON.CANCEL'),
+  //         role: 'cancel',
+  //         cssClass: 'secondary',
+  //         handler: () => {
+  //         }
+  //       }, {
+  //         text: this.trans.instant('COMMON.OK'),
+  //         handler: (alertData) => {
+  //           this.storage.set('isProf', true);
+  //           this.authService.signInUser(alertData.email, alertData.password)
+  //             .then(() => {
+  //               if (this.userService.returnIsProf() == true) {
+  //                 if (this.userService.returnIsNewUser() == true) {
+  //                   this.navCtrl.navigateRoot('/slides')
+  //                 }
+  //                 this.userService.getUserName();
+  //                 this.navCtrl.navigateRoot('/nav/home')
+  //                 this.components.createLoading(this.trans.instant('COMMON.WAITING'))
+  //                 this.components.createToast(this.trans.instant('LOGIN.MSG_PROF'));
+  //               } else {
+  //                 this.components.createAllert(this.trans.instant('COMMON.ERROR'), this.trans.instant('ERRORS.ERROR_IS_PROF') + this.trans.instant('LOGIN.ERROR_MESSAGE'));
+  //                 this.authService.signOutUser();
+  //               }
+  //             })
+  //             .catch(async err => {
+  //               const alert = await this.alertController.create({
+  //                 header: this.trans.instant('COMMON.ERROR'),
+  //                 message: this.handleError.handleError(err) + this.trans.instant('LOGIN.ERROR_MESSAGE'),
+  //                 cssClass: 'error_login',
+  //                 buttons: ['OK']
+  //               });
+  //               await alert.present();
+  //             });
+  //         }
+  //       }
+  //     ]
+  //   });
+  //   await alert.present();
+  // }
+
+  // async logStud() {
+  //   const alert = await this.alertController.create({
+  //     header: this.trans.instant('LOGIN.LOGSTUD'),
+  //     inputs: [
+  //       {
+  //         name: 'email',
+  //         type: 'text',
+  //         placeholder: this.trans.instant('LOGIN.MAIL')
+  //       },
+  //       {
+  //         name: 'password',
+  //         type: 'text',
+  //         placeholder: this.trans.instant('LOGIN.PASSWORD')
+  //       },
+  //     ],
+  //     buttons: [
+  //       {
+  //         text: this.trans.instant('COMMON.CANCEL'),
+  //         role: 'cancel',
+  //         cssClass: 'secondary',
+  //         handler: () => {
+  //         }
+  //       }, {
+  //         text: this.trans.instant('COMMON.OK'),
+  //         handler: (alertData) => {
+  //           this.storage.set('isProf', true);
+  //           this.authService.signInUser(alertData.email, alertData.password)
+  //             .then(() => {
+  //               if (this.userService.returnIsProf() == false) {
+  //                 this.userService.getUserName();
+  //                 this.navCtrl.navigateRoot('/nav/home')
+  //                 this.components.createLoading(this.trans.instant('COMMON.WAITING'))
+  //                 this.components.createToast(this.trans.instant('LOGIN.MSG_STUDENT'));
+  //               } else {
+  //                 this.components.createAllert(this.trans.instant('COMMON.ERROR'), this.trans.instant('ERRORS.ERROR_IS_NOT_PROF') + this.trans.instant('LOGIN.ERROR_MESSAGE'));
+  //                 this.authService.signOutUser();
+  //               }
+  //             })
+  //             .catch(async err => {
+  //               const alert = await this.alertController.create({
+  //                 header: this.trans.instant('COMMON.ERROR'),
+  //                 message: this.handleError.handleError(err) + this.trans.instant('LOGIN.ERROR_MESSAGE'),
+  //                 cssClass: 'error_login',
+  //                 buttons: ['OK']
+  //               });
+  //               await alert.present();
+  //             });
+  //         }
+  //       }
+  //     ]
+  //   });
+  //   await alert.present();
+  // }
 
   async resetPassword() {
     const alert = await this.alertController.create({
@@ -174,7 +209,6 @@ export class LoginPage implements OnInit {
 
   goRegister(){
     this.navCtrl.navigateRoot('/slides');
-    this.menu.close();
   }
 
 }

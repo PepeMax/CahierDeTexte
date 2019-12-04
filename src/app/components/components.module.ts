@@ -6,11 +6,13 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { UserinfosComponent } from './userinfos/userinfos.component';
+import { SigninProfComponent } from './auth/signinprof/signinprof.component';
 
 
 @NgModule({
     declarations: [
         SignupComponent,
+        SigninProfComponent,
         UserinfosComponent,
     ],
         
@@ -20,6 +22,7 @@ import { UserinfosComponent } from './userinfos/userinfos.component';
     ],
     entryComponents: [
         SignupComponent,
+        SigninProfComponent,
         UserinfosComponent,
     ],
     imports: [

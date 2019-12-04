@@ -1,0 +1,19 @@
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <h2>Créer un compte</h2>
+      <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <ion-label for="email">Adresse mail</ion-label>
+          <ion-input type="text" id="email" class="form-control custom-class" formControlName="email" placeholder="Adresse Email"></ion-input>
+        </div>
+        <div class="form-group">
+          <ion-label for="password">Mot de passe</ion-label>
+          <ion-input type="password" id="password" class="form-control" formControlName="password"></ion-input>
+        </div>
+        <ion-button class="btn btn-primary" type="submit" [disabled]="signinForm.invalid">Créer mon compte</ion-button>
+      </form>
+      <p class="text-danger">{{ errorMessage }}</p>
+    </ion-col>
+  </ion-row>
+</ion-grid>
