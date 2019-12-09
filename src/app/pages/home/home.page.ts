@@ -66,8 +66,4 @@ export class HomePage implements OnInit {
     })
   }
 
-  goSettings(){
-    this.navCtrl.navigateRoot('/settings');
-  }
-
 }
