@@ -7,22 +7,26 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { UserinfosComponent } from './userinfos/userinfos.component';
 import { SigninProfComponent } from './auth/signinprof/signinprof.component';
+import { SigninStudentComponent } from './auth/signinstudent/signinstudent.component';
 
 
 @NgModule({
     declarations: [
         SignupComponent,
         SigninProfComponent,
+        SigninStudentComponent,
         UserinfosComponent,
     ],
         
     exports: [
         SignupComponent,
+        SigninStudentComponent,
         UserinfosComponent,
     ],
     entryComponents: [
         SignupComponent,
         SigninProfComponent,
+        SigninStudentComponent,
         UserinfosComponent,
     ],
     imports: [
