@@ -7,12 +7,12 @@
           <div class="form-group">
             <ion-label for="status">Vous êtes :</ion-label>
             <ion-select formControlName="status" placeholder="Une chèvre">
-                <ion-select-option value="prof" checked="true">Professeur</ion-select-option>
+                <ion-select-option value="prof">Professeur</ion-select-option>
                 <ion-select-option value="student">Eleve</ion-select-option>
             </ion-select>
           </div>
-          <div class="form-group">
-            <label for="displayName">Votre Nom :</label>
+          <div *ngIf="student" class="form-group">
+            <label for="displayName">Votre Surnom :</label>
             <ion-input type="displayName" id="displayName" class="form-control" formControlName="displayName"></ion-input>
           </div>
           <br>

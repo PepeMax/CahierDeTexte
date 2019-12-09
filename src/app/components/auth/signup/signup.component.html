@@ -6,18 +6,28 @@
       <form class="ion-text-center" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <ion-label for="email">Adresse mail</ion-label>
-          <ion-input class="test" type="text" id="email" class="form-control" formControlName="email"></ion-input>
+          <ion-input type="text" id="email" class="form-control" formControlName="email"></ion-input>
 
         </div>
         <div class="form-group">
           <label for="password">Mot de passe</label>
           <ion-input type="password" id="password" class="form-control" formControlName="password" icon="none" icon-align="right"></ion-input>
         </div>
+
+        <div>
+          <ion-label for="status">Vous êtes :</ion-label>
+          <ion-select [(ngModel)]="status" formControlName="status" placeholder="Une chèvre" (ionChange)='userStatuts(status)'>
+              <ion-select-option value="prof">Professeur</ion-select-option>
+              <ion-select-option value="student">Eleve</ion-select-option>
+          </ion-select>
+        </div>
         <br>
-        <ion-button color="primary" type="submit" [disabled]="signupForm.invalid">Créer mon compte</ion-button>
+        <ion-button color="primary" type="submit">Créer mon compte</ion-button>
       </form>
       <br>
       <ion-text class="ion-text-center" color="danger">{{errorMessage}}</ion-text>
     </ion-col>
   </ion-row>
 </ion-grid>
+
+ <!--[disabled]="signupForm.invalid"-->

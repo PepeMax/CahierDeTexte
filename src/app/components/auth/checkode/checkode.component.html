@@ -1,0 +1,26 @@
+<ion-grid class="ion-text-center">
+
+  <ion-row>
+    <ion-col>
+
+      <h2 class="ion-text-center">
+        Code d'authentification
+      </h2>
+
+      <ion-label *ngIf="!lastChance">Il vous reste {{nbChances}} chance:</ion-label>
+      <ion-label *ngIf="lastChance">ATTENTION il vous reste seulement 1 essaie.</ion-label>
+      <br><br>
+      <ion-label>Renseigner le code d'authenfication donné par l'administrateur</ion-label>
+      <br>
+      <ion-input [(ngModel)]="code" placeholder="Ex : 0000" type="number"></ion-input>
+
+      <br>
+      <ion-text color="danger">{{errorMessage}}</ion-text>
+      <br>
+
+      <ion-button color="primary" (click)="checkCode">Checker</ion-button>
+
+    </ion-col>
+  </ion-row>
+
+</ion-grid>
