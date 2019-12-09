@@ -61,4 +61,9 @@ export class HomePage implements OnInit {
       photoURL: "#"
     })
   }
+
+  goSettings(){
+    this.navCtrl.navigateRoot('/settings');
+  }
+
 }

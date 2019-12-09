@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { Storage } from '@ionic/storage';
+import { NavController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home-work',
@@ -15,6 +16,7 @@ export class HomeWorkPage implements OnInit {
   constructor(
     public trans: TranslateService,
     public firebase: FirebaseService,
+    public navCtrl: NavController,
   ) { }
 
   ngOnInit() {
@@ -34,6 +36,12 @@ export class HomeWorkPage implements OnInit {
       val.target.complete();
     }, 2000);
     this.getEventFireBase();
+  }
+
+
+  public buttonClickedgmod: boolean = false;
+  public onButtonClickgmod() {
+    this.buttonClickedgmod = !this.buttonClickedgmod;
   }
 
 }

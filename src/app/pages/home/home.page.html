@@ -12,26 +12,32 @@
   <br>
 
   <ion-button (click)="ChangeID()">ID</ion-button>
+
+
+<ion-list lines="none">
+  <ion-list-header>
+    <ion-label>Liens Utiles</ion-label>
+  </ion-list-header>
+  <ion-item (click)="goSettings()">
+    <ion-icon slot="start" color="medium" name="options"></ion-icon>
+    <ion-label>Paramètres</ion-label>
+  </ion-item>
+  <ion-item href="https://www.eiffel-bordeaux.org/">
+    <ion-icon slot="start" color="medium" name="apps"></ion-icon>
+    <ion-label>Gustave Eiffel</ion-label>
+  </ion-item>
+  <ion-item href="www.cfafl.fr">
+    <ion-icon slot="start" color="medium" name="navigate"></ion-icon>
+    <ion-label>Net Y Pareo</ion-label>
+  </ion-item>
+  <ion-item href="">
+    <ion-icon slot="start" color="medium" name="call"></ion-icon>
+    <ion-label>Contacter le CFA</ion-label>
+  </ion-item>
+  <ion-item href="">
+    <ion-icon slot="start" color="medium" name="logo-youtube"></ion-icon>
+    <ion-label>Discord</ion-label>
+  </ion-item>
+</ion-list>
+
 </ion-content>
-
-<ion-footer>
-    <ion-grid>
-      <ion-row>
-        <ion-col size="6">
-          <ion-button color="dark" expand="block" size="large" fill="outline" (click)="goSettings()">Paramètres</ion-button>
-        </ion-col>
-        <ion-col size="6">
-            <ion-button color="dark" expand="block" size="large" fill="outline" href="https://www.eiffel-bordeaux.org/">Gustave Eiffel</ion-button>
-              </ion-col>
-      </ion-row>
-      <ion-row>
-          <ion-col size="6">
-        <ion-button color="dark" expand="block" size="large" fill="outline" href="www.cfafl.fr">Net Y Pareo</ion-button>
-          </ion-col>
-          <ion-col size="6">
-              <ion-button color="dark" expand="block" size="large" fill="outline">Contacter le CFA</ion-button>
-                </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-footer>
-
