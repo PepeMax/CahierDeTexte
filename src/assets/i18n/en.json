@@ -67,6 +67,8 @@
     },
     "LOGIN": {
         "TITLE": "Connect yourself !",
+        "CREATE_ACCOUNT": "Create an account",
+        "CREATE_MY_ACCOUNT": "Create my account",   
         "H4": "You are :",
         "STUDENT": "Student",
         "PROF": "Professor",
@@ -105,11 +107,9 @@
         "TITLE1": "TITRE SLIDE 1",
         "TITLE2": "TITRE SLIDE 2",
         "TITLE3": "TITRE SLIDE 3",
-        "TITLE4": "TITRE SLIDE 4",
         "TEXT1": "TEXTE SLIDE 1",
         "TEXT2": "TEXTE SLIDE 2",
-        "TEXT3": "TEXTE SLIDE 3",
-        "TEXT4": "TEXTE SLIDE 4"
+        "TEXT3": "TEXTE SLIDE 3"
     },
     "ERRORS": {
         "ERROR_MESSAGE": "\nPlease try again",

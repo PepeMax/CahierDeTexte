@@ -103,15 +103,16 @@
         "USERNAME": "Nom d'utilisateur"
     },
     "SLIDES": {
-        "TITLE": "SLIDE",
-        "TITLE1": "TITRE SLIDE 1",
+        "TITLE": "Ça slide",
+        "TITLE1": "Pourquoi une application ?",
         "TITLE2": "TITRE SLIDE 2",
         "TITLE3": "Créer un compte",
-        "TITLE4": "Un dernier petit effort !",
-        "TEXT1": "TEXTE SLIDE 1",
+        "TEXT1": "Pour une raison : avoir les devoirs sur une platforme que tout le monde utilise.",
+        "TEXT1.2": "Ça fait un projet en plus !",
+        "TEXT1.3": "Swipe à droite pour créer ton compte",
         "TEXT2": "TEXTE SLIDE 2",
-        "TEXT3": "TEXTE SLIDE 3",
-        "TEXT4": "TEXTE SLIDE 4"
+        "TEXT2.2": "TEXTE SLIDE 2.2",
+        "TEXT3": "C'est la dernière étape pour enfin avoir les devoirs ! Ou en mettre..."
     },
     "ERRORS": {
         "ERROR_MESSAGE": "\nVeuillez réessayer",

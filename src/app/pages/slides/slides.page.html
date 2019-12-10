@@ -1,6 +1,6 @@
 <ion-header translucent>
   <ion-toolbar>
-    <ion-title>Slides</ion-title>
+    <ion-title>{{'SLIDES.TITLE' | translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,20 +11,31 @@
     <ion-slide>
       <img src="https://ionicframework.com/docs/demos/api/slides/slide-1.png" />
       <h2>{{'SLIDES.TITLE1' | translate}}</h2>
+      <br>
       <p>{{'SLIDES.TEXT1' | translate}}</p>
+      <p>{{'SLIDES.TEXT1.2' | translate}}</p>
+      <br>
+      <br>
+      <p>{{'SLIDES.TEXT1.3' | translate}}</p>
     </ion-slide>
 
     <ion-slide>
       <img src="https://ionicframework.com/docs/demos/api/slides/slide-2.png" />
-      <h2>{{'SLIDES.TITLE2' | translate}}</h2>
+      <h2>{{'SLIDES.TITLE' | translate}}</h2>
+      <br>
       <p>{{'SLIDES.TEXT2' | translate}}</p>
+      <p>{{'SLIDES.TEXT2.2' | translate}}</p>
+      <br>
+      <br>
+      <br>
+      <p>{{'SLIDES.TEXT1.3' | translate}}</p>
     </ion-slide>
 
     <ion-slide>
       <img src="https://promyze.com/wp-content/uploads/themis-fusee.png" />
       <h2>{{'SLIDES.TITLE3' | translate}}</h2>
       <p>{{'SLIDES.TEXT3' | translate}}</p>
-      <ion-button (click)='createNewUser()'>BOUTON</ion-button>
+      <ion-button fill="outline" (click)='createNewUser()'>S'enregistrer</ion-button>
     </ion-slide>
 
   </ion-slides>
