@@ -2,8 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ComponentsService } from 'src/app/services/components.service';
 import { ModalController } from '@ionic/angular';
 import { SignupComponent } from 'src/app/components/auth/signup/signup.component';
-import { UserinfosComponent } from 'src/app/components/userinfos/userinfos.component';
-
 import { TranslateService } from '@ngx-translate/core';
 import { IonSlides} from '@ionic/angular';
 
@@ -114,8 +112,9 @@ export class SlidesPage implements OnInit {
   }
 
   async createNewUser() {
-    const alert = await this.modalCtrl.create({
+    const modalCreateUser = await this.modalCtrl.create({
       component: SignupComponent,
+      id: "modalCreateUser",
       componentProps: {
         message: {
           button: {
@@ -126,27 +125,6 @@ export class SlidesPage implements OnInit {
       },
       cssClass: 'alert-modal',
     });
-    alert.present();
+    modalCreateUser.present();
   }
-
-  async setUserInfo() {
-    const alert = await this.modalCtrl.create({
-      component: UserinfosComponent,
-      componentProps: {
-        message: {
-          button: {
-            validate: 'COMMON.OK'
-          },
-          content: 'CONTRIBUTION_PAGE.POP_UP_RETURN_PAYMENT'
-        }
-      },
-      cssClass: 'alert-modal',
-    });
-    alert.present();
-  }
-
-  nextSlide() {
-    this.startSlide.slideNext();
-  }
-
 }

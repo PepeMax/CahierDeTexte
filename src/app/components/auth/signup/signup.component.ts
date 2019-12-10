@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
-import { NavController, LoadingController, ModalController } from '@ionic/angular';
-import { SlidesPage } from 'src/app/pages/slides/slides.page';
+import { NavController, LoadingController, ModalController, AlertController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
+import { CheckodeComponent } from 'src/app/components/auth/checkode/checkode.component';
 
 @Component({
   selector: 'app-signup',
@@ -13,6 +14,10 @@ export class SignupComponent implements OnInit {
 
   signupForm: FormGroup;
   errorMessage: string;
+  private code: number;
+  private codeChecked: boolean = false;
+  private nbChance: number = 3;
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -20,17 +25,19 @@ export class SignupComponent implements OnInit {
     private navCtrl: NavController,
     private loadingCtrl: LoadingController,
     private modalCtrl: ModalController,
-    private Slide: SlidesPage
+    private alertController: AlertController,
+    public trans: TranslateService,
   ) { }
 
   ngOnInit() {
     this.initForms();
   }
-
+  
   initForms() {
     this.signupForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]]
+      password: ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]],
+      status: ['', [Validators.required]],
     });
   }
 
@@ -38,23 +45,40 @@ export class SignupComponent implements OnInit {
 
     const email = this.signupForm.get('email').value;
     const password = this.signupForm.get('password').value;
+    const status = this.signupForm.get('status').value;
 
     const loading = await this.loadingCtrl.create({
       backdropDismiss: false,
       spinner: "crescent",
     });
-    loading.present();
-    this.authService.createNewUser(email, password)
-      .then(() => {
-        this.authService.signInUser(email, password)
-          .then(() => {
-            loading.dismiss();
-            this.modalCtrl.dismiss();
-          });
+    if (status === "prof") {
+      const modalCheckCode = await this.modalCtrl.create({
+        component: CheckodeComponent,
+        id: "modalCheckCode",
+        componentProps: {
+          message: {
+            button: {
+              validate: 'COMMON.OK'
+            },
+            content: 'CONTRIBUTION_PAGE.POP_UP_RETURN_PAYMENT'
+          }
         },
-        (error) => {
-          this.errorMessage = error;
+        cssClass: 'alert-modal',
+      });
+      modalCheckCode.present();
+      return await modalCheckCode.present();
+    } else if (status === "stud") {
+      this.authService.createNewUser(email, password)
+        .then(() => {
+          console.log("bien crée")
           loading.dismiss();
+          this.modalCtrl.dismiss();
         });
+    }
+    (error) => {
+      console.log("érreur")
+      this.errorMessage = error;
+      loading.dismiss();
+    };
   }
 }

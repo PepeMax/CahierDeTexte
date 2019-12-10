@@ -33,7 +33,7 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.storage.get('valueDarkMode').then(value => this.darkMode = value);
-      enableDarkTheme(this.darkMode);
+      enableDarkTheme(false);
       this.translate.setDefaultLang('fr');
 
     });

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
 import { AlertController } from '@ionic/angular';
@@ -22,10 +22,13 @@ export class HomePage implements OnInit {
     public storage: Storage,
     private authService : AuthService,
     private userService: UserService,
-    public alertController: AlertController
+    public alertController: AlertController,
+    private modalCtrl: ModalController,
+
   ) { }
 
   ngOnInit() {
+    this.modalCtrl.dismiss("modalCheckCode")
   }
 
   goSettings() {
