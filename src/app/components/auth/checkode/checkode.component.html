@@ -1,6 +1,6 @@
 <ion-grid class="ion-text-center">
 
-  <ion-row>
+  <ion-row *ngIf="!codeChecked">
     <ion-col>
 
       <h2 class="ion-text-center">
@@ -11,16 +11,36 @@
       <ion-label *ngIf="lastChance">ATTENTION il vous reste seulement 1 essaie.</ion-label>
       <br><br>
       <ion-label>Renseigner le code d'authenfication donné par l'administrateur</ion-label>
-      <br>
+      <br><br>
       <ion-input [(ngModel)]="code" type="number"></ion-input>
 
       <br>
-      <ion-text color="danger">{{errorMessage}}</ion-text>
-      <br>
-
       <ion-button color="primary" (click)="checkCode()">Checker</ion-button>
+      
+      <ion-text color="danger">{{errorMessage}}</ion-text>
 
     </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="codeChecked">
+      <ion-item>
+        <ion-label>{{'COMMON.SUBJECT' | translate}}</ion-label>
+        <ion-select [(ngModel)]="whoas" required="true" okText="Valider" cancelText="Annuler" (ionchange)="nameProf()">
+          <ion-select-option value="si1">{{'NEWHOMEWORK.SI1' | translate}}</ion-select-option>
+          <ion-select-option value="si2">{{'NEWHOMEWORK.SI2' | translate}}</ion-select-option>
+          <ion-select-option value="si3">{{'NEWHOMEWORK.SI3' | translate}}</ion-select-option>
+          <ion-select-option value="si4">{{'NEWHOMEWORK.SI4' | translate}}</ion-select-option>
+          <ion-select-option value="ppe1">{{'NEWHOMEWORK.PPE1' | translate}}</ion-select-option>
+          <ion-select-option value="ppe2">{{'NEWHOMEWORK.PPE2' | translate}}</ion-select-option>
+          <ion-select-option value="emd1">{{'NEWHOMEWORK.EMD1' | translate}}</ion-select-option>
+          <ion-select-option value="emd2">{{'NEWHOMEWORK.EMD2' | translate}}</ion-select-option>
+          <ion-select-option value="mathsalgo">{{'NEWHOMEWORK.MATHSALGO' | translate}}</ion-select-option>
+          <ion-select-option value="maths">{{'NEWHOMEWORK.MATHS' | translate}}</ion-select-option>
+          <ion-select-option value="anglais">{{'NEWHOMEWORK.ANGLAIS' | translate}}</ion-select-option>
+          <ion-select-option value="français">{{'NEWHOMEWORK.FRANCAIS' | translate}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <h2>{{whoas}}</h2>
   </ion-row>
 
 </ion-grid>
