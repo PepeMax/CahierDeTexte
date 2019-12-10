@@ -15,15 +15,15 @@
         <div>
           <ion-label for="status">Vous êtes :</ion-label>
           <ion-select [(ngModel)]="status" formControlName="status" placeholder="Une chèvre">
-              <ion-select-option value="prof">Professeur</ion-select-option>
-              <ion-select-option value="student">Eleve</ion-select-option>
+            <ion-select-option value="student">Eleve</ion-select-option>
+            <ion-select-option value="professor">Professeur</ion-select-option>
           </ion-select>
         </div>
         <br>
-        <ion-button color="primary" type="submit" >Créer mon compte</ion-button><!-- [disabled]="signupForm.invalid"-->
+        <ion-button color="primary" type="submit" [disabled]="signupForm.invalid">Créer mon compte</ion-button>
+        <br><br>
+        <ion-text class="ion-text-center" color="danger">{{errorMessage}}</ion-text>
       </form>
-      <br>
-      <ion-text class="ion-text-center" color="danger">{{errorMessage}}</ion-text>
     </ion-col>
   </ion-row>
 </ion-grid>

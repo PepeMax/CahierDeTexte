@@ -16,16 +16,18 @@
 
       <br>
       <ion-button color="primary" (click)="checkCode()">Checker</ion-button>
-      
+
       <ion-text color="danger">{{errorMessage}}</ion-text>
 
     </ion-col>
   </ion-row>
 
   <ion-row *ngIf="codeChecked">
+    <ion-col>
+      <h2>Un titre</h2>
       <ion-item>
         <ion-label>{{'COMMON.SUBJECT' | translate}}</ion-label>
-        <ion-select [(ngModel)]="whoas" required="true" okText="Valider" cancelText="Annuler" (ionchange)="nameProf()">
+        <ion-select [(ngModel)]="whoas" required="true" okText="Valider" cancelText="Annuler" (ionChange)="nameProf()">
           <ion-select-option value="si1">{{'NEWHOMEWORK.SI1' | translate}}</ion-select-option>
           <ion-select-option value="si2">{{'NEWHOMEWORK.SI2' | translate}}</ion-select-option>
           <ion-select-option value="si3">{{'NEWHOMEWORK.SI3' | translate}}</ion-select-option>
@@ -40,7 +42,11 @@
           <ion-select-option value="français">{{'NEWHOMEWORK.FRANCAIS' | translate}}</ion-select-option>
         </ion-select>
       </ion-item>
-      <h2>{{whoas}}</h2>
+      <br>
+      <ion-text>{{whoas}}</ion-text>
+      <br><br>
+      <ion-button (click)="createNewProfessor">Créer le compte</ion-button>
+    </ion-col>
   </ion-row>
 
 </ion-grid>

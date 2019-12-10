@@ -125,6 +125,7 @@
         "ERROR_INVALID_USER_TOKEN": "\nVotre utilisateur appartient à un autre projet firebase",
         "ERROR_USER_TOKEN_EXPIRED": "\nVotre jeton à mettre à jour est expiré",
         "ERROR_NULL_USER": "\nLe nom d'utilisateur est nul",
-        "ERROR_TENANT_ID_MISMATCH": "\nL'ID ne correspondant"
+        "ERROR_TENANT_ID_MISMATCH": "\nL'ID ne correspondant",
+        "ERROR_UNKOWN": "\nErreur inconnue au bataillon"
     }
 }
