@@ -5,6 +5,7 @@ import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 import { enableDarkTheme } from 'src/app/components/helpers/utils';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-settings',
@@ -122,6 +123,17 @@ export class SettingsPage implements OnInit {
       ]
     });
     await alert.present();
+  }
+
+  GetUserInfos() {
+    this.userService.userDetails()
+  }
+
+  ChangeID() {
+    var user = firebase.auth().currentUser;
+    return user.updateProfile({
+      photoURL: "#"
+    })
   }
 
 }
