@@ -24,7 +24,6 @@
     },
     "HOMEWORK": {
         "TITLE": "Y'à quoi à faire...",
-        "MATTER": "Matière : ",
         "TYPE": "Type : ",
         "FOR_DATE": "Semaine du  : ",
         "GIVE_DATE": "Donner le : ",
@@ -33,12 +32,16 @@
     "HOME": {
         "TITLE": "Le Récap",
         "DISCONNECT": "Déconnexion",
-        "CONFIRM_DISCONNECT": "Voulez-vous vraiment vous déconnecter ?"
+        "CONFIRM_DISCONNECT": "Voulez-vous vraiment vous déconnecter ?",
+        "CALL": "Appeler",
+        "CALL_CFA" : "Contacter le CFA",
+        "CONFIRM_CALL_CFA" : "Voulez-vous vraiment appeler le CFA ?",
+        "EIFFEL" : "Gustave Eiffel",
+        "PAREO" : "Net Y Pareo"
     },
     "NEWHOMEWORK": {
         "TITLE": "Nouveau devoir :",
         "NAME": "Nom :",
-        "MATTER": "Matière :",
         "TYPE": "Type :",
         "GIVEN_DATE": "Travail donné le :",
         "TO_DO_DATE": "Travail à faire pour :",
@@ -64,6 +67,8 @@
     },
     "LOGIN": {
         "TITLE": "Connecte-toi !",
+        "CREATE_ACCOUNT": "Créer un compte",
+        "CREATE_MY_ACCOUNT": "Créer mon compte",        
         "H4": "Vous êtes :",
         "STUDENT": "Élève",
         "PROF": "Professeur",
@@ -87,11 +92,10 @@
         "NIGHT": "Mode nuit",
         "LANGUAGE": "Langue",
         "FR": "Français",
-        "EN": "English",
+        "EN": "Anglais",
         "FR_EN": "FR / EN",
         "CHANGE_ND": "Changer de nom",
         "CHANGE_ND_SUB_HEADER": "Votre nom actuelle : ",
-        "CHANGE_PWD": "Changer de mot de passe",
         "ND": "Nom d'utilisateur :",
         "POPUP": "C'est carré chef",
         "STATUS_STUD": "Vous êtes l'élève :",
@@ -99,7 +103,7 @@
         "USERNAME": "Nom d'utilisateur"
     },
     "SLIDES": {
-        "TITLE": "TITRE SLIDE 1",
+        "TITLE": "SLIDE",
         "TITLE1": "TITRE SLIDE 1",
         "TITLE2": "TITRE SLIDE 2",
         "TITLE3": "Créer un compte",

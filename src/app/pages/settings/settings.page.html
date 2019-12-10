@@ -34,7 +34,7 @@
         {{'SETTINGS.CHANGE_ND' | translate}}
       </ion-button>
       <ion-button class="testtest" size="small" fill="clear" (click)="resetPassword()">
-        {{'SETTINGS.CHANGE_PWD' | translate}}
+        {{'LOGIN.CHANGE_PASSWORD' | translate}}
       </ion-button>
     </ion-row>
     <br>
@@ -57,11 +57,19 @@
     </ion-row>
     <ion-row >
       <ion-item class="item-select">
-        <ion-label>Dark Mode</ion-label>
+        <ion-label>{{'SETTINGS.NIGHT' | translate}}</ion-label>
         <ion-toggle *ngIf="darkMode" [(ngModel)]="darkMode" (ionChange)="changeDarkMode()" checked color="dark"></ion-toggle>
         <ion-toggle *ngIf="!darkMode" [(ngModel)]="darkMode" (ionChange)="changeDarkMode()" color="dark"></ion-toggle>
       </ion-item>
     </ion-row>
   </ion-grid>
  
+  <br>
+  <br>
+  <br>
+  <br>
+  <ion-button (click)="GetUserInfos()">Infos</ion-button>
+  <br>
+
+  <ion-button (click)="ChangeID()">ID</ion-button>
 </ion-content>

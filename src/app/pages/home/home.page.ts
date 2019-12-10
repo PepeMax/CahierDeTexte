@@ -4,7 +4,6 @@ import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
 import { AlertController } from '@ionic/angular';
-import * as firebase from 'firebase/app';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -53,17 +52,32 @@ export class HomePage implements OnInit {
       ]
     });
     await alert.present();
+
   }
 
-  GetUserInfos() {
-    this.userService.userDetails()
+  async contact() {
+    const alert = await this.alertController.create({
+      header: this.trans.instant('HOME.CALL_CFA'),
+      message: this.trans.instant('HOME.CONFIRM_CALL_CFA'),
+      buttons: [
+        {
+          text: this.trans.instant('COMMON.CANCEL'),
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+          }
+        }, {
+          text: this.trans.instant('HOME.CALL'),
+          handler: () => {
+            this.authService.signOutUser();
+            this.navCtrl.navigateRoot("/nav/home");
+          }
+        }
+      ]
+    });
+    await alert.present();
+
   }
 
-  ChangeID() {
-    var user = firebase.auth().currentUser;
-    return user.updateProfile({
-      photoURL: "#"
-    })
-  }
 
 }
