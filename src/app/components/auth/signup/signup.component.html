@@ -7,13 +7,11 @@
         <div class="form-group">
           <ion-label for="email">Adresse mail</ion-label>
           <ion-input type="text" id="email" class="form-control" formControlName="email"></ion-input>
-
         </div>
         <div class="form-group">
           <label for="password">Mot de passe</label>
           <ion-input type="password" id="password" class="form-control" formControlName="password" icon="none" icon-align="right"></ion-input>
         </div>
-
         <div>
           <ion-label for="status">Vous êtes :</ion-label>
           <ion-select [(ngModel)]="status" formControlName="status" placeholder="Une chèvre">
@@ -22,7 +20,7 @@
           </ion-select>
         </div>
         <br>
-        <ion-button color="primary" type="submit" [disabled]="signupForm.invalid">Créer mon compte</ion-button>
+        <ion-button color="primary" type="submit" >Créer mon compte</ion-button><!-- [disabled]="signupForm.invalid"-->
       </form>
       <br>
       <ion-text class="ion-text-center" color="danger">{{errorMessage}}</ion-text>

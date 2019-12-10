@@ -67,7 +67,6 @@ export class SignupComponent implements OnInit {
         cssClass: 'alert-modal',
       });
       modalCheckCode.present();
-      return await modalCheckCode.present();
     } else if (status === "student") {
       loading.present();
       this.authService.createNewUser(email, password)
