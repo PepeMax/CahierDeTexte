@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { NavController, LoadingController, ModalController } from '@ionic/angular';
-import { TranslateService } from '@ngx-translate/core';
 import { CheckodeComponent } from 'src/app/components/auth/checkode/checkode.component';
 import { Storage } from '@ionic/storage';
 import { HandleErrorService } from 'src/app/services/handle-error.service';
@@ -15,11 +14,10 @@ import * as firebase from 'firebase/app';
 })
 export class SignupComponent implements OnInit {
 
-  signupForm: FormGroup;
-  errorMessage: string;
-  private code: number;
-  private codeChecked: boolean = false;
-  private nbChance: number = 3;
+  public signupForm: FormGroup;
+  public errorMessage: string;
+  public isStudent: boolean = false;
+  public statusInput;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -27,7 +25,6 @@ export class SignupComponent implements OnInit {
     private navCtrl: NavController,
     private loadingCtrl: LoadingController,
     private modalCtrl: ModalController,
-    public trans: TranslateService,
     private storage: Storage,
     private handleErr: HandleErrorService,
   ) { }
@@ -41,7 +38,18 @@ export class SignupComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]],
       status: ['', [Validators.required]],
+      name: ['', ],//Validators.required, Validators.pattern(/[0-9a-zA-Z]{3,}/)]],
     });
+  }
+
+  setNameForStudent() {
+    console.log(this.statusInput)
+    if (this.statusInput === "student") {
+      this.isStudent = true;
+    } else if (this.statusInput === "professor") {
+      this.signupForm.get('name').setValidators(null);
+      this.isStudent = false;
+    }
   }
 
   async onSubmit() {

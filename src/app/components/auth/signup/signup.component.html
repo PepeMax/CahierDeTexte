@@ -14,10 +14,15 @@
         </div>
         <div>
           <ion-label for="status">Vous êtes :</ion-label>
-          <ion-select [(ngModel)]="status" formControlName="status" placeholder="Une chèvre">
+          <ion-select [(ngModel)]="statusInput" formControlName="status" placeholder="Une chèvre" (ionChange)="setNameForStudent()">
             <ion-select-option value="student">Eleve</ion-select-option>
             <ion-select-option value="professor">Professeur</ion-select-option>
           </ion-select>
+        </div>
+        <br>
+        <div *ngIf="isStudent">
+          <ion-label>Votre Nom</ion-label>
+          <ion-input type="text" id="name" class="form-control" formControlName="name" icon="none" icon-align="right" placeholder="Ex: la chèvre du CFA"></ion-input>
         </div>
         <br>
         <ion-button color="primary" type="submit" [disabled]="signupForm.invalid">Créer mon compte</ion-button>

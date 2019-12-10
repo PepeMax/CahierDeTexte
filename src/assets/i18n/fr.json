@@ -100,8 +100,7 @@
         "STATUS_STUD": "Vous êtes l'élève :",
         "STATUS_PROF": "Vous êtes le professeur :",
         "USERNAME": "Nom d'utilisateur",
-        "NEW_PASSWORD": "Nouveau mot de passe",
-
+        "NEW_PASSWORD": "Nouveau mot de passe"
     },
     "SLIDES": {
         "TITLE": "Ça slide",
