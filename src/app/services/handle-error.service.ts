@@ -87,6 +87,7 @@ export class HandleErrorService {
       // }
 
       default: {
+          return this.trans.instant('ERRORS.ERROR_UNKOWN')
         break;
       }
     }
