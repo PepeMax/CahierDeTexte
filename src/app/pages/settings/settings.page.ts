@@ -102,9 +102,9 @@ export class SettingsPage implements OnInit {
       header: this.trans.instant('LOGIN.CHANGE_PASSWORD'),
       inputs: [
         {
-          name: 'email',
-          type: 'text',
-          placeholder: this.trans.instant('LOGIN.MAIL')
+          name: 'password',
+          type: 'password',
+          placeholder: this.trans.instant('LOGIN.PASSWORD')
         },
       ],
       buttons: [
@@ -117,7 +117,7 @@ export class SettingsPage implements OnInit {
         }, {
           text: this.trans.instant('COMMON.OK'),
           handler: (alertData) => {
-            this.authService.resetPassword(alertData.email)
+            this.authService.resetPassword(alertData.password)
           }
         }
       ]
