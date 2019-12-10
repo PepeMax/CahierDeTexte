@@ -96,11 +96,12 @@
         "FR_EN": "FR / EN",
         "CHANGE_ND": "Changer de nom",
         "CHANGE_ND_SUB_HEADER": "Votre nom actuelle : ",
-        "ND": "Nom d'utilisateur :",
         "POPUP": "C'est carré chef",
         "STATUS_STUD": "Vous êtes l'élève :",
         "STATUS_PROF": "Vous êtes le professeur :",
-        "USERNAME": "Nom d'utilisateur"
+        "USERNAME": "Nom d'utilisateur",
+        "NEW_PASSWORD": "Nouveau mot de passe",
+
     },
     "SLIDES": {
         "TITLE": "Ça slide",
