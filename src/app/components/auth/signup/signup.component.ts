@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { NavController, LoadingController, ModalController, AlertController } from '@ionic/angular';
-import { SlidesPage } from 'src/app/pages/slides/slides.page';
 import { TranslateService } from '@ngx-translate/core';
 import { CheckodeComponent } from 'src/app/components/auth/checkode/checkode.component';
 
@@ -26,7 +25,6 @@ export class SignupComponent implements OnInit {
     private navCtrl: NavController,
     private loadingCtrl: LoadingController,
     private modalCtrl: ModalController,
-    private Slide: SlidesPage,
     private alertController: AlertController,
     public trans: TranslateService,
   ) { }
@@ -34,11 +32,7 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
     this.initForms();
   }
-
-  userStatuts(value) {
-
-  }
-
+  
   initForms() {
     this.signupForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -58,9 +52,9 @@ export class SignupComponent implements OnInit {
       spinner: "crescent",
     });
     if (status === "prof") {
-      //faire une modal plutot
-      const alert = await this.modalCtrl.create({
+      const modalCheckCode = await this.modalCtrl.create({
         component: CheckodeComponent,
+        id: "modalCheckCode",
         componentProps: {
           message: {
             button: {
@@ -71,55 +65,15 @@ export class SignupComponent implements OnInit {
         },
         cssClass: 'alert-modal',
       });
-      alert.present();
-    
-      return await alert.present();
-      // const alert = await this.alertController.create({
-      //   header: "il vous reste" + this.nbChance + "chances",//this.trans.instant('SETTINGS.CHANGE_ND'),
-      //   //subHeader: this.traname,ns.instant('SETTINGS.CHANGE_ND_SUB_HEADER') + this.user
-      //   inputs: [
-      //     {
-      //       name: 'code',
-      //       type: 'text',
-      //       placeholder: "Code mystère"
-      //     }
-      //   ],
-      //   buttons: [
-      //     {
-      //       text: this.trans.instant('COMMON.CANCEL'),
-      //       role: 'cancel',
-      //       cssClass: 'secondary',
-      //       handler: () => {
-      //       }
-      //     }, {
-      //       text: this.trans.instant('COMMON.OK'),
-      //       handler: (alertData) => {
-      //         this.code = alertData.code;
-              
-      //           if (this.code == 3322) {
-      //             this.codeChecked = true;
-      //           } else {
-      //             this.nbChance--;
-      //             console.log(this.nbChance)
-      //           }
-              
-
-      //       //on affiche la liste des 
-      //         //loading.present();
-      //       }
-      //     }
-
-      //   ]
-      // });
-      // await alert.present();
-
+      modalCheckCode.present();
+      return await modalCheckCode.present();
     } else if (status === "stud") {
-    this.authService.createNewUser(email, password)
-      .then(() => {
-        console.log("bien crée")
-        loading.dismiss();
-        this.modalCtrl.dismiss();
-      });
+      this.authService.createNewUser(email, password)
+        .then(() => {
+          console.log("bien crée")
+          loading.dismiss();
+          this.modalCtrl.dismiss();
+        });
     }
     (error) => {
       console.log("érreur")

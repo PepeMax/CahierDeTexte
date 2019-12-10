@@ -12,13 +12,13 @@
       <br><br>
       <ion-label>Renseigner le code d'authenfication donné par l'administrateur</ion-label>
       <br>
-      <ion-input [(ngModel)]="code" placeholder="Ex : 0000" type="number"></ion-input>
+      <ion-input [(ngModel)]="code" type="number"></ion-input>
 
       <br>
       <ion-text color="danger">{{errorMessage}}</ion-text>
       <br>
 
-      <ion-button color="primary" (click)="checkCode">Checker</ion-button>
+      <ion-button color="primary" (click)="checkCode()">Checker</ion-button>
 
     </ion-col>
   </ion-row>

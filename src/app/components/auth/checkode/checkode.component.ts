@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-checkode',
@@ -15,24 +15,27 @@ export class CheckodeComponent implements OnInit {
 
   constructor(
     private navCtrl: NavController,
+    private modalCtrl: ModalController,
+
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.modalCtrl.dismiss("modalCreateUser");
+  }
 
   checkCode() {
     if (this.code == 3322) {
-
+      this.navCtrl.navigateRoot("nav/home");
     } else {
-      this.nbChances--
-      this.errorMessage = "Code faux, réessayer"
+      this.nbChances--;
+      this.errorMessage = "Code faux, réessayer";
       if (this.nbChances == 1) {
         this.lastChance = true;
       }
       if (this.nbChances == 0) {
-        this.navCtrl.navigateRoot("/login");
+        this.navCtrl.navigateRoot("/homelogin");
       }
     }
-
   }
 
 }

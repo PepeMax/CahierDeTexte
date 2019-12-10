@@ -22,12 +22,10 @@
           </ion-select>
         </div>
         <br>
-        <ion-button color="primary" type="submit">Créer mon compte</ion-button>
+        <ion-button color="primary" type="submit" [disabled]="signupForm.invalid">Créer mon compte</ion-button>
       </form>
       <br>
       <ion-text class="ion-text-center" color="danger">{{errorMessage}}</ion-text>
     </ion-col>
   </ion-row>
 </ion-grid>
-
- <!--[disabled]="signupForm.invalid"-->
