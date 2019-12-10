@@ -32,7 +32,7 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
     this.initForms();
   }
-  
+
   initForms() {
     this.signupForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -51,6 +51,7 @@ export class SignupComponent implements OnInit {
       backdropDismiss: false,
       spinner: "crescent",
     });
+
     if (status === "prof") {
       const modalCheckCode = await this.modalCtrl.create({
         component: CheckodeComponent,
@@ -67,18 +68,23 @@ export class SignupComponent implements OnInit {
       });
       modalCheckCode.present();
       return await modalCheckCode.present();
-    } else if (status === "stud") {
+    } else if (status === "student") {
+      loading.present();
       this.authService.createNewUser(email, password)
         .then(() => {
           console.log("bien crée")
-          loading.dismiss();
-          this.modalCtrl.dismiss();
+          this.authService.signInUser(email, password)
+          .then(() => {
+            this.navCtrl.navigateRoot("nav/home")
+            loading.dismiss();
+          })
         });
+      (error) => {
+        console.log("érreur")
+        this.errorMessage = error;
+        loading.dismiss();
+      };
     }
-    (error) => {
-      console.log("érreur")
-      this.errorMessage = error;
-      loading.dismiss();
-    };
+
   }
 }
