@@ -12,11 +12,9 @@
       <br><br>
       <ion-label>{{'CHECKCODE.TEXT' | translate}}</ion-label>
       <br><br>
-      <ion-input [(ngModel)]="code" type="number"></ion-input>
-
+      <ion-input [(ngModel)]="code" type="number" placeholder="Ex: 0000"></ion-input>
       <br>
       <ion-button color="primary" (click)="checkCode()">{{'COMMON.VALIDATE' | translate}}</ion-button>
-
       <ion-text color="danger">{{errorMessage}}</ion-text>
 
     </ion-col>
