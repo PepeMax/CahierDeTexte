@@ -19,6 +19,7 @@ export class SignupComponent implements OnInit {
   public isStudent: boolean = false;
   public statusInput;
 
+
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
@@ -59,6 +60,9 @@ export class SignupComponent implements OnInit {
     const password = this.signupForm.get('password').value;
     const status = this.signupForm.get('status').value;
     const name = this.signupForm.get('name').value;
+
+    this.storage.set('email', email);
+    this.storage.set('password', password);
 
     this.storage.set('email', email);
     this.storage.set('password', password);
