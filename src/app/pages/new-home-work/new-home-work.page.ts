@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NavController, ToastController } from '@ionic/angular';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { Storage } from '@ionic/storage';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-new-home-work',
@@ -35,6 +36,11 @@ export class NewHomeWorkPage implements OnInit {
 
   cancel() {
     this.navCtrl.navigateForward("/nav/home")
+  }
+
+  //Create new HomeWork
+  createNewHomeWork() {
+
   }
 
   async presentToast() {

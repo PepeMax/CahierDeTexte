@@ -4,7 +4,7 @@ import { NavController, ModalController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
 import { AlertController } from '@ionic/angular';
-import { UserService } from 'src/app/services/user.service';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-home',
@@ -14,20 +14,23 @@ import { UserService } from 'src/app/services/user.service';
 export class HomePage implements OnInit {
 
   public name;
+  public nomduser;
+  public mdp;
 
   constructor(
     public trans: TranslateService,
     public navCtrl: NavController,
     public storage: Storage,
-    private authService : AuthService,
-    private userService: UserService,
+    private authService: AuthService,
     public alertController: AlertController,
     private modalCtrl: ModalController,
 
   ) { }
 
   ngOnInit() {
-    this.modalCtrl.dismiss("modalCheckCode")
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    this.modalCtrl.dismiss("modalCheckCode");
   }
 
   goSettings() {

@@ -5,7 +5,6 @@ import { SignupComponent } from 'src/app/components/auth/signup/signup.component
 import { TranslateService } from '@ngx-translate/core';
 import { IonSlides} from '@ionic/angular';
 
-
 @Component({
   selector: 'app-slides',
   templateUrl: './slides.page.html',
@@ -123,7 +122,7 @@ export class SlidesPage implements OnInit {
           content: 'CONTRIBUTION_PAGE.POP_UP_RETURN_PAYMENT'
         }
       },
-      cssClass: 'alert-modal',
+      cssClass: 'alert-modal-createNewUser',
     });
     modalCreateUser.present();
   }

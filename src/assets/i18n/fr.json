@@ -67,8 +67,8 @@
     },
     "LOGIN": {
         "TITLE": "Connecte-toi !",
-        "CREATE_ACCOUNT": "Créer un compte",
-        "CREATE_MY_ACCOUNT": "Créer mon compte",        
+        "LOGIN": "Se connecter",
+        "LOG": "Connexion",        
         "H4": "Vous êtes :",
         "STUDENT": "Élève",
         "PROF": "Professeur",
@@ -126,6 +126,8 @@
         "ERROR_USER_TOKEN_EXPIRED": "\nVotre jeton à mettre à jour est expiré",
         "ERROR_NULL_USER": "\nLe nom d'utilisateur est nul",
         "ERROR_TENANT_ID_MISMATCH": "\nL'ID ne correspondant",
-        "ERROR_UNKOWN": "\nErreur inconnue au bataillon"
+        "ERROR_UNKOWN": "\nErreur inconnue au bataillon",
+        "ERROR_DISCONNECT_1": "Vous n'êtes plus connecté",
+        "ERROR_DISCONNECT_2": "Reconnecter vous !!!" 
     }
 }

@@ -6,3 +6,11 @@ ion-grid {
 ion-select {
   border: 1px solid;
 }
+
+ion-input{
+  --background: rgb(219,219,219);
+  --padding-end: 8px;
+  border-radius: 10px;
+  font-size: 0.9em;
+  border: 1px solid #f1f1f1;
+}

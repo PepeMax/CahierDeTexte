@@ -38,14 +38,14 @@ export class SignupComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]],
       status: ['', [Validators.required]],
-      name: ['', ],//Validators.required, Validators.pattern(/[0-9a-zA-Z]{3,}/)]],
+      name: ['', [Validators.nullValidator]],
     });
   }
 
   setNameForStudent() {
-    console.log(this.statusInput)
     if (this.statusInput === "student") {
       this.isStudent = true;
+      this.signupForm.get('name').setValidators([Validators.required, Validators.pattern(/[0-9a-zA-Z]{3,}/)]);
     } else if (this.statusInput === "professor") {
       this.signupForm.get('name').setValidators(null);
       this.isStudent = false;
@@ -58,6 +58,7 @@ export class SignupComponent implements OnInit {
     const email = this.signupForm.get('email').value;
     const password = this.signupForm.get('password').value;
     const status = this.signupForm.get('status').value;
+    const name = this.signupForm.get('name').value;
 
     this.storage.set('email', email);
     this.storage.set('password', password);
