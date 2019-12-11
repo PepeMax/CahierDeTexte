@@ -1,26 +1,26 @@
 <ion-grid>
   <ion-row>
     <ion-col>
-      <h2 class="ion-text-center">Créer un compte</h2>
+      <h2 class="ion-text-center">{{'LOGIN.CREATE_ACCOUNT' | translate}}</h2>
       <br>
       <form class="ion-text-center" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <ion-label for="email">Adresse mail</ion-label>
+          <ion-label for="email">{{'LOGIN.MAIL' | translate}}</ion-label>
           <ion-input type="text" id="email" class="form-control" formControlName="email"></ion-input>
         </div>
         <div class="form-group">
-          <label for="password">Mot de passe</label>
+          <label for="password">{{'LOGIN.PASSWORD' | translate}}</label>
           <ion-input type="password" id="password" class="form-control" formControlName="password" icon="none" icon-align="right"></ion-input>
         </div>
         <div>
-          <ion-label for="status">Vous êtes :</ion-label>
+          <ion-label for="status">{{'LOGIN.H4' | translate}}</ion-label>
           <ion-select [(ngModel)]="status" formControlName="status" placeholder="Une chèvre">
-            <ion-select-option value="student">Eleve</ion-select-option>
-            <ion-select-option value="professor">Professeur</ion-select-option>
+            <ion-select-option value="student">{{'LOGIN.STUDENT' | translate}}</ion-select-option>
+            <ion-select-option value="professor">{{'LOGIN.PROF' | translate}}</ion-select-option>
           </ion-select>
         </div>
         <br>
-        <ion-button color="primary" type="submit" [disabled]="signupForm.invalid">Créer mon compte</ion-button>
+        <ion-button color="primary" type="submit" [disabled]="signupForm.invalid">{{'LOGIN.CREATE_MY_ACCOUNT' | translate}}</ion-button>
         <br><br>
         <ion-text class="ion-text-center" color="danger">{{errorMessage}}</ion-text>
       </form>

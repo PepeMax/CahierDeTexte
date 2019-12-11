@@ -66,9 +66,10 @@
         "TITLE": "Planning de la semaine"
     },
     "LOGIN": {
-        "TITLE": "Connecte-toi !",
+        "CONNECT_STUD": "Connecte-toi !",
+        "CONNECT_PROF": "Connectez-vous :",
         "CREATE_ACCOUNT": "Créer un compte",
-        "CREATE_MY_ACCOUNT": "Créer mon compte",        
+        "CREATE_MY_ACCOUNT": "Créer mon compte",
         "H4": "Vous êtes :",
         "STUDENT": "Élève",
         "PROF": "Professeur",
@@ -77,6 +78,7 @@
         "MAIL": "Adresse mail",
         "PASSWORD": "Mot de passe",
         "NOT_SIGNUP": "Vous ne possédez pas de compte ?",
+        "ACCOUNT": "Vous possédez déjà un compte ?",
         "SIGNUP": "S'enregistrer",
         "MSG_STUDENT": "Eh bienvenue wesh",
         "MSG_PROF": "Bienvenue professeur !",
@@ -100,7 +102,7 @@
         "STATUS_STUD": "Vous êtes l'élève :",
         "STATUS_PROF": "Vous êtes le professeur :",
         "USERNAME": "Nom d'utilisateur",
-        "NEW_PASSWORD": "Nouveau mot de passe",
+        "NEW_PASSWORD": "Nouveau mot de passe"
 
     },
     "SLIDES": {
@@ -114,6 +116,15 @@
         "TEXT2": "TEXTE SLIDE 2",
         "TEXT2.2": "TEXTE SLIDE 2.2",
         "TEXT3": "C'est la dernière étape pour enfin avoir les devoirs ! Ou en mettre..."
+    },
+    "CHECKCODE": {
+        "AUTH_CODE": "Code d'authentification",
+        "LAST_CHANCE": "ATTENTION il vous reste seulement 1 essai.",
+        "!LAST_CHANCE1":"Il vous reste ",
+        "CHANCE":" chances :",
+        "TEXT":"Renseigner le code d'authenfication donné par l'administrateur",
+        "SELECT_MATTER":"Sélectionner votre matière :",
+        "TEXT2":"Attention, ne vous trompez pas c'est votre dernier mot !"
     },
     "ERRORS": {
         "ERROR_MESSAGE": "\nVeuillez réessayer",
