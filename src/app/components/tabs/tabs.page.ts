@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Storage } from '@ionic/storage';
+import { NavController } from '@ionic/angular';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-tabs',
@@ -8,15 +9,15 @@ import { Storage } from '@ionic/storage';
 })
 export class TabsPage {
 
-  public isProf: boolean = false;
+  public isProf: boolean;
 
   constructor(
-    public storage: Storage,
+    private navCtrl: NavController,
+    private userServ: UserService,
   ) {}
 
-  async ngOnInit() {
-    this.isProf = JSON.parse(await this.storage.get('isProf'));
-    console.log("salut")
+  ngOnInit() {
+    this.isProf = this.userServ.returnIsProf();
   }
 
 }

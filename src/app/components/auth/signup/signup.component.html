@@ -6,27 +6,31 @@
       <form class="ion-text-center" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <ion-label for="email">Adresse mail</ion-label>
-          <ion-input type="text" id="email" class="form-control" formControlName="email"></ion-input>
+          <ion-input type="text" id="email" class="form-control itemform" formControlName="email"></ion-input>
         </div>
+        <br>
         <div class="form-group">
           <label for="password">Mot de passe</label>
-          <ion-input type="password" id="password" class="form-control" formControlName="password" icon="none" icon-align="right"></ion-input>
+          <ion-input type="password" id="password" class="form-control itemform" formControlName="password" icon="none"
+            icon-align="right"></ion-input>
         </div>
+        <br>
         <div>
           <ion-label for="status">Vous êtes :</ion-label>
-          <ion-select [(ngModel)]="statusInput" formControlName="status" placeholder="Une chèvre" (ionChange)="setNameForStudent()">
+          <ion-select [(ngModel)]="statusInput" formControlName="status" placeholder="Une chèvre"
+            (ionChange)="setNameForStudent()">
             <ion-select-option value="student">Eleve</ion-select-option>
             <ion-select-option value="professor">Professeur</ion-select-option>
           </ion-select>
         </div>
-        <br>
+        <br *ngIf="isStudent">
         <div *ngIf="isStudent">
           <ion-label>Votre Nom</ion-label>
-          <ion-input type="text" id="name" class="form-control" formControlName="name" icon="none" icon-align="right" placeholder="Ex: la chèvre du CFA"></ion-input>
+          <ion-input type="text" id="name" class="form-control itemform" formControlName="name" placeholder="Ex: la chèvre du CFA"></ion-input>
         </div>
         <br>
         <ion-button color="primary" type="submit" [disabled]="signupForm.invalid">Créer mon compte</ion-button>
-        <br><br>
+        <br>
         <ion-text class="ion-text-center" color="danger">{{errorMessage}}</ion-text>
       </form>
     </ion-col>
