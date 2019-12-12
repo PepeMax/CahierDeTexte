@@ -39,8 +39,7 @@
         "CALL_CFA" : "Contacter le CFA",
         "CONFIRM_CALL_CFA" : "Voulez-vous vraiment appeler le CFA ?",
         "EIFFEL" : "Gustave Eiffel",
-        "PAREO" : "Net Y Pareo",
-        "LINK":"Liens utiles"
+        "PAREO" : "Net Y Pareo"
     },
     "NEWHOMEWORK": {
         "TITLE": "Nouveau devoir :",
@@ -106,6 +105,7 @@
         "STATUS_PROF": "Vous êtes le professeur :",
         "USERNAME": "Nom d'utilisateur",
         "NEW_PASSWORD": "Nouveau mot de passe"
+
     },
     "SLIDES": {
         "TITLE": "Ça slide",

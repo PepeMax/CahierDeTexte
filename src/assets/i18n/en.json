@@ -20,9 +20,7 @@
         "STARS": " *",
         "HOME_PAGE": "Home page",
         "SIGNIN": "Log in",
-        "SIGNUP": "Sign up",
-        "CONNECT":"Connection",
-        "SURNAME":"Your nickname :"
+        "SIGNUP": "Sign up"
     },
     "HOMEWORK": {
         "TITLE": "What's there to do....",
@@ -39,8 +37,7 @@
         "CALL_CFA" : "Contact the CFA",
         "CONFIRM_CALL_CFA" : "Do you really want to call the CFA ?",
         "EIFFEL" : "Gustave Eiffel",
-        "PAREO" : "Net Y Pareo",
-        "LINK":"Useful links"
+        "PAREO" : "Net Y Pareo"
     },
     "NEWHOMEWORK": {
         "TITLE": "New homework :",
@@ -69,8 +66,7 @@
         "TITLE": "Planning of the week"
     },
     "LOGIN": {
-        "CONNECT_STUD": "Connect yourself !",
-        "CONNECT_PROF": "Log in :",
+        "TITLE": "Connect yourself !",
         "CREATE_ACCOUNT": "Create an account",
         "CREATE_MY_ACCOUNT": "Create my account",   
         "H4": "You are :",
@@ -81,7 +77,6 @@
         "MAIL": "E-Mail",
         "PASSWORD": "Password",
         "NOT_SIGNUP": "You don't have an account?",
-        "ACCOUNT": "Already have an account ?",
         "SIGNUP": "Signup",
         "MSG_STUDENT": "Hey welcome wesh",
         "MSG_PROF": "Welcome professor !",
@@ -101,23 +96,20 @@
         "FR_EN": "FR / EN",
         "CHANGE_ND": "Change name",
         "CHANGE_ND_SUB_HEADER": "Your current name : ",
+        "ND": "Username :",
         "POPUP": "It's square chief",
         "STATUS_STUD": "You are the student :",
         "STATUS_PROF": "You are the professor :",
-        "USERNAME": "Username",
-        "NEW_PASSWORD": "New password"
+        "USERNAME": "Username"
     },
     "SLIDES": {
-        "TITLE": "Ça slide",
-        "TITLE1": "Pourquoi une application ?",
+        "TITLE": "SLIDE",
+        "TITLE1": "TITRE SLIDE 1",
         "TITLE2": "TITRE SLIDE 2",
-        "TITLE3": "Créer un compte",
-        "TEXT1": "Pour une raison : avoir les devoirs sur une platforme que tout le monde utilise.",
-        "TEXT1.2": "Ça fait un projet en plus !",
-        "TEXT1.3": "Swipe à droite pour créer ton compte",
+        "TITLE3": "TITRE SLIDE 3",
+        "TEXT1": "TEXTE SLIDE 1",
         "TEXT2": "TEXTE SLIDE 2",
-        "TEXT2.2": "TEXTE SLIDE 2.2",
-        "TEXT3": "C'est la dernière étape pour enfin avoir les devoirs ! Ou en mettre..."
+        "TEXT3": "TEXTE SLIDE 3"
     },
     "ERRORS": {
         "ERROR_MESSAGE": "\nPlease try again",
