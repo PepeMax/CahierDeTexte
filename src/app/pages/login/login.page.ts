@@ -3,9 +3,6 @@ import { NavController, ToastController, AlertController, LoadingController, Mod
 import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
-import { HandleErrorService } from 'src/app/services/handle-error.service';
-import { ComponentsService } from 'src/app/services/components.service';
-import { UserService } from 'src/app/services/user.service';
 import { SigninProfComponent } from 'src/app/components/auth/signinprof/signinprof.component';
 import { SigninStudentComponent } from 'src/app/components/auth/signinstudent/signinstudent.component';
 
@@ -26,9 +23,7 @@ export class LoginPage implements OnInit {
     private modalCtrl: ModalController,
     //Services
     private authService: AuthService,
-    private userService: UserService,
-    private handleError: HandleErrorService,
-    private components: ComponentsService
+
 
   ) { }
 
@@ -39,6 +34,7 @@ export class LoginPage implements OnInit {
   async signInStud() {
     const alert = await this.modalCtrl.create({
       component: SigninStudentComponent,
+      id: "signInStud",
       componentProps: {
         message: {
           button: {
@@ -50,11 +46,13 @@ export class LoginPage implements OnInit {
       cssClass: 'alert-modal',
     });
     alert.present();
+    this.modalCtrl.dismiss('signInStud');
   }
 
   async signInProf() {
     const alert = await this.modalCtrl.create({
       component: SigninProfComponent,
+      id: "signInProf",
       componentProps: {
         message: {
           button: {
@@ -66,6 +64,7 @@ export class LoginPage implements OnInit {
       cssClass: 'alert-modal',
     });
     alert.present();
+    this.modalCtrl.dismiss('signInProf');
   }
 
   async resetPassword() {

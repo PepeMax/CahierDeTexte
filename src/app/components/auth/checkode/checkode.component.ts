@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ModalController } from '@ionic/angular';
+import { NavController, LoadingController } from '@ionic/angular';
 import * as firebase from 'firebase/app';
 import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
+import { HandleErrorService } from 'src/app/services/handle-error.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-checkode',
@@ -11,23 +13,25 @@ import { Storage } from '@ionic/storage';
 })
 export class CheckodeComponent implements OnInit {
 
-  public nbChances: number = 3;
+  public errorMessage1: string;
+  public errorMessage2: string;
   public lastChance: boolean = false;
-  public code: number;
-  public errorMessage: string;
   public codeChecked: boolean = false;
+  public nbChances: number = 3;
+  public code: number;
   public whoas;
 
   constructor(
     private navCtrl: NavController,
-    private modalCtrl: ModalController,
     private trans: TranslateService,
-    private storage: Storage
+    private storage: Storage,
+    private loadingCtrl: LoadingController,
+    private handleErr: HandleErrorService,
+    private authService: AuthService
 
   ) { }
 
   ngOnInit() {
-    this.modalCtrl.dismiss("modalCreateUser");
   }
 
   checkCode() {
@@ -35,7 +39,7 @@ export class CheckodeComponent implements OnInit {
       this.codeChecked = true;
     } else {
       this.nbChances--;
-      this.errorMessage = "Code faux, réessayer";
+      this.errorMessage1 = "Code faux, réessayer";
       if (this.nbChances == 1) {
         this.lastChance = true;
       }
@@ -93,23 +97,35 @@ export class CheckodeComponent implements OnInit {
 
     const email = await this.storage.get('email');
     const password = await this.storage.get('password');
+    const status = await this.storage.get('status');
     const name = this.whoas;
+
+    const loading = await this.loadingCtrl.create({
+      backdropDismiss: false,
+      spinner: "crescent",
+    });
+
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(cred => {
-        return db.collection('profs').doc(cred.user.uid).set({
+        return db.collection('users').doc(cred.user.uid).set({
           email: email,
           password: password,
-          name: name
-        })
+          name: name,
+          status: status
+        }).then(() => {
+          this.authService.signInUser(email, password)
+            .then(() => {
+              this.navCtrl.navigateRoot("nav/home");
+              loading.dismiss();
+            }).catch((error) => {
+              this.errorMessage2 = this.handleErr.handleError(error);
+              loading.dismiss();
+            });
+        });
+      }).catch((error) => {
+        this.errorMessage2 = this.handleErr.handleError(error);
+        loading.dismiss();
       });
-  }
-
-  //this.navCtrl.navigateRoot("nav/home");
-
-
-  foncion() {
-    console.log(firebase.firestore().collection('users'))
-
   }
 
 }

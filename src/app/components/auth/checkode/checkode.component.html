@@ -15,7 +15,9 @@
       <ion-input [(ngModel)]="code" type="number" placeholder="Ex: 0000"></ion-input>
       <br>
       <ion-button color="primary" (click)="checkCode()">{{'COMMON.VALIDATE' | translate}}</ion-button>
-      <ion-text color="danger">{{errorMessage}}</ion-text>
+      <br>
+      <br>
+      <ion-text color="danger">{{errorMessage1}}</ion-text>
 
     </ion-col>
   </ion-row>
@@ -44,7 +46,12 @@
       <br>
       <ion-text>{{whoas}}</ion-text>
       <br><br>
-      <ion-button (click)="createNewProfessor">{{'LOGIN.CREATE_MY_ACCOUNT' | translate}}</ion-button>
+
+      <ion-button (click)="createNewProfessor()">{{'LOGIN.CREATE_MY_ACCOUNT' | translate}}</ion-button>
+      <br>
+      <br>
+      <ion-text color="danger">{{errorMessage2}}</ion-text>
+
     </ion-col>
   </ion-row>
 

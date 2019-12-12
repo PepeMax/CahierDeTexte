@@ -17,15 +17,17 @@
         <br>
         <div>
           <ion-label for="status">{{'LOGIN.H4' | translate}}</ion-label>
-          <ion-select [(ngModel)]="status" formControlName="status" placeholder="Une chèvre">
-            <ion-select-option value="student">{{'LOGIN.STUDENT' | translate}}</ion-select-option>
-            <ion-select-option value="professor">{{'LOGIN.PROF' | translate}}</ion-select-option>
+          <ion-select [(ngModel)]="statusInput" formControlName="status" placeholder="Une chèvre"
+            (ionChange)="setNameForStudent()">
+            <ion-select-option value='false'>{{'LOGIN.STUDENT' | translate}}</ion-select-option>
+            <ion-select-option value='true' selected="true">{{'LOGIN.PROF' | translate}}</ion-select-option>
           </ion-select>
         </div>
-        <br *ngIf="isStudent">
-        <div *ngIf="isStudent">
-          <ion-label>{{'LOGIN.NAME' | translate}}</ion-label>
-          <ion-input type="text" id="name" class="form-control itemform" formControlName="name" placeholder="Ex: la chèvre du CFA"></ion-input>
+        <br *ngIf="!isNotStudent">
+        <div *ngIf="!isNotStudent">
+          <ion-label>Votre Nom</ion-label>
+          <ion-input type="text" id="name" class="form-control itemform" formControlName="name"
+            placeholder="Ex: la chèvre du CFA"></ion-input>
         </div>
         <br>
         <ion-button color="primary" type="submit" [disabled]="signupForm.invalid">{{'LOGIN.CREATE_MY_ACCOUNT' | translate}}</ion-button>
