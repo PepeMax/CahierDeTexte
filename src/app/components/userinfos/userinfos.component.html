@@ -5,14 +5,14 @@
         <br>
         <form [formGroup]="setUserInfosForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
-            <ion-label for="status">Vous êtes :</ion-label>
+            <ion-label for="status">{{'LOGIN.H4' | translate }}</ion-label>
             <ion-select formControlName="status" placeholder="Une chèvre">
-                <ion-select-option value="prof">Professeur</ion-select-option>
-                <ion-select-option value="student">Eleve</ion-select-option>
+                <ion-select-option value="prof">{{'LOGIN.PROF' | translate }}</ion-select-option>
+                <ion-select-option value="student">{{'LOGIN.STUDENT' | translate }}</ion-select-option>
             </ion-select>
           </div>
           <div *ngIf="student" class="form-group">
-            <label for="displayName">Votre Surnom :</label>
+            <label for="displayName">{{'COMMON.SURNAME' | translate }}</label>
             <ion-input type="displayName" id="displayName" class="form-control" formControlName="displayName"></ion-input>
           </div>
           <br>

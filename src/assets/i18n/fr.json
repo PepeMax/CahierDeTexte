@@ -20,7 +20,9 @@
         "STARS": " *",
         "HOME_PAGE": "Page d'accueil",
         "SIGNIN": "Se connecter",
-        "SIGNUP": "S'enregistrer"
+        "SIGNUP": "S'enregistrer",
+        "CONNECT":"Connexion",
+        "SURNAME":"Votre surnom :"
     },
     "HOMEWORK": {
         "TITLE": "Y'à quoi à faire...",
@@ -37,7 +39,8 @@
         "CALL_CFA" : "Contacter le CFA",
         "CONFIRM_CALL_CFA" : "Voulez-vous vraiment appeler le CFA ?",
         "EIFFEL" : "Gustave Eiffel",
-        "PAREO" : "Net Y Pareo"
+        "PAREO" : "Net Y Pareo",
+        "LINK": "Liens utiles"
     },
     "NEWHOMEWORK": {
         "TITLE": "Nouveau devoir :",
@@ -141,4 +144,5 @@
         "ERROR_DISCONNECT_1": "Vous n'êtes plus connecté",
         "ERROR_DISCONNECT_2": "Reconnecter vous !!!"
     }
+
 }
