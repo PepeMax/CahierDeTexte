@@ -21,7 +21,7 @@
 
     <ion-slide>
       <img src="https://ionicframework.com/docs/demos/api/slides/slide-2.png" />
-      <h2>{{'SLIDES.TITLE' | translate}}</h2>
+      <h2>{{'SLIDES.TITLE2' | translate}}</h2>
       <br>
       <p>{{'SLIDES.TEXT2' | translate}}</p>
       <p>{{'SLIDES.TEXT2.2' | translate}}</p>
@@ -36,7 +36,18 @@
       <h2>{{'SLIDES.TITLE3' | translate}}</h2>
       <p>{{'SLIDES.TEXT3' | translate}}</p>
       <ion-button fill="outline" (click)='createNewUser()'>S'enregistrer</ion-button>
+
+      <br>
+      <br>
+      <br>
+      <ion-footer class="ion-text-center">
+        <ion-label color="medium">{{'LOGIN.ACCOUNT' | translate}}</ion-label>
+        <br>
+        <ion-label (click)="goRegister()" color="primary">&nbsp;&nbsp;{{'COMMON.SIGNIN' | translate}}</ion-label>
+      </ion-footer>
     </ion-slide>
+
+
 
   </ion-slides>
 

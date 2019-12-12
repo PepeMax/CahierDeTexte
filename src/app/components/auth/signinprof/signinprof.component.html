@@ -1,7 +1,8 @@
 <ion-grid>
   <ion-row>
     <ion-col>
-      <h2>{{'LOGIN.LOGIN' | translate }}</h2>
+
+      <h2>{{'LOGIN.CONNECT_PROF' | translate }}</h2>
       <br>
       <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
@@ -14,7 +15,7 @@
           <ion-input type="password" id="password" class="form-control" formControlName="password"></ion-input>
         </div>
         <br>
-        <ion-button class="btn btn-primary" type="submit" [disabled]="signinForm.invalid">{{'LOGIN.LOG' | translate }}</ion-button>
+        <ion-button class="btn btn-primary" type="submit" [disabled]="signinForm.invalid">{{'COMMON.SIGNIN' | translate }}</ion-button>
       </form>
       <p class="text-danger">{{ errorMessage }}</p>
     </ion-col>

@@ -20,7 +20,9 @@
         "STARS": " *",
         "HOME_PAGE": "Page d'accueil",
         "SIGNIN": "Se connecter",
-        "SIGNUP": "S'enregistrer"
+        "SIGNUP": "S'enregistrer",
+        "CONNECT":"Connexion",
+        "SURNAME":"Votre surnom :"
     },
     "HOMEWORK": {
         "TITLE": "Y'à quoi à faire...",
@@ -37,7 +39,8 @@
         "CALL_CFA" : "Contacter le CFA",
         "CONFIRM_CALL_CFA" : "Voulez-vous vraiment appeler le CFA ?",
         "EIFFEL" : "Gustave Eiffel",
-        "PAREO" : "Net Y Pareo"
+        "PAREO" : "Net Y Pareo",
+        "LINK": "Liens utiles"
     },
     "NEWHOMEWORK": {
         "TITLE": "Nouveau devoir :",
@@ -66,10 +69,12 @@
         "TITLE": "Planning de la semaine"
     },
     "LOGIN": {
-        "TITLE": "Connecte-toi !",
-        "LOGIN": "Se connecter",
-        "LOG": "Connexion",        
+        "CONNECT_STUD": "Connecte-toi !",
+        "CONNECT_PROF": "Connectez-vous :",
+        "CREATE_ACCOUNT": "Créer un compte",
+        "CREATE_MY_ACCOUNT": "Créer mon compte",
         "H4": "Vous êtes :",
+        "NAME":"Votre nom :",
         "STUDENT": "Élève",
         "PROF": "Professeur",
         "LOGPROF": "Connexion professeur",
@@ -77,6 +82,7 @@
         "MAIL": "Adresse mail",
         "PASSWORD": "Mot de passe",
         "NOT_SIGNUP": "Vous ne possédez pas de compte ?",
+        "ACCOUNT": "Vous possédez déjà un compte ?",
         "SIGNUP": "S'enregistrer",
         "MSG_STUDENT": "Eh bienvenue wesh",
         "MSG_PROF": "Bienvenue professeur !",
@@ -108,11 +114,20 @@
         "TITLE2": "TITRE SLIDE 2",
         "TITLE3": "Créer un compte",
         "TEXT1": "Pour une raison : avoir les devoirs sur une platforme que tout le monde utilise.",
-        "TEXT1.2": "Ça fait un projet en plus !",
+        "TEXT1.2": "Ça fait un projet, en plus !",
         "TEXT1.3": "Swipe à droite pour créer ton compte",
         "TEXT2": "TEXTE SLIDE 2",
         "TEXT2.2": "TEXTE SLIDE 2.2",
         "TEXT3": "C'est la dernière étape pour enfin avoir les devoirs ! Ou en mettre..."
+    },
+    "CHECKCODE": {
+        "AUTH_CODE": "Code d'authentification",
+        "LAST_CHANCE": "ATTENTION il vous reste seulement 1 essai.",
+        "!LAST_CHANCE1":"Il vous reste ",
+        "CHANCE":" chances :",
+        "TEXT":"Renseigner le code d'authenfication donné par l'administrateur",
+        "SELECT_MATTER":"Sélectionner votre matière :",
+        "TEXT2":"Attention, ne vous trompez pas c'est votre dernier mot !"
     },
     "ERRORS": {
         "ERROR_MESSAGE": "\nVeuillez réessayer",
@@ -128,6 +143,6 @@
         "ERROR_TENANT_ID_MISMATCH": "\nL'ID ne correspondant",
         "ERROR_UNKOWN": "\nErreur inconnue au bataillon",
         "ERROR_DISCONNECT_1": "Vous n'êtes plus connecté",
-        "ERROR_DISCONNECT_2": "Reconnecter vous !!!" 
+        "ERROR_DISCONNECT_2": "Reconnecter vous !!"
     }
 }

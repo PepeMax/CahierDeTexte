@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ComponentsService } from 'src/app/services/components.service';
-import { ModalController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
 import { SignupComponent } from 'src/app/components/auth/signup/signup.component';
 import { TranslateService } from '@ngx-translate/core';
 import { IonSlides} from '@ionic/angular';
@@ -15,6 +15,7 @@ export class SlidesPage implements OnInit {
   @ViewChild('Slide',  { static: true }) startSlide: IonSlides;
 
   constructor(
+    private navCtrl: NavController,
     private components: ComponentsService,
     private modalCtrl: ModalController,
     public trans: TranslateService,
@@ -126,4 +127,9 @@ export class SlidesPage implements OnInit {
     });
     modalCreateUser.present();
   }
+
+  goRegister(){
+    this.navCtrl.navigateRoot('/login');
+  }
+
 }

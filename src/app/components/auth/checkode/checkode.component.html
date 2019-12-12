@@ -4,17 +4,17 @@
     <ion-col>
 
       <h2 class="ion-text-center">
-        Code d'authentification
+        {{'CHECKCODE.AUTH_CODE' | translate}}
       </h2>
 
-      <ion-label *ngIf="!lastChance">Il vous reste {{nbChances}} chance:</ion-label>
-      <ion-label *ngIf="lastChance">ATTENTION il vous reste seulement 1 essaie.</ion-label>
+      <ion-label *ngIf="!lastChance">{{'CHECKCODE.!LAST_CHANCE1' | translate}}{{nbChances}}{{'CHECKCODE.CHANCE' | translate}}</ion-label>
+      <ion-label *ngIf="lastChance">{{'CHECKCODE.LAST_CHANCE' | translate}}</ion-label>
       <br><br>
-      <ion-label>Renseigner le code d'authenfication donné par l'administrateur</ion-label>
+      <ion-label>{{'CHECKCODE.TEXT' | translate}}</ion-label>
       <br><br>
       <ion-input [(ngModel)]="code" type="number" placeholder="Ex: 0000"></ion-input>
       <br>
-      <ion-button color="primary" (click)="checkCode()">Checker</ion-button>
+      <ion-button color="primary" (click)="checkCode()">{{'COMMON.VALIDATE' | translate}}</ion-button>
       <br>
       <br>
       <ion-text color="danger">{{errorMessage1}}</ion-text>
@@ -24,7 +24,8 @@
 
   <ion-row *ngIf="codeChecked">
     <ion-col>
-      <h2>Un titre</h2>
+      <h2>{{'CHECKCODE.SELECT_MATTER' | translate}}</h2>
+      <p>{{'CHECKCODE.TEXT2' | translate}}</p>
       <ion-item>
         <ion-label>{{'COMMON.SUBJECT' | translate}}</ion-label>
         <ion-select [(ngModel)]="whoas" required="true" okText="Valider" cancelText="Annuler" (ionChange)="nameProf()">
@@ -45,7 +46,8 @@
       <br>
       <ion-text>{{whoas}}</ion-text>
       <br><br>
-      <ion-button (click)="createNewProfessor()">Créer le compte</ion-button>
+
+      <ion-button (click)="createNewProfessor()">{{'LOGIN.CREATE_MY_ACCOUNT' | translate}}</ion-button>
       <br>
       <br>
       <ion-text color="danger">{{errorMessage2}}</ion-text>
