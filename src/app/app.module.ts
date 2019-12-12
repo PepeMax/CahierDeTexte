@@ -18,6 +18,8 @@ import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 
+import { CallNumber } from '@ionic-native/call-number/ngx';
+
 //FireBase
 import { environment } from 'src/environments/environment';
 import { AuthService } from './services/auth.service';
@@ -68,7 +70,7 @@ firebase.initializeApp(environment.firebase);
     AuthGuardService,
     HandleErrorService,
     SlidesPage,
-
+    CallNumber,
   ],
   bootstrap: [AppComponent]
 })

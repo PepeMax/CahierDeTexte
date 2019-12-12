@@ -4,6 +4,7 @@ import { NavController, ModalController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
 import { AlertController } from '@ionic/angular';
+import { CallNumber } from '@ionic-native/call-number/ngx';
 
 @Component({
   selector: 'app-home',
@@ -19,8 +20,8 @@ export class HomePage implements OnInit {
     private authService: AuthService,
     public alertController: AlertController,
     private modalCtrl: ModalController,
-
-  ) { }
+    private callNumber: CallNumber,
+  ) {}
 
   ngOnInit() {
     this.modalCtrl.dismiss("modalCreateUser");
@@ -68,8 +69,9 @@ export class HomePage implements OnInit {
         }, {
           text: this.trans.instant('HOME.CALL'),
           handler: () => {
-            this.authService.signOutUser();
-            this.navCtrl.navigateRoot("/nav/home");
+            this.callNumber.callNumber("0556917342", true)
+              .then(res => console.log('Launched dialer!', res))
+              .catch(err => console.log('Error launching dialer', err));
           }
         }
       ]
