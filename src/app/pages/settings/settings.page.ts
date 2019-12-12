@@ -15,7 +15,7 @@ import * as firebase from 'firebase/app';
 export class SettingsPage implements OnInit {
 
   public username;
-  public isprof;
+  public status;
   public buttonClickedNewND: boolean = false;
   public email;
   public darkMode: boolean;
@@ -31,10 +31,21 @@ export class SettingsPage implements OnInit {
   ) { }
 
   async ngOnInit() {
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
     this.storage.get('valueDarkMode').then(value => this.darkMode = value);
     this.username = this.userService.getUserName();
-    this.isprof = JSON.parse(await this.storage.get('isProf'));
 
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        db.collection('users').doc(user.uid).get()
+          .then(doc => {
+            this.username = doc.data().name;
+            this.status = doc.data().status;
+          });
+      }
+    });
   }
 
   changeDarkMode() {
@@ -44,11 +55,6 @@ export class SettingsPage implements OnInit {
 
   goBack() {
     this.navCtrl.navigateBack("/nav/home");
-  }
-
-  disconnect() {
-    this.authService.signOutUser();
-    this.navCtrl.navigateRoot("/login");
   }
 
   goAdmin() {
@@ -123,17 +129,6 @@ export class SettingsPage implements OnInit {
       ]
     });
     await alert.present();
-  }
-
-  GetUserInfos() {
-    this.userService.userDetails()
-  }
-
-  ChangeID() {
-    var user = firebase.auth().currentUser;
-    return user.updateProfile({
-      photoURL: "#"
-    })
   }
 
 }

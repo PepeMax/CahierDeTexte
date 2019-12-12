@@ -46,7 +46,19 @@
 }
 
 .alert-modal {
+  --border-radius	: 50px;
   --height: 50%;
+  @media screen and (min-width: 960px) {
+    --width: 41%;
+  }
+  @media screen and (max-width: 960px) {
+    --width: 80%;
+  }
+}
+
+.alert-modal-createNewUser {
+  --border-radius	: 50px;
+  --height: 60%;
   @media screen and (min-width: 960px) {
     --width: 41%;
   }
