@@ -24,7 +24,7 @@
         </div>
         <br *ngIf="isStudent">
         <div *ngIf="isStudent">
-          <ion-label>Votre Nom</ion-label>
+          <ion-label>{{'LOGIN.NAME' | translate}}</ion-label>
           <ion-input type="text" id="name" class="form-control itemform" formControlName="name" placeholder="Ex: la chèvre du CFA"></ion-input>
         </div>
         <br>

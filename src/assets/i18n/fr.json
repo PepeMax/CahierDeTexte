@@ -74,6 +74,7 @@
         "CREATE_ACCOUNT": "Créer un compte",
         "CREATE_MY_ACCOUNT": "Créer mon compte",
         "H4": "Vous êtes :",
+        "NAME":"Votre nom :",
         "STUDENT": "Élève",
         "PROF": "Professeur",
         "LOGPROF": "Connexion professeur",
@@ -113,7 +114,7 @@
         "TITLE2": "TITRE SLIDE 2",
         "TITLE3": "Créer un compte",
         "TEXT1": "Pour une raison : avoir les devoirs sur une platforme que tout le monde utilise.",
-        "TEXT1.2": "Ça fait un projet en plus !",
+        "TEXT1.2": "Ça fait un projet, en plus !",
         "TEXT1.3": "Swipe à droite pour créer ton compte",
         "TEXT2": "TEXTE SLIDE 2",
         "TEXT2.2": "TEXTE SLIDE 2.2",
@@ -142,7 +143,6 @@
         "ERROR_TENANT_ID_MISMATCH": "\nL'ID ne correspondant",
         "ERROR_UNKOWN": "\nErreur inconnue au bataillon",
         "ERROR_DISCONNECT_1": "Vous n'êtes plus connecté",
-        "ERROR_DISCONNECT_2": "Reconnecter vous !!!"
+        "ERROR_DISCONNECT_2": "Reconnecter vous !!"
     }
-
 }
