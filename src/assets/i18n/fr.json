@@ -39,7 +39,8 @@
         "CALL_CFA" : "Contacter le CFA",
         "CONFIRM_CALL_CFA" : "Voulez-vous vraiment appeler le CFA ?",
         "EIFFEL" : "Gustave Eiffel",
-        "PAREO" : "Net Y Pareo"
+        "PAREO" : "Net Y Pareo",
+        "LINK": "Liens utiles"
     },
     "NEWHOMEWORK": {
         "TITLE": "Nouveau devoir :",
@@ -143,4 +144,5 @@
         "ERROR_DISCONNECT_1": "Vous n'êtes plus connecté",
         "ERROR_DISCONNECT_2": "Reconnecter vous !!!"
     }
+
 }
