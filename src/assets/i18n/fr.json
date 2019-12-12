@@ -20,7 +20,9 @@
         "STARS": " *",
         "HOME_PAGE": "Page d'accueil",
         "SIGNIN": "Se connecter",
-        "SIGNUP": "S'enregistrer"
+        "SIGNUP": "S'enregistrer",
+        "CONNECT":"Connexion",
+        "SURNAME":"Votre surnom :"
     },
     "HOMEWORK": {
         "TITLE": "Y'à quoi à faire...",
