@@ -13,11 +13,11 @@
       <ion-label>Renseigner le code d'authenfication donné par l'administrateur</ion-label>
       <br><br>
       <ion-input [(ngModel)]="code" type="number" placeholder="Ex: 0000"></ion-input>
-
       <br>
       <ion-button color="primary" (click)="checkCode()">Checker</ion-button>
-
-      <ion-text color="danger">{{errorMessage}}</ion-text>
+      <br>
+      <br>
+      <ion-text color="danger">{{errorMessage1}}</ion-text>
 
     </ion-col>
   </ion-row>
@@ -45,7 +45,11 @@
       <br>
       <ion-text>{{whoas}}</ion-text>
       <br><br>
-      <ion-button (click)="createNewProfessor">Créer le compte</ion-button>
+      <ion-button (click)="createNewProfessor()">Créer le compte</ion-button>
+      <br>
+      <br>
+      <ion-text color="danger">{{errorMessage2}}</ion-text>
+
     </ion-col>
   </ion-row>
 

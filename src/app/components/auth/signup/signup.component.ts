@@ -16,7 +16,7 @@ export class SignupComponent implements OnInit {
 
   public signupForm: FormGroup;
   public errorMessage: string;
-  public isStudent: boolean = false;
+  public isNotStudent: boolean = true;
   public statusInput;
 
   constructor(
@@ -43,12 +43,12 @@ export class SignupComponent implements OnInit {
   }
 
   setNameForStudent() {
-    if (this.statusInput === "student") {
-      this.isStudent = true;
+    if (this.statusInput === "false") {
+      this.isNotStudent = false;
       this.signupForm.get('name').setValidators([Validators.required, Validators.pattern(/[0-9a-zA-Z]{3,}/)]);
-    } else if (this.statusInput === "professor") {
+    } else if (this.statusInput === "true") {
       this.signupForm.get('name').setValidators(null);
-      this.isStudent = false;
+      this.isNotStudent = true;
     }
   }
 
@@ -57,18 +57,19 @@ export class SignupComponent implements OnInit {
 
     const email = this.signupForm.get('email').value;
     const password = this.signupForm.get('password').value;
-    const status = this.signupForm.get('status').value;
+    const status = this.isNotStudent;
     const name = this.signupForm.get('name').value;
 
     this.storage.set('email', email);
     this.storage.set('password', password);
+    this.storage.set('status', status);
 
     const loading = await this.loadingCtrl.create({
       backdropDismiss: false,
       spinner: "crescent",
     });
 
-    if (status === "professor") {
+    if (status == true) {
       const modalCheckCode = await this.modalCtrl.create({
         component: CheckodeComponent,
         id: "modalCheckCode",
@@ -83,18 +84,21 @@ export class SignupComponent implements OnInit {
         cssClass: 'alert-modal',
       });
       modalCheckCode.present();
-    } else if (status === "student") {
+    } else if (status == false) {
       loading.present();
       firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(cred => {
           return db.collection('users').doc(cred.user.uid).set({
             email: email,
-            password: password,
-            name: name
+            name: name,
+            status: status
           }).then(() => {
             this.authService.signInUser(email, password)
               .then(() => {
                 this.navCtrl.navigateRoot("nav/home");
+                loading.dismiss();
+              }).catch((error) => {
+                this.errorMessage = this.handleErr.handleError(error);
                 loading.dismiss();
               });
           });
@@ -102,8 +106,7 @@ export class SignupComponent implements OnInit {
           this.errorMessage = this.handleErr.handleError(error);
           loading.dismiss();
         });
-
     }
-
   }
+
 }

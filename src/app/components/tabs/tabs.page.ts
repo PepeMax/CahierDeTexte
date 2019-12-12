@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { UserService } from 'src/app/services/user.service';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-tabs',
@@ -12,12 +12,11 @@ export class TabsPage {
   public isProf: boolean;
 
   constructor(
-    private navCtrl: NavController,
-    private userServ: UserService,
+    private storage: Storage,
   ) {}
 
-  ngOnInit() {
-    this.isProf = this.userServ.returnIsProf();
+  async ngOnInit() {
+    this.isProf = await this.storage.get('status');
   }
 
 }

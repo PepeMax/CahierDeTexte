@@ -24,6 +24,39 @@ export class AuthService {
   public userID;
   public userInfo;
 
+  getUserName() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        firebase.firestore().collection('users').doc(user.uid).get()
+          .then(doc => {
+            return doc.data().name;
+          });
+      }
+    });
+  }
+
+  getEmail() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        firebase.firestore().collection('users').doc(user.uid).get()
+          .then(doc => {
+            return doc.data().email;
+          });
+      }
+    });
+  }
+  
+  getStatus() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        firebase.firestore().collection('users').doc(user.uid).get()
+          .then(doc => {
+            return doc.data().status;
+          });
+      }
+    });
+  }
+
   signInUser(email: string, password: string): Promise<any> {
     return new Promise<any>(
       (resolve, reject) => {
@@ -50,10 +83,11 @@ export class AuthService {
         );
       }
     );
-}
+  }
 
   signOutUser() {
     firebase.auth().signOut();
+    this.navCtrl.navigateRoot('/login');
   }
 
   //Change user's settings
@@ -70,20 +104,22 @@ export class AuthService {
 
   async updateProfile(newUser): Promise<any> {
     var user = firebase.auth().currentUser;
-    return user.updateProfile({
-      displayName: newUser
-    })
-      .then(() => {
-        return newUser;
-      })
-      .catch(async err => {
-        const alert = await this.alertController.create({
-          header: this.trans.instant('COMMON.ERROR'),
-          message: this.handleError.handleError(err) + this.trans.instant('LOGIN.ERROR_MESSAGE'),
-          cssClass: 'error_login',
-          buttons: ['OK']
-        });
-        await alert.present();
+
+    firebase.firestore().collection('users').doc(user.uid).set({
+      email: this.getEmail,
+      name: newUser,
+      status: this.getStatus,
+
+    }).then(() => {
+      return newUser;
+    }).catch(async err => {
+      const alert = await this.alertController.create({
+        header: this.trans.instant('COMMON.ERROR'),
+        message: this.handleError.handleError(err) + this.trans.instant('LOGIN.ERROR_MESSAGE'),
+        cssClass: 'error_login',
+        buttons: ['OK']
       });
+      await alert.present();
+    });
   }
 }
