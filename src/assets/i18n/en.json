@@ -20,7 +20,9 @@
         "STARS": " *",
         "HOME_PAGE": "Home page",
         "SIGNIN": "Log in",
-        "SIGNUP": "Sign up"
+        "SIGNUP": "Sign up",
+        "CONNECT":"Connection",
+        "SURNAME":"Your surname :"
     },
     "HOMEWORK": {
         "TITLE": "What's there to do....",
@@ -37,7 +39,8 @@
         "CALL_CFA" : "Contact the CFA",
         "CONFIRM_CALL_CFA" : "Do you really want to call the CFA ?",
         "EIFFEL" : "Gustave Eiffel",
-        "PAREO" : "Net Y Pareo"
+        "PAREO" : "Net Y Pareo",
+        "LINK": "Useful links"
     },
     "NEWHOMEWORK": {
         "TITLE": "New homework :",
@@ -66,10 +69,12 @@
         "TITLE": "Planning of the week"
     },
     "LOGIN": {
-        "TITLE": "Connect yourself !",
+        "CONNECT_STUD": "Connect yourself !",
+        "CONNECT_PROF": "Log in :",
         "CREATE_ACCOUNT": "Create an account",
         "CREATE_MY_ACCOUNT": "Create my account",   
         "H4": "You are :",
+        "NAME":"Your name :",
         "STUDENT": "Student",
         "PROF": "Professor",
         "LOGPROF": "Professor login",
@@ -77,6 +82,7 @@
         "MAIL": "E-Mail",
         "PASSWORD": "Password",
         "NOT_SIGNUP": "You don't have an account?",
+        "ACCOUNT": "Already have an account ?",
         "SIGNUP": "Signup",
         "MSG_STUDENT": "Hey welcome wesh",
         "MSG_PROF": "Welcome professor !",
@@ -96,20 +102,32 @@
         "FR_EN": "FR / EN",
         "CHANGE_ND": "Change name",
         "CHANGE_ND_SUB_HEADER": "Your current name : ",
-        "ND": "Username :",
         "POPUP": "It's square chief",
         "STATUS_STUD": "You are the student :",
         "STATUS_PROF": "You are the professor :",
-        "USERNAME": "Username"
+        "USERNAME": "Username",
+        "NEW_PASSWORD": "New password"
     },
     "SLIDES": {
-        "TITLE": "SLIDE",
-        "TITLE1": "TITRE SLIDE 1",
-        "TITLE2": "TITRE SLIDE 2",
-        "TITLE3": "TITRE SLIDE 3",
-        "TEXT1": "TEXTE SLIDE 1",
-        "TEXT2": "TEXTE SLIDE 2",
-        "TEXT3": "TEXTE SLIDE 3"
+        "TITLE": "It slides",
+        "TITLE1": "Why an application?",
+        "TITLE2": "TITLE SLIDE 2",
+        "TITLE3": "Create an account",
+        "TEXT1": "For one reason : having homework on a platform that everyone uses.",
+        "TEXT1.2": "That's a project, too!",
+        "TEXT1.3": "Swipe on the right to create your account",
+        "TEXT2": "TEXT SLIDE 2",
+        "TEXT2.2": "TEXT SLIDE 2.2",
+        "TEXT3": "This is the last step to finally get the homework! Or put some on..."
+    },
+    "CHECKCODE": {
+        "AUTH_CODE": "Authentication code",
+        "LAST_CHANCE": "CAUTION you only have 1 more try.",
+        "!LAST_CHANCE1":"You have ",
+        "CHANCE":"more chances :",
+        "TEXT":"Enter the authenfication code given by the administrator",
+        "SELECT_MATTER":"Select your subject :",
+        "TEXT2":"Be careful, don't be mistaken, it's your last word !"
     },
     "ERRORS": {
         "ERROR_MESSAGE": "\nPlease try again",
@@ -122,6 +140,9 @@
         "ERROR_INVALID_USER_TOKEN": "\nYour user is from another firebase project",
         "ERROR_USER_TOKEN_EXPIRED": "\nYour token to update has expired",
         "ERROR_NULL_USER": "\nThe username is empty",
-        "ERROR_TENANT_ID_MISMATCH": "\nThe ID not corresponding"
+        "ERROR_TENANT_ID_MISMATCH": "\nThe ID not corresponding",
+        "ERROR_UNKOWN": "\nError unknown in the battalion",
+        "ERROR_DISCONNECT_1": "You are no longer connected",
+        "ERROR_DISCONNECT_2": "Log in now !!"
     }
 }
