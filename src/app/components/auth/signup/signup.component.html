@@ -12,7 +12,9 @@
         <br>
         <div class="form-group">
           <label for="password">{{'LOGIN.PASSWORD' | translate}}</label>
-          <ion-input type="password" id="password" class="form-control" formControlName="password" icon="none" icon-align="right"></ion-input>
+          <ion-input [type]="passwordType" id="password" class="form-control" formControlName="password" icon="none"
+            icon-align="right"></ion-input>
+          <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
         </div>
         <br>
         <div>
@@ -30,7 +32,8 @@
             placeholder="Ex: la chèvre du CFA"></ion-input>
         </div>
         <br>
-        <ion-button color="primary" type="submit" [disabled]="signupForm.invalid">{{'LOGIN.CREATE_MY_ACCOUNT' | translate}}</ion-button>
+        <ion-button color="primary" type="submit" [disabled]="signupForm.invalid">
+          {{'LOGIN.CREATE_MY_ACCOUNT' | translate}}</ion-button>
         <br><br>
         <ion-text class="ion-text-center" color="danger">{{errorMessage}}</ion-text>
       </form>

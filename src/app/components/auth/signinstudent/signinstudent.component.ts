@@ -29,9 +29,15 @@ export class SigninStudentComponent implements OnInit {
     private handleError: HandleErrorService,
     private modalCtrl: ModalController,
     private storage: Storage,
+  ) {}
 
+  passwordType: string = 'password';
+  passwordIcon: string = 'eye-off';
 
-  ) { }
+  hideShowPassword() {
+    this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
+    this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
+}
 
   ngOnInit() {
     this.initForms();

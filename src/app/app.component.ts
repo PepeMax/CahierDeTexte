@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -27,15 +26,13 @@ export class AppComponent {
     this.initializeApp();
   }
 
-
-  initializeApp() {
+  async initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.storage.get('valueDarkMode').then(value => this.darkMode = value);
-      enableDarkTheme(false);
       this.translate.setDefaultLang('fr');
-
     });
+    this.darkMode = await this.storage.get('valueDarkMode');
+    enableDarkTheme(this.darkMode);
   }
 }

@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~8.1.2",
     "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/router": "~8.1.2",
+    "@ionic-native/call-number": "^5.18.0",
     "@ionic-native/core": "^5.0.0",
     "@ionic-native/document-viewer": "^5.15.1",
     "@ionic-native/file": "^5.15.1",
@@ -31,6 +32,7 @@
     "@ionic/storage": "^2.2.0",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
+    "call-number": "1.0.1",
     "cordova-android": "^8.1.0",
     "cordova-plugin-document-viewer": "^0.9.13",
     "cordova-plugin-file": "^6.0.2",
@@ -90,7 +92,8 @@
       "cordova-plugin-document-viewer": {},
       "cordova-plugin-file-opener2": {
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
-      }
+      },
+      "mx.ferreyra.callnumber": {}
     },
     "platforms": [
       "android"

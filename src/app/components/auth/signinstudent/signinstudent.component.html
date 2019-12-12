@@ -1,23 +1,33 @@
 <ion-grid>
   <ion-row>
     <ion-col>
+
       <h2>{{'LOGIN.CONNECT_STUD' | translate }}</h2>
+
       <br>
+
       <form class="ion-text-center" [formGroup]="signinForm" (ngSubmit)="onSubmit()">
 
         <div class="form-group">
           <ion-label for="email">{{'LOGIN.MAIL' | translate }}</ion-label>
           <ion-input type="text" id="email" class="form-control custom-class" formControlName="email"></ion-input>
         </div>
+
         <br>
+
         <div class="form-group">
           <ion-label for="password">{{'LOGIN.PASSWORD' | translate }}</ion-label>
-          <ion-input type="password" id="password" class="form-control" formControlName="password"></ion-input>
-        </div>        
+          <ion-input [type]="passwordType" id="password" class="form-control" formControlName="password"></ion-input>
+          <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+        </div>
+
         <br>
-         <ion-button class="btn btn-primary" type="submit" [disabled]="signinForm.invalid">{{'COMMON.SIGNIN' | translate }}</ion-button>
+
+        <ion-button class="btn btn-primary" type="submit" [disabled]="signinForm.invalid">{{'COMMON.SIGNIN' | translate }}</ion-button>
+
       </form>
-      <p class="text-danger">{{ errorMessage }}</p>
+
+      <p class="text-danger">{{errorMessage}}</p>
     </ion-col>
   </ion-row>
 </ion-grid>
