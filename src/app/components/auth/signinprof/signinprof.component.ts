@@ -9,7 +9,6 @@ import { Storage } from '@ionic/storage';
 
 import * as firebase from 'firebase/app';
 
-
 @Component({
   selector: 'app-signinprof',
   templateUrl: './signinprof.component.html',

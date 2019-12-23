@@ -19,6 +19,7 @@ import { File } from '@ionic-native/file/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 
 import { CallNumber } from '@ionic-native/call-number/ngx';
+import { Keyboard } from '@ionic-native/keyboard/ngx';
 
 //FireBase
 import { environment } from 'src/environments/environment';
@@ -71,6 +72,7 @@ firebase.initializeApp(environment.firebase);
     HandleErrorService,
     SlidesPage,
     CallNumber,
+    Keyboard,
   ],
   bootstrap: [AppComponent]
 })
