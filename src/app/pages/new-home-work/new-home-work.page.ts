@@ -4,6 +4,7 @@ import { NavController, ToastController } from '@ionic/angular';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { Storage } from '@ionic/storage';
 import * as firebase from 'firebase';
+import { HomeWorkService } from 'src/app/services/home-work.service';
 
 @Component({
   selector: 'app-new-home-work',
@@ -29,6 +30,7 @@ export class NewHomeWorkPage implements OnInit {
     public toastController: ToastController,
     public storage: Storage,
     public firebase: FirebaseService,
+    public homework: HomeWorkService
   ) { }
 
   ngOnInit() {
@@ -36,6 +38,10 @@ export class NewHomeWorkPage implements OnInit {
 
   cancel() {
     this.navCtrl.navigateForward("/nav/home")
+  }
+
+  getHomeWork() {
+    this.homework.getHomeWork();
   }
 
   //Create new HomeWork

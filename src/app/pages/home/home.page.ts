@@ -5,6 +5,7 @@ import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
 import { AlertController } from '@ionic/angular';
 import { CallNumber } from '@ionic-native/call-number/ngx';
+import { NewHomeWorkPage } from '../new-home-work/new-home-work.page';
 
 @Component({
   selector: 'app-home',
