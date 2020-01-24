@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { NavController } from '@ionic/angular';
+import { NavController, PopoverController } from '@ionic/angular';
+import { InfoslyceeComponent } from 'src/app/components/popover/infoslycee/infoslycee.component';
 
 @Component({
   selector: 'app-homelogin',
@@ -12,6 +13,7 @@ export class HomeloginPage implements OnInit {
   constructor(
     public trans: TranslateService,
     private navCtrl: NavController,
+    public popoverController: PopoverController,
 
 
   ) { }
@@ -25,6 +27,16 @@ export class HomeloginPage implements OnInit {
 
   registerAccount() {
     this.navCtrl.navigateRoot('/slides')
+  }
+
+  async showInfos(ev: any) {
+    const popover = await this.popoverController.create({
+      component: InfoslyceeComponent,
+      event: ev,
+      animated: false,
+      translucent: true
+    });
+    return await popover.present();
   }
 
 }
