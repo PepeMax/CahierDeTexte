@@ -10,6 +10,7 @@ import { UserinfosComponent } from './userinfos/userinfos.component';
 import { SigninProfComponent } from './auth/signinprof/signinprof.component';
 import { SigninStudentComponent } from './auth/signinstudent/signinstudent.component';
 import { CheckodeComponent } from './auth/checkode/checkode.component';
+import { InfoslyceeComponent } from './popover/infoslycee/infoslycee.component';
 
 
 @NgModule({
@@ -21,6 +22,8 @@ import { CheckodeComponent } from './auth/checkode/checkode.component';
         CheckodeComponent,
         //
         UserinfosComponent,
+        //
+        InfoslyceeComponent
 
     ],
         
@@ -40,6 +43,8 @@ import { CheckodeComponent } from './auth/checkode/checkode.component';
         CheckodeComponent,
         //
         UserinfosComponent,
+        //
+        InfoslyceeComponent,
     ],
     imports: [
         IonicModule,
