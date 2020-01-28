@@ -16,13 +16,12 @@ export class NewHomeWorkPage implements OnInit {
   today = new Date().toISOString();
   public homeworks;
 
-  public newHomeWork: any = {
-    name_homework: '',
-    type_homework: '',
-    givedate_homework: this.today,
-    fordate_homework: '',
-    infos_homework: ''
-  }
+
+  public name_homework: '';
+  public type_homework: '';
+  public fordate_homework: '';
+  public infos_homework: ''
+
 
   constructor(
     public trans: TranslateService,
@@ -46,6 +45,18 @@ export class NewHomeWorkPage implements OnInit {
 
   //Create new HomeWork
   createNewHomeWork() {
+    var homeworksRef = firebase.firestore().collection("homeworks")
+
+    homeworksRef.doc().set({
+      name_homework: this.name_homework,
+      type_homework: this.type_homework,
+      givedate_homework: this.today,
+      fordate_homework: this.fordate_homework,
+      infos_homework: this.infos_homework
+    });
+
+    this.presentToast();
+    this.cancel();
 
   }
 
@@ -55,31 +66,6 @@ export class NewHomeWorkPage implements OnInit {
       duration: 2000
     });
     toast.present();
-  }
-
-  async submit() {
-
-    let oldHomework: any[] = JSON.parse(await this.storage.get('homework'));
-    if (oldHomework !== null) {
-      oldHomework.push(this.newHomeWork);
-    } else {
-      oldHomework = [];
-      oldHomework.push(this.newHomeWork);
-    }
-
-    await this.storage.set('homework', JSON.stringify(oldHomework))
-      .then(homework => {
-        console.log(homework);
-      })
-      .catch(error => {
-        console.error(error);
-      })
-      .finally(() => {
-        this.presentToast();
-        this.cancel();
-      });
-    let homework: any[] = JSON.parse(await this.storage.get('homework'));
-    this.firebase.addOnFireBase(homework);
   }
 
 }
