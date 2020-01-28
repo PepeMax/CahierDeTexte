@@ -6,12 +6,11 @@
 
 <ion-content>
 
-  <ion-button (click)='getHomeWork()'>test</ion-button>
-
   <ion-grid>
     <ion-row>
       <ion-item>
-        <ion-label>{{'COMMON.SUBJECT' | translate}}<ion-text color="danger">{{'COMMON.STARS' | translate}}</ion-text></ion-label>
+        <ion-label>{{'COMMON.SUBJECT' | translate}}<ion-text color="danger">{{'COMMON.STARS' | translate}}</ion-text>
+        </ion-label>
         <ion-select [(ngModel)]="name_homework" required="true" okText="Valider" cancelText="Annuler">
           <ion-select-option value="si1">{{'NEWHOMEWORK.SI1' | translate}}</ion-select-option>
           <ion-select-option value="si2">{{'NEWHOMEWORK.SI2' | translate}}</ion-select-option>
@@ -49,8 +48,8 @@
         <ion-label>{{'NEWHOMEWORK.TO_DO_DATE' | translate}}<ion-text color="danger">{{'COMMON.STARS' | translate}}
           </ion-text>
         </ion-label>
-        <ion-datetime [(ngModel)]="fordate_homework" placeholder="02 Septembre 2019"  min="2019-09-02" max="2021-12-31" 
-        displayFormat="DD MMMM YYYY" [value]="today"
+        <ion-datetime [(ngModel)]="fordate_homework" placeholder="02 Septembre 2019" min="2019-09-02" max="2021-12-31"
+          displayFormat="DD MMMM YYYY" [value]="today"
           monthNames="Janvier, Février, Mars, Avril, Mai, Juin, Juillet, Août, Septembre, Octobre, Novembre, Décembre">
         </ion-datetime>
       </ion-item>
