@@ -9,10 +9,10 @@ describe('NewHomeWorkPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewHomeWorkPage ],
+      declarations: [NewHomeWorkPage],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

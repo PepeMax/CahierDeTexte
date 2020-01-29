@@ -29,7 +29,6 @@ import * as firebase from 'firebase';
 
 import { HandleErrorService } from './services/handle-error.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthGuardService } from './services/auth-guard.service';
 import { ComponentsModule } from './components/components.module';
 import { SlidesPage } from './pages/slides/slides.page';
 
@@ -63,12 +62,11 @@ firebase.initializeApp(environment.firebase);
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     DocumentViewer,
     File,
     FileOpener,
     AuthService,
-    AuthGuardService,
     HandleErrorService,
     SlidesPage,
     CallNumber,
@@ -76,4 +74,4 @@ firebase.initializeApp(environment.firebase);
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

@@ -7,7 +7,8 @@
         {{'CHECKCODE.AUTH_CODE' | translate}}
       </h2>
 
-      <ion-label *ngIf="!lastChance">{{'CHECKCODE.!LAST_CHANCE1' | translate}}{{nbChances}}{{'CHECKCODE.CHANCE' | translate}}</ion-label>
+      <ion-label *ngIf="!lastChance">
+        {{'CHECKCODE.!LAST_CHANCE1' | translate}}{{nbChances}}{{'CHECKCODE.CHANCE' | translate}}</ion-label>
       <ion-label *ngIf="lastChance">{{'CHECKCODE.LAST_CHANCE' | translate}}</ion-label>
       <br><br>
       <ion-label>{{'CHECKCODE.TEXT' | translate}}</ion-label>

@@ -28,7 +28,7 @@ export class SignupComponent implements OnInit {
     private modalCtrl: ModalController,
     private storage: Storage,
     private handleErr: HandleErrorService,
-  ) {}
+  ) { }
 
   passwordType: string = 'password';
   passwordIcon: string = 'eye-off';
@@ -36,7 +36,7 @@ export class SignupComponent implements OnInit {
   hideShowPassword() {
     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
     this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
-}
+  }
 
   ngOnInit() {
     this.initForms();

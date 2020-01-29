@@ -16,11 +16,13 @@ import * as firebase from 'firebase/app';
 })
 export class SettingsPage implements OnInit {
 
+  //User
   public username;
-  public status;
+  public status: Boolean;
+
   public buttonClickedNewND: boolean = false;
+
   public darkMode: boolean;
-  public isProf: boolean;
 
   constructor(
     public navCtrl: NavController,
@@ -36,9 +38,6 @@ export class SettingsPage implements OnInit {
     const db = firebase.firestore();
 
     this.storage.get('valueDarkMode').then(value => this.darkMode = value);
-    this.username = this.authService.getUserName();
-    
-    this.isProf = await this.storage.get('status');
 
     auth.onAuthStateChanged(user => {
       if (user) {
@@ -74,72 +73,6 @@ export class SettingsPage implements OnInit {
     toast.present();
   }
 
-  getUserName() {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        firebase.firestore().collection('users').doc(user.uid).get()
-          .then(doc => {
-            return doc.data().name;
-          });
-      }
-    });
-  }
-
-  getEmail() {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        firebase.firestore().collection('users').doc(user.uid).get()
-          .then(doc => {
-            return doc.data().email;
-          });
-      }
-    });
-  }
-  
-  getStatus() {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        firebase.firestore().collection('users').doc(user.uid).get()
-          .then(doc => {
-            return doc.data().status;
-          });
-      }
-    });
-  }
-
-  public async changeName() {
-    const alert = await this.alertController.create({
-      header: this.trans.instant('SETTINGS.CHANGE_ND'),
-      subHeader: this.trans.instant('SETTINGS.CHANGE_ND_SUB_HEADER') + this.username,
-      inputs: [
-        {
-          name: 'username',
-          type: 'text',
-          placeholder: this.trans.instant('SETTINGS.USERNAME')
-        }
-      ],
-      buttons: [
-        {
-          text: this.trans.instant('COMMON.CANCEL'),
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: () => {
-          }
-        }, {
-          text: this.trans.instant('COMMON.OK'),
-          handler: (alertData) => {
-            this.authService.updateProfile(alertData.username)
-              .then(newuser => {
-                this.username = newuser;
-                console.log(alertData.username)
-              });
-          }
-        }
-      ]
-    });
-    await alert.present();
-  }
-
   public async resetPassword() {
     const alert = await this.alertController.create({
       header: this.trans.instant('LOGIN.CHANGE_PASSWORD'),
@@ -167,5 +100,5 @@ export class SettingsPage implements OnInit {
     });
     await alert.present();
   }
-
 }
+

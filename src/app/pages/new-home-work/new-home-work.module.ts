@@ -25,4 +25,4 @@ const routes: Routes = [
   ],
   declarations: [NewHomeWorkPage]
 })
-export class NewHomeWorkPageModule {}
+export class NewHomeWorkPageModule { }

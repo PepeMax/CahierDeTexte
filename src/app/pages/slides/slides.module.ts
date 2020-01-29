@@ -26,4 +26,4 @@ const routes: Routes = [
   ],
   declarations: [SlidesPage]
 })
-export class SlidesPageModule {}
+export class SlidesPageModule { }

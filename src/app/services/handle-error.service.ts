@@ -56,7 +56,7 @@ export class HandleErrorService {
         return this.trans.instant('ERRORS.ERROR_TENANT_ID_MISMATCH')
         break
       }
-      
+
       // case "auth/null-user": {
       //   return this.trans.instant('ERROR.ERROR_PASSWORD_INVALID')
       //   break
@@ -87,7 +87,7 @@ export class HandleErrorService {
       // }
 
       default: {
-          return this.trans.instant('ERRORS.ERROR_UNKOWN')
+        return this.trans.instant('ERRORS.ERROR_UNKOWN')
         break;
       }
     }

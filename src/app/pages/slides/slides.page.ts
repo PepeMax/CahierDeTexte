@@ -3,7 +3,7 @@ import { ComponentsService } from 'src/app/services/components.service';
 import { NavController, ModalController } from '@ionic/angular';
 import { SignupComponent } from 'src/app/components/auth/signup/signup.component';
 import { TranslateService } from '@ngx-translate/core';
-import { IonSlides} from '@ionic/angular';
+import { IonSlides } from '@ionic/angular';
 
 @Component({
   selector: 'app-slides',
@@ -11,8 +11,8 @@ import { IonSlides} from '@ionic/angular';
   styleUrls: ['./slides.page.scss'],
 })
 export class SlidesPage implements OnInit {
-  
-  @ViewChild('Slide',  { static: true }) startSlide: IonSlides;
+
+  @ViewChild('Slide', { static: true }) startSlide: IonSlides;
 
   constructor(
     private navCtrl: NavController,
@@ -62,10 +62,10 @@ export class SlidesPage implements OnInit {
             } else if (rtl) {
               rotateY = -rotateY;
             }
-    
-             $slideEl[0].style.zIndex = -Math.abs(Math.round(progress)) + slides.length;
-    
-             if (swiper.params.flipEffect.slideShadows) {
+
+            $slideEl[0].style.zIndex = -Math.abs(Math.round(progress)) + slides.length;
+
+            if (swiper.params.flipEffect.slideShadows) {
               // Set shadows
               let shadowBefore = swiper.isHorizontal() ? $slideEl.find('.swiper-slide-shadow-left') : $slideEl.find('.swiper-slide-shadow-top');
               let shadowAfter = swiper.isHorizontal() ? $slideEl.find('.swiper-slide-shadow-right') : $slideEl.find('.swiper-slide-shadow-bottom');
@@ -97,7 +97,7 @@ export class SlidesPage implements OnInit {
             slides.eq(activeIndex).transitionEnd(function onTransitionEnd() {
               if (eventTriggered) return;
               if (!swiper || swiper.destroyed) return;
-    
+
               eventTriggered = true;
               swiper.animating = false;
               const triggerEvents = ['webkitTransitionEnd', 'transitionend'];
@@ -128,7 +128,7 @@ export class SlidesPage implements OnInit {
     modalCreateUser.present();
   }
 
-  goRegister(){
+  goRegister() {
     this.navCtrl.navigateRoot('/login');
   }
 

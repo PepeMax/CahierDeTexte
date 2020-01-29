@@ -29,7 +29,7 @@ export class SigninProfComponent implements OnInit {
     private handleError: HandleErrorService,
     private modalCtrl: ModalController,
     private storage: Storage,
-  ) {}
+  ) { }
 
   passwordType: string = 'password';
   passwordIcon: string = 'eye-off';
@@ -37,7 +37,7 @@ export class SigninProfComponent implements OnInit {
   hideShowPassword() {
     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
     this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
-}
+  }
 
   ngOnInit() {
     this.initForms();
@@ -50,8 +50,6 @@ export class SigninProfComponent implements OnInit {
     });
   }
 
-  
-  
   async onSubmit() {
     const email = this.signinForm.get('email').value;
     const password = this.signinForm.get('password').value;

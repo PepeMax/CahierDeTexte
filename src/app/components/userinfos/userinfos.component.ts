@@ -41,7 +41,7 @@ export class UserinfosComponent implements OnInit {
       spinner: "crescent",
     });
     loading.present();
-    
+
     // this.authService.createNewUser(email, password)
     //   .then(() => {
     //     this.authService.signInUser(email, password)

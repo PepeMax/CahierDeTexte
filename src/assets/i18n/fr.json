@@ -21,8 +21,8 @@
         "HOME_PAGE": "Page d'accueil",
         "SIGNIN": "Se connecter",
         "SIGNUP": "S'enregistrer",
-        "CONNECT":"Connexion",
-        "SURNAME":"Votre surnom :"
+        "CONNECT": "Connexion",
+        "SURNAME": "Votre surnom :"
     },
     "HOMEWORK": {
         "TITLE": "Y'à quoi à faire...",
@@ -36,10 +36,10 @@
         "DISCONNECT": "Déconnexion",
         "CONFIRM_DISCONNECT": "Voulez-vous vraiment vous déconnecter ?",
         "CALL": "Appeler",
-        "CALL_CFA" : "Contacter le CFA",
-        "CONFIRM_CALL_CFA" : "Voulez-vous vraiment appeler le CFA ?",
-        "EIFFEL" : "Gustave Eiffel",
-        "PAREO" : "Net Y Pareo",
+        "CALL_CFA": "Contacter le CFA",
+        "CONFIRM_CALL_CFA": "Voulez-vous vraiment appeler le CFA ?",
+        "EIFFEL": "Gustave Eiffel",
+        "PAREO": "Net Y Pareo",
         "LINK": "Liens utiles"
     },
     "NEWHOMEWORK": {
@@ -74,7 +74,7 @@
         "CREATE_ACCOUNT": "Créer un compte",
         "CREATE_MY_ACCOUNT": "Créer mon compte",
         "H4": "Vous êtes :",
-        "NAME":"Votre nom :",
+        "NAME": "Votre nom :",
         "STUDENT": "Élève",
         "PROF": "Professeur",
         "LOGPROF": "Connexion professeur",
@@ -123,11 +123,11 @@
     "CHECKCODE": {
         "AUTH_CODE": "Code d'authentification",
         "LAST_CHANCE": "ATTENTION il vous reste seulement 1 essai.",
-        "!LAST_CHANCE1":"Il vous reste ",
-        "CHANCE":" chances :",
-        "TEXT":"Renseigner le code d'authenfication donné par l'administrateur",
-        "SELECT_MATTER":"Sélectionner votre matière :",
-        "TEXT2":"Attention, ne vous trompez pas c'est votre dernier mot !"
+        "!LAST_CHANCE1": "Il vous reste ",
+        "CHANCE": " chances :",
+        "TEXT": "Renseigner le code d'authenfication donné par l'administrateur",
+        "SELECT_MATTER": "Sélectionner votre matière :",
+        "TEXT2": "Attention, ne vous trompez pas c'est votre dernier mot !"
     },
     "ERRORS": {
         "ERROR_MESSAGE": "\nVeuillez réessayer",

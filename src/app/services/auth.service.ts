@@ -6,7 +6,6 @@ import { HandleErrorService } from './handle-error.service';
 import { AlertController, NavController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -30,28 +29,6 @@ export class AuthService {
         firebase.firestore().collection('users').doc(user.uid).get()
           .then(doc => {
             return doc.data().name;
-          });
-      }
-    });
-  }
-
-  getEmail() {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        firebase.firestore().collection('users').doc(user.uid).get()
-          .then(doc => {
-            return doc.data().email;
-          });
-      }
-    });
-  }
-  
-  getStatus() {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        firebase.firestore().collection('users').doc(user.uid).get()
-          .then(doc => {
-            return doc.data().status;
           });
       }
     });
@@ -92,10 +69,10 @@ export class AuthService {
 
   //Change user's settings
 
-  resetPassword(mail) {
-    firebase.auth().sendPasswordResetEmail(mail)
+  resetPassword(password) {
+    firebase.auth().currentUser.updatePassword(password)
       .then(() => {
-        console.log("envoyé");
+        console.log("reset");
       })
       .catch((error) => {
         console.log(this.handleError.handleError(error))
@@ -105,11 +82,16 @@ export class AuthService {
   async updateProfile(newUser): Promise<any> {
     var user = firebase.auth().currentUser;
 
-    firebase.firestore().collection('users').doc(user.uid).set({
-      email: this.getEmail,
-      name: newUser,
-      status: this.getStatus,
+    let email = await this.storage.get("email");
+    // let email2 = JSON.parse(this.storage.get("email"));
 
+    console.log(email);
+    // console.log(email2);
+
+    firebase.firestore().collection('users').doc(user.uid).set({
+      email: email,
+      name: newUser,
+      status: this.storage.get("status"),
     }).then(() => {
       return newUser;
     }).catch(async err => {

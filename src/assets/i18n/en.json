@@ -21,8 +21,8 @@
         "HOME_PAGE": "Home page",
         "SIGNIN": "Log in",
         "SIGNUP": "Sign up",
-        "CONNECT":"Connection",
-        "SURNAME":"Your surname :"
+        "CONNECT": "Connection",
+        "SURNAME": "Your surname :"
     },
     "HOMEWORK": {
         "TITLE": "What's there to do....",
@@ -36,10 +36,10 @@
         "DISCONNECT": "Log out",
         "CONFIRM_DISCONNECT": "Do you really want to log out?",
         "CALL": "Call",
-        "CALL_CFA" : "Contact the CFA",
-        "CONFIRM_CALL_CFA" : "Do you really want to call the CFA ?",
-        "EIFFEL" : "Gustave Eiffel",
-        "PAREO" : "Net Y Pareo",
+        "CALL_CFA": "Contact the CFA",
+        "CONFIRM_CALL_CFA": "Do you really want to call the CFA ?",
+        "EIFFEL": "Gustave Eiffel",
+        "PAREO": "Net Y Pareo",
         "LINK": "Useful links"
     },
     "NEWHOMEWORK": {
@@ -72,9 +72,9 @@
         "CONNECT_STUD": "Connect yourself !",
         "CONNECT_PROF": "Log in :",
         "CREATE_ACCOUNT": "Create an account",
-        "CREATE_MY_ACCOUNT": "Create my account",   
+        "CREATE_MY_ACCOUNT": "Create my account",
         "H4": "You are :",
-        "NAME":"Your name :",
+        "NAME": "Your name :",
         "STUDENT": "Student",
         "PROF": "Professor",
         "LOGPROF": "Professor login",
@@ -123,11 +123,11 @@
     "CHECKCODE": {
         "AUTH_CODE": "Authentication code",
         "LAST_CHANCE": "CAUTION you only have 1 more try.",
-        "!LAST_CHANCE1":"You have ",
-        "CHANCE":"more chances :",
-        "TEXT":"Enter the authenfication code given by the administrator",
-        "SELECT_MATTER":"Select your subject :",
-        "TEXT2":"Be careful, don't be mistaken, it's your last word !"
+        "!LAST_CHANCE1": "You have ",
+        "CHANCE": "more chances :",
+        "TEXT": "Enter the authenfication code given by the administrator",
+        "SELECT_MATTER": "Select your subject :",
+        "TEXT2": "Be careful, don't be mistaken, it's your last word !"
     },
     "ERRORS": {
         "ERROR_MESSAGE": "\nPlease try again",
