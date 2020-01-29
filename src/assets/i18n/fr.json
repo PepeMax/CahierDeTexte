@@ -119,7 +119,9 @@
         "TEXT2": "L'application est encore en dévellopement, seule les fonctionnalités les plus importantes sont finis.",
         "TEXT2.2": "Il reste quelques paramètres et fonctions à ajouter mais pour l'instant elle fait le boulot voulu.",
         "TEXT2.3": "Swipe à droite pour créer ton compte",
-        "TEXT3": "C'est la dernière étape pour enfin avoir les devoirs ! Ou en mettre..."
+        "TEXT3": "C'est la dernière étape pour enfin avoir les devoirs ! Ou en mettre...",
+        "TEXT3.2": "!!! Attention lors de la création de compte !!!",
+        "TEXT3.3": "Il ne faut pas d'espace à la fin de l'adresse email."
     },
     "CHECKCODE": {
         "AUTH_CODE": "Code d'authentification",
