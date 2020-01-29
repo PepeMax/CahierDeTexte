@@ -26,4 +26,4 @@ const routes: Routes = [
   ],
   declarations: [HomeWorkPage]
 })
-export class HomeWorkPageModule {}
+export class HomeWorkPageModule { }

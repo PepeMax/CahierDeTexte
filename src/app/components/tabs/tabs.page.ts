@@ -13,7 +13,7 @@ export class TabsPage {
 
   constructor(
     private storage: Storage,
-  ) {}
+  ) { }
 
   async ngOnInit() {
     this.isProf = await this.storage.get('status');

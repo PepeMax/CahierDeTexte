@@ -17,13 +17,15 @@
 
         <div class="form-group">
           <ion-label for="password">{{'LOGIN.PASSWORD' | translate }}</ion-label>
-          <ion-input [type]="passwordType" id="password" class="form-control" formControlName="password" clearOnEdit="false"></ion-input>
+          <ion-input [type]="passwordType" id="password" class="form-control" formControlName="password"
+            clearOnEdit="false"></ion-input>
           <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
         </div>
 
         <br>
 
-        <ion-button class="btn btn-primary" type="submit" [disabled]="signinForm.invalid">{{'COMMON.SIGNIN' | translate }}</ion-button>
+        <ion-button class="btn btn-primary" type="submit" [disabled]="signinForm.invalid">
+          {{'COMMON.SIGNIN' | translate }}</ion-button>
 
       </form>
 

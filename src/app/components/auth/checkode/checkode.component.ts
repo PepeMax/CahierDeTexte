@@ -109,7 +109,6 @@ export class CheckodeComponent implements OnInit {
       .then(cred => {
         return db.collection('users').doc(cred.user.uid).set({
           email: email,
-          password: password,
           name: name,
           status: status
         }).then(() => {

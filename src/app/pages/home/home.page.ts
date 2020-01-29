@@ -22,7 +22,7 @@ export class HomePage implements OnInit {
     public alertController: AlertController,
     private modalCtrl: ModalController,
     private callNumber: CallNumber,
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.modalCtrl.dismiss("modalCreateUser");

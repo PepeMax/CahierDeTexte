@@ -25,4 +25,4 @@ const routes: Routes = [
   ],
   declarations: [PlanningPage]
 })
-export class PlanningPageModule {}
+export class PlanningPageModule { }

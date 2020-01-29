@@ -26,4 +26,4 @@ const routes: Routes = [
   ],
   declarations: [HomeloginPage]
 })
-export class HomeloginPageModule {}
+export class HomeloginPageModule { }

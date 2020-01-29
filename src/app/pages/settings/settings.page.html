@@ -1,6 +1,5 @@
 <ion-header no-border>
   <ion-toolbar>
-    <!-- <ion-button fill="clear" (click)=goAdmin()></ion-button> -->
     <ion-title>{{'SETTINGS.TITLE' | translate}}</ion-title>
     <ion-button color="dark" slot="start" fill="clear" (click)="goBack()">
       <ion-icon name="arrow-dropleft"></ion-icon>
@@ -22,8 +21,8 @@
     </ion-row>
     <br>
     <ion-row justify-content-center>
-      <p *ngIf="!isprof">{{'SETTINGS.STATUS_STUD' | translate}}</p>
-      <p *ngIf="isprof">{{'SETTINGS.STATUS_PROF' | translate}}</p>
+      <p *ngIf="!status">{{'SETTINGS.STATUS_STUD' | translate}}</p>
+      <p *ngIf="status">{{'SETTINGS.STATUS_PROF' | translate}}</p>
     </ion-row>
     <ion-row justify-content-center>
       <h4>{{username}}</h4>
@@ -55,13 +54,14 @@
         </ion-select>
       </ion-item>
     </ion-row>
-    <ion-row >
+    <ion-row>
       <ion-item class="item-select">
         <ion-label>{{'SETTINGS.NIGHT' | translate}}</ion-label>
-        <ion-toggle *ngIf="darkMode" [(ngModel)]="darkMode" (ionChange)="changeDarkMode()" checked color="dark"></ion-toggle>
+        <ion-toggle *ngIf="darkMode" [(ngModel)]="darkMode" (ionChange)="changeDarkMode()" checked color="dark">
+        </ion-toggle>
         <ion-toggle *ngIf="!darkMode" [(ngModel)]="darkMode" (ionChange)="changeDarkMode()" color="dark"></ion-toggle>
       </ion-item>
     </ion-row>
   </ion-grid>
- 
+
 </ion-content>

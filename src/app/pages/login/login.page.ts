@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ToastController, AlertController, LoadingController, ModalController,  } from '@ionic/angular';
+import { NavController, ToastController, AlertController, LoadingController, ModalController, } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
@@ -95,7 +95,7 @@ export class LoginPage implements OnInit {
     await alert.present();
   }
 
-  goRegister(){
+  goRegister() {
     this.navCtrl.navigateRoot('/slides');
   }
 
