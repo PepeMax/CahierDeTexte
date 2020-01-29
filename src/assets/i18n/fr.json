@@ -111,13 +111,14 @@
     "SLIDES": {
         "TITLE": "Ça slide",
         "TITLE1": "Pourquoi une application ?",
-        "TITLE2": "TITRE SLIDE 2",
+        "TITLE2": "Appli en Dev",
         "TITLE3": "Créer un compte",
         "TEXT1": "Pour une raison : avoir les devoirs sur une platforme que tout le monde utilise.",
         "TEXT1.2": "Ça fait un projet, en plus !",
-        "TEXT1.3": "Swipe à droite pour créer ton compte",
-        "TEXT2": "TEXTE SLIDE 2",
-        "TEXT2.2": "TEXTE SLIDE 2.2",
+        "TEXT1.3": "Swipe à droite",
+        "TEXT2": "L'application est encore en dévellopement, seule les fonctionnalités les plus importantes sont finis.",
+        "TEXT2.2": "Il reste quelques paramètres et fonctions à ajouter mais pour l'instant elle fait le boulot voulu.",
+        "TEXT2.3": "Swipe à droite pour créer ton compte",
         "TEXT3": "C'est la dernière étape pour enfin avoir les devoirs ! Ou en mettre..."
     },
     "CHECKCODE": {
