@@ -6,6 +6,8 @@ import { HandleErrorService } from './handle-error.service';
 import { AlertController, NavController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 
+import { ComponentsService } from 'src/app/services/components.service'
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +18,8 @@ export class AuthService {
     public handleError: HandleErrorService,
     public alertController: AlertController,
     public trans: TranslateService,
-    public navCtrl: NavController
+    public navCtrl: NavController,
+    public components : ComponentsService
   ) { }
 
   public erreur;
@@ -72,11 +75,21 @@ export class AuthService {
   resetPassword(password) {
     firebase.auth().currentUser.updatePassword(password)
       .then(() => {
-        console.log("reset");
+        this.components.createToast(this.trans.instant("COMMON.RESET_PASSWORD_SUCCESSFUL"));
       })
       .catch((error) => {
-        console.log(this.handleError.handleError(error))
+        this.components.createToast(this.trans.instant("COMMON.RESET_PASSWORD_FAIL"));
       });
+  }
+
+  resetPasswordWithEmail(email) {
+    firebase.auth().sendPasswordResetEmail(email)
+    .then(() => {
+      this.components.createToast(this.trans.instant("COMMON.RESET_PASSWORD_WITH_EMAIL"));
+    })
+    .catch((error) => {
+      this.components.createToast(this.trans.instant("COMMON.RESET_PASSWORD_FAIL"))
+    });
   }
 
   async updateProfile(newUser): Promise<any> {

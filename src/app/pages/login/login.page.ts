@@ -87,7 +87,7 @@ export class LoginPage implements OnInit {
         }, {
           text: this.trans.instant('COMMON.OK'),
           handler: (alertData) => {
-            this.authService.resetPassword(alertData.email)
+            this.authService.resetPasswordWithEmail(alertData.email)
           }
         }
       ]

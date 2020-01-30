@@ -22,7 +22,10 @@
         "SIGNIN": "Se connecter",
         "SIGNUP": "S'enregistrer",
         "CONNECT": "Connexion",
-        "SURNAME": "Votre surnom :"
+        "SURNAME": "Votre surnom :",
+        "RESET_PASSWORD_WITH_EMAIL": "Un mail pour changer votre mot de passe vient de vous être envoyé.",
+        "RESET_PASSWORD_SUCCESSFUL": "Votre mot de passe à bien était changé",
+        "RESET_PASSWORD_FAIL": "La réinitialisation de votre mot de passe à échoué"
     },
     "HOMEWORK": {
         "TITLE": "Y'à quoi à faire...",
@@ -116,12 +119,12 @@
         "TEXT1": "Pour une raison : avoir les devoirs sur une platforme que tout le monde utilise.",
         "TEXT1.2": "Ça fait un projet, en plus !",
         "TEXT1.3": "Swipe à droite",
-        "TEXT2": "L'application est encore en dévellopement, seule les fonctionnalités les plus importantes sont finis.",
+        "TEXT2": "L'application est encore en développement, seules les fonctionnalités les plus importantes sont finies.",
         "TEXT2.2": "Il reste quelques paramètres et fonctions à ajouter mais pour l'instant elle fait le boulot voulu.",
         "TEXT2.3": "Swipe à droite pour créer ton compte",
         "TEXT3": "C'est la dernière étape pour enfin avoir les devoirs ! Ou en mettre...",
-        "TEXT3.2": "!!! Attention lors de la création de compte !!!",
-        "TEXT3.3": "Il ne faut pas d'espace à la fin de l'adresse email."
+        "TEXT3.2": "!!! Attention !!!",
+        "TEXT3.3": "Pas d'espace à la fin de l'adresse email."
     },
     "CHECKCODE": {
         "AUTH_CODE": "Code d'authentification",
