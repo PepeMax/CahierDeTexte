@@ -16,7 +16,6 @@
     <ion-card-content>
 
       <ion-list>
-        <!-- <ng-template></ng-template> -->
         <div [ngSwitch]="homework.name_homework">
           <p *ngSwitchCase="'si1'">{{'COMMON.SUBJECT' | translate}} {{'NEWHOMEWORK.SI1' | translate}}</p>
           <p *ngSwitchCase="'si2'">{{'COMMON.SUBJECT' | translate}} {{'NEWHOMEWORK.SI2' | translate}}</p>
@@ -27,10 +26,9 @@
           <p *ngSwitchCase="'emd1'">{{'COMMON.SUBJECT' | translate}} {{'NEWHOMEWORK.EMD1' | translate}}</p>
           <p *ngSwitchCase="'emd2'">{{'COMMON.SUBJECT' | translate}} {{'NEWHOMEWORK.EMD2' | translate}}</p>
           <p *ngSwitchCase="'mathsalgo'">{{'COMMON.SUBJECT' | translate}} {{'NEWHOMEWORK.MATHSALGO' | translate}}</p>
-          <p *ngSwitchCase="'maths'">{{'COMMON.SUBJECT' | translate}} {{'NEWHOMEWORK.ANGLAIS' | translate}}</p>
-          <p *ngSwitchCase="'anglais'">{{'COMMON.SUBJECT' | translate}} {{'NEWHOMEWORK.FRANCAIS' | translate}}</p>
-          <p *ngSwitchCase="'français'">{{'COMMON.SUBJECT' | translate}} {{'NEWHOMEWORK.' | translate}}</p>
-          <p *ngSwitchDefault>{{homework.name_homework}}</p>
+          <p *ngSwitchCase="'maths'">{{'COMMON.SUBJECT' | translate}} {{'NEWHOMEWORK.MATHS' | translate}}</p>
+          <p *ngSwitchCase="'anglais'">{{'COMMON.SUBJECT' | translate}} {{'NEWHOMEWORK.ANGLAIS' | translate}}</p>
+          <p *ngSwitchCase="'français'">{{'COMMON.SUBJECT' | translate}} {{'NEWHOMEWORK.FRANCAIS' | translate}}</p>
         </div>
 
         <p>{{'HOMEWORK.TYPE' | translate}} {{homework.type_homework}}</p>
