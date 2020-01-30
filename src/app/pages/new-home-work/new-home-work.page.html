@@ -5,7 +5,6 @@
 </ion-header>
 
 <ion-content>
-
   <ion-grid>
     <ion-row>
       <ion-item>
@@ -48,7 +47,7 @@
         <ion-label>{{'NEWHOMEWORK.TO_DO_DATE' | translate}}<ion-text color="danger">{{'COMMON.STARS' | translate}}
           </ion-text>
         </ion-label>
-        <ion-datetime [(ngModel)]="fordate_homework" placeholder="02 Septembre 2019" min="2019-09-02" max="2021-12-31"
+        <ion-datetime [(ngModel)]="fordate_homework" placeholder="{{'COMMON.FUNNY_DATE' | translate}}" min={{today}} max="2021-12-31"
           displayFormat="DD MMMM YYYY" [value]="today"
           monthNames="Janvier, Février, Mars, Avril, Mai, Juin, Juillet, Août, Septembre, Octobre, Novembre, Décembre">
         </ion-datetime>
@@ -65,7 +64,9 @@
     </ion-row>
   </ion-grid>
 
-
+  <br>
+  <br>
+  
   <div class="new_events">
     <ion-button color="danger" (click)=cancel()>{{'COMMON.CANCEL' | translate}}</ion-button>
     <ion-button color="success" (click)="createNewHomeWork()">{{'NEWHOMEWORK.NEW' | translate}}</ion-button>

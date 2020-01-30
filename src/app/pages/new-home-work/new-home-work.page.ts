@@ -13,14 +13,13 @@ import * as firebase from 'firebase';
 export class NewHomeWorkPage implements OnInit {
 
   today = new Date().toISOString();
-  public homeworks;
 
+  public homeworks;
 
   public name_homework: '';
   public type_homework: '';
   public fordate_homework: '';
   public infos_homework: ''
-
 
   constructor(
     public trans: TranslateService,
@@ -28,6 +27,7 @@ export class NewHomeWorkPage implements OnInit {
     public toastController: ToastController,
     public storage: Storage,
     public firebase: FirebaseService,
+
   ) { }
 
   ngOnInit() {
@@ -55,7 +55,6 @@ export class NewHomeWorkPage implements OnInit {
       fordate_homework: this.fordate_homework,
       infos_homework: this.infos_homework
     });
-
     this.presentToast();
     this.cancel();
   }
