@@ -10,6 +10,7 @@ import { Storage } from '@ionic/storage';
 export class TabsPage {
 
   public isProf: boolean;
+  public badge = 5;
 
   constructor(
     private storage: Storage,
@@ -17,6 +18,7 @@ export class TabsPage {
 
   async ngOnInit() {
     this.isProf = await this.storage.get('status');
+    this.badge = await this.storage.get('badge');
   }
 
 }

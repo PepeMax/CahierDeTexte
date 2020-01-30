@@ -6,6 +6,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { AlertController } from '@ionic/angular';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { NewHomeWorkPage } from '../new-home-work/new-home-work.page';
+import { HomeWorkPage } from '../home-work/home-work.page';
 
 @Component({
   selector: 'app-home',
@@ -22,9 +23,11 @@ export class HomePage implements OnInit {
     public alertController: AlertController,
     private modalCtrl: ModalController,
     private callNumber: CallNumber,
+    private homeworks: HomeWorkPage
   ) { }
 
   ngOnInit() {
+    this.homeworks.getHomeworks();
     this.modalCtrl.dismiss("modalCreateUser");
   }
 

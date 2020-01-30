@@ -31,6 +31,7 @@ import { HandleErrorService } from './services/handle-error.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComponentsModule } from './components/components.module';
 import { SlidesPage } from './pages/slides/slides.page';
+import { HomeWorkPage } from './pages/home-work/home-work.page';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -71,6 +72,7 @@ firebase.initializeApp(environment.firebase);
     SlidesPage,
     CallNumber,
     Keyboard,
+    HomeWorkPage,
   ],
   bootstrap: [AppComponent]
 })

@@ -54,9 +54,9 @@
     <ion-row>
       <ion-item class="item-select">
         <ion-label>{{'SETTINGS.NIGHT' | translate}}</ion-label>
-        <ion-toggle *ngIf="darkMode" [(ngModel)]="darkMode" (ionChange)="changeDarkMode()" checked color="dark">
+        <ion-toggle *ngIf="darkMode" [(ngModel)]="darkMode" (ionChange)="changeDarkMode()" checked >
         </ion-toggle>
-        <ion-toggle *ngIf="!darkMode" [(ngModel)]="darkMode" (ionChange)="changeDarkMode()" color="dark"></ion-toggle>
+        <ion-toggle *ngIf="!darkMode" [(ngModel)]="darkMode" (ionChange)="changeDarkMode()"></ion-toggle>
       </ion-item>
     </ion-row>
   </ion-grid>
