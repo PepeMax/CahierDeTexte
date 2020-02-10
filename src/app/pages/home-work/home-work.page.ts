@@ -36,11 +36,6 @@ export class HomeWorkPage implements OnInit {
     this.getHomeworks();
   }
 
-  public buttonClickedgmod: boolean = false;
-  public onButtonClickgmod() {
-    this.buttonClickedgmod = !this.buttonClickedgmod;
-  }
-
   async getHomeworks() {
     firebase.firestore().collection("homeworks").get()
       .then((querySnapshot) => {
