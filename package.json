@@ -41,7 +41,7 @@
     "cordova-sqlite-storage": "^3.4.1",
     "core-js": "^2.6.11",
     "firebase": "^7.7.0",
-    "ionic": "^5.4.16",
+    "mx.ferreyra.callnumber": "0.0.2",
     "rxjs": "^6.5.4",
     "serialize-javascript": "^2.1.2",
     "tslib": "^1.9.0",
@@ -96,7 +96,8 @@
       "cordova-plugin-file-opener2": {
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
       },
-      "mx.ferreyra.callnumber": {}
+      "mx.ferreyra.callnumber": {},
+      "call-number": {}
     },
     "platforms": [
       "android"
