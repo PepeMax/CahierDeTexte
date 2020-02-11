@@ -112,7 +112,7 @@
         "STATUS_PROF": "Vous êtes le professeur :",
         "USERNAME": "Nom d'utilisateur",
         "NEW_PASSWORD": "Nouveau mot de passe",
-        "CONFIRM": "Voulez-vous appliquer les modifications ?"
+        "EMAIL_USER": "Adresses mail des utilisateurs"
     },
     "SLIDES": {
         "TITLE": "Ça slide",

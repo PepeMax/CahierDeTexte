@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { enableDarkTheme } from 'src/app/components/helpers/utils';
 
 import * as firebase from 'firebase/app';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-settings',
@@ -20,6 +21,8 @@ export class SettingsPage implements OnInit {
   public username;
   public status: Boolean;
 
+  public language;
+
   public buttonClickedNewND: boolean = false;
 
   public darkMode: boolean;
@@ -31,9 +34,11 @@ export class SettingsPage implements OnInit {
     public storage: Storage,
     public trans: TranslateService,
     private authService: AuthService,
+    private app: AppComponent,
   ) { }
 
   async ngOnInit() {
+    this.language = await this.storage.get('language');
     const auth = firebase.auth();
     const db = firebase.firestore();
 
@@ -89,6 +94,10 @@ export class SettingsPage implements OnInit {
 
   navigateEmailUser() {
     this.navCtrl.navigateForward('/email-user')
+  }
+
+  changeLanguage() {
+    this.app.changeLanguage(this.language);
   }
 
 }

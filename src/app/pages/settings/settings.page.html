@@ -34,7 +34,7 @@
     <ion-row>
       <ion-item class="item-select">
         <ion-label>{{'SETTINGS.LANGUAGE' | translate}}</ion-label>
-        <ion-select interface="action-sheet" cancelText="Annuler" placeholder="{{'SETTINGS.FR_EN' | translate}}">
+        <ion-select (ionChange)="changeLanguage(event)" [(ngModel)]="language" interface="action-sheet" cancelText="Annuler" placeholder="{{'SETTINGS.FR_EN' | translate}}">
           <ion-select-option value="fr">{{'SETTINGS.FR' | translate}}</ion-select-option>
           <ion-select-option value="en">{{'SETTINGS.EN' | translate}}</ion-select-option>
         </ion-select>
@@ -48,15 +48,16 @@
         <ion-toggle *ngIf="!darkMode" [(ngModel)]="darkMode" (ionChange)="changeDarkMode()"></ion-toggle>
       </ion-item>
     </ion-row>
-    <ion-row>
+    <!-- <ion-row>
       <ion-item class="item-select">
         <ion-label>{{'SETTINGS.NOTIF' | translate}}</ion-label>
         <ion-toggle></ion-toggle>
       </ion-item>
-    </ion-row>
+    </ion-row> -->
     <ion-row>
       <ion-item class="item-select" (click)="navigateEmailUser()">
         <ion-label>{{'SETTINGS.EMAIL_USER' | translate}}</ion-label>
+        <ion-icon name="at" size="large" slot="end"></ion-icon>
       </ion-item>
     </ion-row>
   </ion-grid>
