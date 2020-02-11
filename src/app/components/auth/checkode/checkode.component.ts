@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, LoadingController } from '@ionic/angular';
+import { NavController, LoadingController, ModalController } from '@ionic/angular';
 import * as firebase from 'firebase/app';
 import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
@@ -27,8 +27,8 @@ export class CheckodeComponent implements OnInit {
     private storage: Storage,
     private loadingCtrl: LoadingController,
     private handleErr: HandleErrorService,
-    private authService: AuthService
-
+    private authService: AuthService,
+    private modalCtrl: ModalController,
   ) { }
 
   ngOnInit() {
@@ -114,6 +114,7 @@ export class CheckodeComponent implements OnInit {
         }).then(() => {
           this.authService.signInUser(email, password)
             .then(() => {
+              this.modalCtrl.dismiss(null, null, "modalCreateUser");
               this.navCtrl.navigateRoot("nav/home");
               loading.dismiss();
             }).catch((error) => {

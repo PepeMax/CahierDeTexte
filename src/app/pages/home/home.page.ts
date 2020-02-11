@@ -5,7 +5,6 @@ import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
 import { AlertController } from '@ionic/angular';
 import { CallNumber } from '@ionic-native/call-number/ngx';
-import { NewHomeWorkPage } from '../new-home-work/new-home-work.page';
 import { HomeWorkPage } from '../home-work/home-work.page';
 
 @Component({
@@ -27,8 +26,8 @@ export class HomePage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.modalCtrl.dismiss(null, null, "modalCheckCode")
     this.homeworks.getHomeworks();
-    this.modalCtrl.dismiss("modalCreateUser");
   }
 
   goSettings() {
