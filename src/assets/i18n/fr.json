@@ -24,9 +24,11 @@
         "CONNECT": "Connexion",
         "SURNAME": "Votre surnom :",
         "RESET_PASSWORD_WITH_EMAIL": "Un mail pour changer votre mot de passe vient de vous être envoyé.",
-        "RESET_PASSWORD_SUCCESSFUL": "Votre mot de passe à bien était changé",
+        "RESET_PASSWORD_SUCCESSFUL": "Votre mot de passe à bien été changé",
         "RESET_PASSWORD_FAIL": "La réinitialisation de votre mot de passe à échoué",
-        "FUNNY_DATE": "Un lundi au soleil..."
+        "FUNNY_DATE": "Un lundi au soleil...",
+        "FUNNY_PLACEHOLDER": "Ex: la chèvre du CFA",
+        "GOAT": "Une chèvre"
     },
     "HOMEWORK": {
         "TITLE": "Y'à quoi à faire...",
@@ -53,7 +55,7 @@
         "NAME": "Nom :",
         "TYPE": "Type :",
         "GIVEN_DATE": "Travail donné le :",
-        "TO_DO_DATE": "Travail à faire pour :",
+        "TO_DO_DATE": "Travail à faire pour le :",
         "INFO": "Description :",
         "HOMEWORK": "Devoir",
         "EVAL": "Évaluation",
@@ -80,11 +82,8 @@
         "CREATE_ACCOUNT": "Créer un compte",
         "CREATE_MY_ACCOUNT": "Créer mon compte",
         "H4": "Vous êtes :",
-        "NAME": "Votre nom :",
         "STUDENT": "Élève",
         "PROF": "Professeur",
-        "LOGPROF": "Connexion professeur",
-        "LOGSTUD": "Connexion élève",
         "MAIL": "Adresse mail",
         "PASSWORD": "Mot de passe",
         "SAVEIDENTIFIER": "Retenir mes identifiants ? ",
@@ -110,8 +109,6 @@
         "FR_EN": "FR / EN",
         "STATUS_STUD": "Vous êtes l'élève :",
         "STATUS_PROF": "Vous êtes le professeur :",
-        "USERNAME": "Nom d'utilisateur",
-        "NEW_PASSWORD": "Nouveau mot de passe",
         "EMAIL_USER": "Adresses mail des utilisateurs"
     },
     "SLIDES": {
@@ -132,7 +129,7 @@
     "CHECKCODE": {
         "AUTH_CODE": "Code d'authentification",
         "LAST_CHANCE": "ATTENTION il vous reste seulement 1 essai.",
-        "!LAST_CHANCE1": "Il vous reste ",
+        "LAST_CHANCE1": "Il vous reste ",
         "CHANCE": " chances :",
         "TEXT": "Renseigner le code d'authenfication donné par l'administrateur",
         "SELECT_MATTER": "Sélectionner votre matière :",
@@ -146,13 +143,10 @@
         "ERROR_PASSWORD_INVALID": "\nMot de passe invalide",
         "ERROR_USER_NOT_FOUND": "\nUtilisateur introuvable",
         "ERROR_USER_DISABLED": "\nL'utilisateur est désactivé",
-        "ERROR_INVALID_USER_TOKEN": "\nVotre utilisateur appartient à un autre projet firebase",
         "ERROR_USER_TOKEN_EXPIRED": "\nVotre jeton à mettre à jour est expiré",
         "ERROR_NULL_USER": "\nLe nom d'utilisateur est nul",
         "ERROR_TENANT_ID_MISMATCH": "\nL'ID ne correspondant",
         "ERROR_UNKOWN": "\nErreur inconnue au bataillon",
-        "ERROR_DISCONNECT_1": "Vous n'êtes plus connecté",
-        "ERROR_DISCONNECT_2": "Reconnecter vous !!"
     },
     "EMAIL_USER": {
         "TITLE": "Adresses mail",

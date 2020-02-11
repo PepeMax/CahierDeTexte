@@ -22,7 +22,13 @@
         "SIGNIN": "Log in",
         "SIGNUP": "Sign up",
         "CONNECT": "Connection",
-        "SURNAME": "Your surname :"
+        "SURNAME": "Your surname :",
+        "RESET_PASSWORD_WITH_EMAIL": "An email to change your password has just been sent to you.",
+        "RESET_PASSWORD_SUCCESSFUL": "Your password has been changed",
+        "RESET_PASSWORD_FAIL": "Password reset failed",
+        "FUNNY_DATE": "Un lundi au soleil...",
+        "FUNNY_PLACEHOLDER": "Ex: the CFA goat",
+        "GOAT": "A goat"
     },
     "HOMEWORK": {
         "TITLE": "What's there to do....",
@@ -37,9 +43,11 @@
         "CONFIRM_DISCONNECT": "Do you really want to log out?",
         "CALL": "Call",
         "CALL_CFA": "Contact the CFA",
+        "CFA": "CFA",
         "CONFIRM_CALL_CFA": "Do you really want to call the CFA ?",
         "EIFFEL": "Gustave Eiffel",
         "PAREO": "Net Y Pareo",
+        "GIORGI": "Mr Giorgi website",
         "LINK": "Useful links"
     },
     "NEWHOMEWORK": {
@@ -74,13 +82,11 @@
         "CREATE_ACCOUNT": "Create an account",
         "CREATE_MY_ACCOUNT": "Create my account",
         "H4": "You are :",
-        "NAME": "Your name :",
         "STUDENT": "Student",
         "PROF": "Professor",
-        "LOGPROF": "Professor login",
-        "LOGSTUD": "Student login",
-        "MAIL": "E-Mail",
+        "MAIL": "Adresse mail",
         "PASSWORD": "Password",
+        "SAVEIDENTIFIER": "Remember my identifier ?",
         "NOT_SIGNUP": "You don't have an account?",
         "ACCOUNT": "Already have an account ?",
         "SIGNUP": "Signup",
@@ -96,29 +102,29 @@
     "SETTINGS": {
         "TITLE": "Settings",
         "NIGHT": "Night mod",
+        "NOTIF": "Enable notifications",
         "LANGUAGE": "Language",
         "FR": "French",
         "EN": "English",
         "FR_EN": "FR / EN",
-        "CHANGE_ND": "Change name",
-        "CHANGE_ND_SUB_HEADER": "Your current name : ",
-        "POPUP": "It's square chief",
         "STATUS_STUD": "You are the student :",
         "STATUS_PROF": "You are the professor :",
-        "USERNAME": "Username",
-        "NEW_PASSWORD": "New password"
+        "EMAIL_USER": "User email addresses"
     },
     "SLIDES": {
-        "TITLE": "It slides",
+        "TITLE": "That slide",
         "TITLE1": "Why an application?",
-        "TITLE2": "TITLE SLIDE 2",
+        "TITLE2": "App in Dev",
         "TITLE3": "Create an account",
-        "TEXT1": "For one reason : having homework on a platform that everyone uses.",
-        "TEXT1.2": "That's a project, too!",
-        "TEXT1.3": "Swipe on the right to create your account",
-        "TEXT2": "TEXT SLIDE 2",
-        "TEXT2.2": "TEXT SLIDE 2.2",
-        "TEXT3": "This is the last step to finally get the homework! Or put some on..."
+        "TEXT1": "For a reason: having homework on a platform that everyone uses.",
+        "TEXT1.2": "It makes a project, moreover!",
+        "TEXT1.3": "Right swipe",
+        "TEXT2": "The application is still in development, only the most important functionalities are finished.",
+        "TEXT2.2": "There are still a few parameters and functions to add but for the moment it is doing the job you want.",
+        "TEXT2.3": "Swipe on the right to create your account",
+        "TEXT3": "It's the last step to finally have homework! Or put some ...",
+        "TEXT3.2": "!!! Attention !!!",
+        "TEXT3.3": "No space at the end of the email address." 
     },
     "CHECKCODE": {
         "AUTH_CODE": "Authentication code",
@@ -144,5 +150,10 @@
         "ERROR_UNKOWN": "\nError unknown in the battalion",
         "ERROR_DISCONNECT_1": "You are no longer connected",
         "ERROR_DISCONNECT_2": "Log in now !!"
-    }
+        },
+        "EMAIL_USER": {
+            "TITLE": "Adresses mail",
+            "STUDENT": "Élève",
+            "PROF": "Professeur"
+        }
 }
