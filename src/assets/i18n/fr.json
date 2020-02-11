@@ -108,11 +108,13 @@
         "FR_EN": "FR / EN",
         "CHANGE_ND": "Changer de nom",
         "CHANGE_ND_SUB_HEADER": "Votre nom actuelle : ",
-        "POPUP": "C'est carré chef",
+        "POPUP_STUD": "C'est carré chef",
+        "POPUP_PROF": "C'est dans la boite",
         "STATUS_STUD": "Vous êtes l'élève :",
         "STATUS_PROF": "Vous êtes le professeur :",
         "USERNAME": "Nom d'utilisateur",
-        "NEW_PASSWORD": "Nouveau mot de passe"
+        "NEW_PASSWORD": "Nouveau mot de passe",
+        "CONFIRM": "Voulez-vous appliquer les modifications ?"
     },
     "SLIDES": {
         "TITLE": "Ça slide",
