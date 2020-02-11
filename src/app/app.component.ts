@@ -31,8 +31,10 @@ export class AppComponent {
   }
 
   async initializeApp() {
+    console.log("init")
     this.language = await this.storage.get('language');
-    if (this.language === "") {
+    console.log(this.language)
+    if (this.language == null) {
       this.language = 'fr';
     }
     this.platform.ready().then(() => {
