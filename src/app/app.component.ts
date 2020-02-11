@@ -32,6 +32,9 @@ export class AppComponent {
 
   async initializeApp() {
     this.language = await this.storage.get('language');
+    if (this.language === "") {
+      this.language = 'fr';
+    }
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();

@@ -27,7 +27,6 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.modalCtrl.dismiss(null, null, "modalCheckCode")
-    this.homeworks.getHomeworks();
   }
 
   goSettings() {

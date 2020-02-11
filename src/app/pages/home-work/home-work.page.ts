@@ -26,7 +26,7 @@ export class HomeWorkPage implements OnInit {
   }
 
   ngOnInit() {
-    this.getHomeworks()
+    this.getHomeworks();
   }
 
   doRefresh(val) {
