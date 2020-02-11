@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
 
 @Component({
   selector: 'app-email-user',
@@ -10,6 +11,7 @@ export class EmailUserPage implements OnInit {
 
   constructor(
     public navCtrl: NavController,
+    private emailComposer: EmailComposer
   ) { }
 
   avatar_Student: String = "../../../assets/img/student.png";
@@ -87,5 +89,16 @@ export class EmailUserPage implements OnInit {
 
   goBack() {
     this.navCtrl.navigateBack("/settings");
+  }
+
+  sendEmail(i) {
+     let email = {
+       to: this.tab_Stud[i].email,
+       subject: '',
+       body: 'Envoyé de l\' application "Cahier de texte"',
+       isHtml: false
+     }
+     
+     this.emailComposer.open(email);
   }
 }

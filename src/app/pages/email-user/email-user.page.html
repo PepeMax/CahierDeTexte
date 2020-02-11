@@ -19,7 +19,7 @@
 
 
   <ion-list *ngIf="display_stud">
-    <ion-item *ngFor="let student of tab_Stud">
+    <ion-item *ngFor="let student of tab_Stud; let i = index" (click)="sendEmail(i)">
       <ion-avatar slot="start">
         <img src="{{avatar_Student}}">
       </ion-avatar>
@@ -39,7 +39,7 @@
   </ion-item>
 
   <ion-list *ngIf="display_prof">
-    <ion-item *ngFor="let professor of tab_Prof">
+    <ion-item *ngFor="let professor of tab_Prof; let i = index" (click)="sendEmail(i)">
       <ion-avatar slot="start">
         <img src="{{avatar_Professor}}">
       </ion-avatar>
