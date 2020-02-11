@@ -31,7 +31,7 @@
     "HOMEWORK": {
         "TITLE": "Y'à quoi à faire...",
         "TYPE": "Type : ",
-        "FOR_DATE": "Semaine du  : ",
+        "FOR_DATE": "À faire pour le ",
         "GIVE_DATE": "Donner le : ",
         "INFOS": "Description  : "
     },
@@ -87,6 +87,7 @@
         "LOGSTUD": "Connexion élève",
         "MAIL": "Adresse mail",
         "PASSWORD": "Mot de passe",
+        "SAVEIDENTIFIER": "Retenir mes identifiants ? ",
         "NOT_SIGNUP": "Vous ne possédez pas de compte ?",
         "ACCOUNT": "Vous possédez déjà un compte ?",
         "SIGNUP": "S'enregistrer",
