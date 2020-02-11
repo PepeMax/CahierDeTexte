@@ -18,7 +18,8 @@
         <div class="form-group">
           <ion-label for="password">{{'LOGIN.PASSWORD' | translate }}</ion-label>
           <ion-input [type]="passwordType" id="password" class="form-control" formControlName="password"></ion-input>
-          <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+          <ion-icon item-end [name]="passwordIcon" class="Icon" (click)='hideShowPassword()'></ion-icon>
+          <ion-icon item-end [name]="connectIcon" class="Icon" (click)='test()'></ion-icon>
         </div>
 
         <br>
