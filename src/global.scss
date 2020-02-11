@@ -47,7 +47,7 @@
 
 .alert-modal {
   --border-radius: 50px;
-  --height: 50%;
+  --height: 70%;
   @media screen and (min-width: 960px) {
     --width: 41%;
   }
@@ -58,7 +58,7 @@
 
 .alert-modal-createNewUser {
   --border-radius: 50px;
-  --height: 60%;
+  --height: 70%;
   @media screen and (min-width: 960px) {
     --width: 41%;
   }
@@ -69,7 +69,7 @@
 
 .alert-modal-createNewUser.dark {
   --border-radius: 50px;
-  --height: 60%;
+  --height: 70%;
   @media screen and (min-width: 960px) {
     --width: 41%;
   }
