@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'settings', loadChildren: './pages/settings/settings.module#SettingsPageModule' },
   { path: 'slides', loadChildren: './pages/slides/slides.module#SlidesPageModule' },
-  { path: 'homelogin', loadChildren: './pages/homelogin/homelogin.module#HomeloginPageModule' },
+  { path: 'homelogin', loadChildren: './pages/homelogin/homelogin.module#HomeloginPageModule' },  { path: 'email-user', loadChildren: './pages/email-user/email-user.module#EmailUserPageModule' },
+
 
 ];
 @NgModule({

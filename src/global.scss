@@ -153,20 +153,24 @@ body.dark {
 
   app-signup {
     background-color: #808080;
+    --border-radius: 50px;
+
   }
   app-signinstudent {
     background-color: #808080;
+    --border-radius: 50px;
+
   }
   app-signinprof {
+    --border-radius: 50px;
     background-color: #808080;
   }
   app-checkode {
+    --border-radius: 50px;
+
     background-color: #808080;
   }
 
-  ion-page {
-    background-color: red;
-  }
 }
 
 /*
