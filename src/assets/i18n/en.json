@@ -152,8 +152,8 @@
         "ERROR_DISCONNECT_2": "Log in now !!"
         },
         "EMAIL_USER": {
-            "TITLE": "Adresses mail",
-            "STUDENT": "Élève",
-            "PROF": "Professeur"
+            "TITLE": "Email adress",
+            "STUDENT": "Student(s)",
+            "PROF": "Professor(s)"
         }
 }

@@ -150,7 +150,7 @@
     },
     "EMAIL_USER": {
         "TITLE": "Adresses mail",
-        "STUDENT": "Élève",
-        "PROF": "Professeur"
+        "STUDENT": "Élève(s)",
+        "PROF": "Professeur(s)"
     }
 }
