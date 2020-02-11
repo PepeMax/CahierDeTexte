@@ -1,7 +1,7 @@
 <ion-header no-border>
   <ion-toolbar>
     <ion-title>{{'SETTINGS.TITLE' | translate}}</ion-title>
-    <ion-button color="dark" slot="start" fill="clear" (click)="confirmSettings()">
+    <ion-button color="dark" slot="start" fill="clear" (click)="goBack()">
       <ion-icon name="arrow-dropleft"></ion-icon>
     </ion-button>
   </ion-toolbar>
@@ -24,18 +24,10 @@
     <ion-row justify-content-center>
       <h4>{{username}}</h4>
     </ion-row>
-    <br>
     <ion-row justify-content-center>
       <ion-button class="testtest" size="small" fill="clear" (click)="resetPassword()">
         {{'LOGIN.CHANGE_PASSWORD' | translate}}
       </ion-button>
-    </ion-row>
-    <br>
-    <ion-row *ngIf="buttonClickedNewND">
-      <ion-item>
-        <ion-label position="stacked">{{'SETTINGS.CHANGE_ND' | translate}}</ion-label>
-        <ion-input [(ngModel)]="changeName" required="true"></ion-input>
-      </ion-item>
     </ion-row>
     <br>
 
@@ -54,6 +46,12 @@
         <ion-toggle *ngIf="darkMode" [(ngModel)]="darkMode" (ionChange)="changeDarkMode()" checked >
         </ion-toggle>
         <ion-toggle *ngIf="!darkMode" [(ngModel)]="darkMode" (ionChange)="changeDarkMode()"></ion-toggle>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item class="item-select">
+        <ion-label>{{'SETTINGS.NOTIF' | translate}}</ion-label>
+        <ion-toggle></ion-toggle>
       </ion-item>
     </ion-row>
   </ion-grid>

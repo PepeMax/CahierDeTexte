@@ -59,20 +59,6 @@ export class SettingsPage implements OnInit {
     this.navCtrl.navigateBack("/nav/home");
   }
 
-  goAdmin() {
-    this.navCtrl.navigateRoot("/planning");
-  }
-
-  // async confirmSettings() {
-  //   this.navCtrl.navigateBack('/nav/home')
-  //   const toast = await this.toastController.create({
-  //     message: this.trans.instant('SETTINGS.POPUP_STUD'),
-  //     duration: 2000,
-  //     cssClass: 'toast'
-  //   });
-  //   toast.present();
-  // }
-
   public async resetPassword() {
     const alert = await this.alertController.create({
       header: this.trans.instant('LOGIN.CHANGE_PASSWORD'),
@@ -100,29 +86,6 @@ export class SettingsPage implements OnInit {
     });
     await alert.present();
   }
-
-
-  async confirmSettings() {
-    const alert = await this.alertController.create({
-      header: this.trans.instant('SETTINGS.CONFIRM'),
-      buttons: [
-        {
-          text: this.trans.instant('COMMON.CANCEL'),
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: () => {
-          }
-        }, {
-          text: this.trans.instant('COMMON.YES'),
-          handler: () => {
-            this.navCtrl.navigateBack("/nav/home")
-          } 
-        } 
-      ]
-    });
-    await alert.present();
-  }
-
 
 
 }
