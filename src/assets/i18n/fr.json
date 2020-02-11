@@ -40,11 +40,11 @@
         "DISCONNECT": "Déconnexion",
         "CONFIRM_DISCONNECT": "Voulez-vous vraiment vous déconnecter ?",
         "CALL": "Appeler",
-        "CALL_CFA" : "Contacter le CFA",
-        "CFA":"CFA",
-        "CONFIRM_CALL_CFA" : "Voulez-vous vraiment appeler le CFA ?",
-        "EIFFEL" : "Gustave Eiffel",
-        "PAREO" : "Net Y Pareo",
+        "CALL_CFA": "Contacter le CFA",
+        "CFA": "CFA",
+        "CONFIRM_CALL_CFA": "Voulez-vous vraiment appeler le CFA ?",
+        "EIFFEL": "Gustave Eiffel",
+        "PAREO": "Net Y Pareo",
         "GIORGI": "Site de Mr Giorgi",
         "LINK": "Liens utiles"
     },
@@ -153,5 +153,10 @@
         "ERROR_UNKOWN": "\nErreur inconnue au bataillon",
         "ERROR_DISCONNECT_1": "Vous n'êtes plus connecté",
         "ERROR_DISCONNECT_2": "Reconnecter vous !!"
+    },
+    "EMAIL_USER": {
+        "TITLE": "Adresses mail",
+        "STUDENT": "Élève",
+        "PROF": "Professeur"
     }
 }

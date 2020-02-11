@@ -87,6 +87,9 @@ export class SettingsPage implements OnInit {
     await alert.present();
   }
 
+  navigateEmailUser() {
+    this.navCtrl.navigateForward('/email-user')
+  }
 
 }
 
