@@ -16,6 +16,7 @@ import { ThreeDeeTouch, ThreeDeeTouchQuickAction, ThreeDeeTouchForceTouch } from
 export class AppComponent {
 
   private darkMode: boolean;
+  private language: string;
 
   constructor(
     private platform: Platform,
@@ -30,10 +31,11 @@ export class AppComponent {
   }
 
   async initializeApp() {
+    this.language = await this.storage.get('language');
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.translate.setDefaultLang('fr');
+      this.translate.setDefaultLang(this.language);
     });
     this.darkMode = await this.storage.get('valueDarkMode');
     enableDarkTheme(this.darkMode);
@@ -79,6 +81,11 @@ export class AppComponent {
         console.log('Pressed the ${payload.title} button')
         console.log(payload.type)
       });
+  }
+
+  changeLanguage(language) {
+    this.translate.use(language);
+    this.storage.set('language', language);
   }
 
 }
