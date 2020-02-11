@@ -18,8 +18,16 @@
         <div class="form-group">
           <ion-label for="password">{{'LOGIN.PASSWORD' | translate }}</ion-label>
           <ion-input [type]="passwordType" id="password" class="form-control" formControlName="password"></ion-input>
-          <ion-icon item-end [name]="passwordIcon" class="Icon" (click)='hideShowPassword()'></ion-icon>
-          <ion-icon item-end [name]="connectIcon" class="Icon" (click)='test()'></ion-icon>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+          <ion-label for="saveIdentifier">{{'LOGIN.SAVEIDENTIFIER' | translate }}</ion-label>
+          <ion-checkbox checked="false" color="dark" id="saveIdentifier" class="form-control"
+            formControlName="saveIdentifier" [checked]="false"> </ion-checkbox>
+          <br>
+          <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
         </div>
 
         <br>

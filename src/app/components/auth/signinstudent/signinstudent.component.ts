@@ -31,6 +31,12 @@ export class SigninStudentComponent implements OnInit {
     private storage: Storage,
   ) { }
 
+  public identifier: {
+    mail: string,
+    password: string,
+    saveIdentifier: boolean
+  } = { mail: '', password: '', saveIdentifier: false };
+
   passwordType: string = 'password';
   passwordIcon: string = 'eye-off';
   connectIcon: string = 'radio-button-off';
@@ -49,15 +55,33 @@ export class SigninStudentComponent implements OnInit {
     this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.initForms();
+    let setIdentifier = await this.getIdentifier();
+    if (setIdentifier.mail != "" && setIdentifier.password != "") {
+      this.signinForm.controls['email'].setValue(setIdentifier.mail);
+      this.signinForm.controls['password'].setValue(setIdentifier.password);
+      this.signinForm.controls['saveIdentifier'].setValue(setIdentifier.saveIdentifier);
+    }
+  }
+  async getIdentifier() {
+    let getIdentifier: { mail: string, password: string, saveIdentifier: boolean } = { mail: '', password: '', saveIdentifier: false };
+    try {
+      const str = await this.storage.get('identifier_professor');
+      getIdentifier = str;
+      return getIdentifier;
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   initForms() {
     this.signinForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]]
+      password: ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]],
+      saveIdentifier: [''],
     });
+    this.signinForm.controls['saveIdentifier'].setValue(false);
   }
 
   async onSubmit() {
@@ -92,5 +116,11 @@ export class SigninStudentComponent implements OnInit {
         this.modalCtrl.dismiss();
         await alert.present();
       });
+    if (this.signinForm.get('saveIdentifier').value == true) {
+      this.identifier.mail = email;
+      this.identifier.password = password;
+      this.identifier.saveIdentifier = this.signinForm.get('saveIdentifier').value;
+    }
+    this.storage.set('identifier_professor', this.identifier);
   }
 }

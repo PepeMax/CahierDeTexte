@@ -14,8 +14,6 @@ export class HomeloginPage implements OnInit {
     public trans: TranslateService,
     private navCtrl: NavController,
     public popoverController: PopoverController,
-
-
   ) { }
 
   ngOnInit() {
@@ -40,3 +38,4 @@ export class HomeloginPage implements OnInit {
   }
 
 }
+

@@ -22,7 +22,8 @@ export class HomeWorkPage implements OnInit {
     public firebase: FirebaseService,
     public navCtrl: NavController,
     private storage: Storage
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     this.getHomeworks()
@@ -42,9 +43,23 @@ export class HomeWorkPage implements OnInit {
         querySnapshot.forEach((doc) => {
           this.tab_homeworks.push(doc.data());
         });
+        this.tab_homeworks.sort(this.compareDate);
         this.badge = this.tab_homeworks.length;
         this.storage.set('badge', this.badge)
       });
+  }
+
+  public compareDate(a, b) {
+    let d1 = new Date(a.fordate_homework);
+    let d2 = new Date(b.fordate_homework);
+    
+    if (d1.getTime() > d2.getTime()) {
+      return 1
+    }
+    if (d1.getTime() < d2.getTime()) {
+      return -1
+    }
+    return 0
   }
 
 }
