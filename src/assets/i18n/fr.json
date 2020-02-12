@@ -49,7 +49,9 @@
         "PAREO": "Net Y Pareo",
         "GIORGI": "Site de Mr Giorgi",
         "LINK": "Liens utiles",
-        "EMAIL_USER": "Adresses mail des utilisateurs"        
+        "EMAIL_USER": "Adresses mail des utilisateurs",
+        "TITLE_NEWS": "Conseil de classe",
+        "TEXT_NEWS": "Le conseil de classe aura lieu le 18 Février 2020 à 17h !"       
     },
     "NEWHOMEWORK": {
         "TITLE": "Nouveau devoir :",
