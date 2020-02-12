@@ -33,7 +33,7 @@
     "HOMEWORK": {
         "TITLE": "Y'à quoi à faire...",
         "TYPE": "Type : ",
-        "FOR_DATE": "À faire pour le ",
+        "FOR_DATE": "Semaine du : ",
         "GIVE_DATE": "Donner le : ",
         "INFOS": "Description  : "
     },
@@ -48,14 +48,13 @@
         "EIFFEL": "Gustave Eiffel",
         "PAREO": "Net Y Pareo",
         "GIORGI": "Site de Mr Giorgi",
-        "LINK": "Liens utiles"
+        "LINK": "Liens utiles",
+        "EMAIL_USER": "Adresses mail des utilisateurs"        
     },
     "NEWHOMEWORK": {
         "TITLE": "Nouveau devoir :",
-        "NAME": "Nom :",
         "TYPE": "Type :",
-        "GIVEN_DATE": "Travail donné le :",
-        "TO_DO_DATE": "Travail à faire pour le :",
+        "TO_DO_DATE": "Travail à faire pour :",
         "INFO": "Description :",
         "HOMEWORK": "Devoir",
         "EVAL": "Évaluation",

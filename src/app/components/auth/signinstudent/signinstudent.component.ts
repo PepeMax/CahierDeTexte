@@ -41,10 +41,6 @@ export class SigninStudentComponent implements OnInit {
   passwordIcon: string = 'eye-off';
   connectIcon: string = 'radio-button-off';
 
-  test() {
-    this.connectIcon = this.connectIcon === 'radio-button-off' ? 'radio-button-on' : 'radio-button-off';
-  }
-
   stayConnected() {
     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
     this.connectIcon = this.connectIcon === 'radio-button-off' ? 'radio-button-on' : 'radio-button-off';
