@@ -20,12 +20,12 @@ export class SettingsPage implements OnInit {
   //User
   public username;
   public status: Boolean;
-
+  
   public language;
-
-  public buttonClickedNewND: boolean = false;
-
-  public darkMode: boolean;
+  
+  public buttonClickedNewND: Boolean = false;
+  
+  public darkMode: Boolean;
 
   constructor(
     public navCtrl: NavController,

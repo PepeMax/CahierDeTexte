@@ -35,6 +35,7 @@ import { HomeWorkPage } from './pages/home-work/home-work.page';
 
 import { ThreeDeeTouch, ThreeDeeTouchQuickAction, ThreeDeeTouchForceTouch } from '@ionic-native/three-dee-touch/ngx';
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -70,6 +71,7 @@ firebase.initializeApp(environment.firebase);
     DocumentViewer,
     File,
     FileOpener,
+    FileTransfer,
     AuthService,
     HandleErrorService,
     SlidesPage,

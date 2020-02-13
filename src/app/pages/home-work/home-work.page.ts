@@ -1,6 +1,5 @@
 import { Component, OnInit, } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { FirebaseService } from 'src/app/services/firebase.service';
 import { NavController, ToastController } from '@ionic/angular';
 
 import * as firebase from 'firebase/app';
@@ -19,7 +18,6 @@ export class HomeWorkPage implements OnInit {
 
   constructor(
     public trans: TranslateService,
-    public firebase: FirebaseService,
     public navCtrl: NavController,
     private storage: Storage
   ) {
