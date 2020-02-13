@@ -55,20 +55,20 @@ export class EmailUserPage implements OnInit {
   ]
   
   public tab_Prof = [
-    { name: " Pascal GIORGI ", email: " p.giorgi@orange.fr" },
-    { name: " Edwige CLERMONT ", email: " edwigeclermont@free.fr" },
-    { name: " Bertrand RABUSSIER ", email: " bertrand@rabussier.name" },
-    { name: " Bertrand MEULEBROUCK ", email: " bmeulebrouck@yahoo.fr" },
-    { name: " Azeddine MAJNANI ", email: " azeddinemajnani@gmail.com" },
-    { name: " Nebout Nelly ", email: " nelly.nebout@orange.fr" },
-    { name: " Didier Raymond ", email: " didierraymond@free.fr" },
-    { name: " FORGES Cathy ", email: " forges.cathy@gmail.com" },
     { name: " Virginie ARNAULD ", email: " v.ads@free.fr" },
-    { name: " Estelle SORNETTE CYBULA ", email: " sornette@netcourrier.com" },
-    { name: " Hélèna Berger ", email: " helena.berger33@gmail.com" },
-    { name: " Fernand GARRIDO ", email: " fernand.garrido@ac-bordeaux.fr" },
     { name: " Frédérique BALUTEAU ", email: " frederique.baluteau@greta-cfa-aquitaine.fr" },
-    { name: " Régis LAMOUROUX ", email: " regis.lamouroux@gmail.com" }
+    { name: " Hélèna Berger ", email: " helena.berger33@gmail.com" },
+    { name: " FORGES Cathy ", email: " forges.cathy@gmail.com" },
+    { name: " Edwige CLERMONT ", email: " edwigeclermont@free.fr" },
+    { name: " Fernand GARRIDO ", email: " fernand.garrido@ac-bordeaux.fr" },
+    { name: " Pascal GIORGI ", email: " p.giorgi@orange.fr" },
+    { name: " Régis LAMOUROUX ", email: " regis.lamouroux@gmail.com" },
+    { name: " Azeddine MAJNANI ", email: " azeddinemajnani@gmail.com" },
+    { name: " Bertrand MEULEBROUCK ", email: " bmeulebrouck@yahoo.fr" },
+    { name: " Nebout Nelly ", email: " nelly.nebout@orange.fr" },
+    { name: " Bertrand RABUSSIER ", email: " bertrand@rabussier.name" },
+    { name: " Didier Raymond ", email: " didierraymond@free.fr" },
+    { name: " Estelle SORNETTE CYBULA ", email: " sornette@netcourrier.com" }
   ]
 
   ngOnInit() {
