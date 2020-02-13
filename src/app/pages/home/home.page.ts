@@ -81,6 +81,9 @@ export class HomePage implements OnInit {
     await alert.present();
 
   }
-
+  
+  navigateEmailUser() {
+    this.navCtrl.navigateForward('/email-user')
+  }
 
 }

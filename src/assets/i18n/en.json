@@ -48,14 +48,15 @@
         "EIFFEL": "Gustave Eiffel",
         "PAREO": "Net Y Pareo",
         "GIORGI": "Mr Giorgi website",
-        "LINK": "Useful links"
+        "LINK": "Useful links",
+        "EMAIL_USER": "User email addresses",
+        "TITLE_NEWS": "Class Council",
+        "TEXT_NEWS": "The class council will take place on February 18, 2020 at 5pm!"
     },
     "NEWHOMEWORK": {
         "TITLE": "New homework :",
-        "NAME": "Name :",
         "TYPE": "Type :",
-        "GIVEN_DATE": "Work given on :",
-        "TO_DO_DATE": "Work to be done by :",
+        "TO_DO_DATE": "Work to do for :",
         "INFO": "Description :",
         "HOMEWORK": "Homework",
         "EVAL": "Evaluation",

@@ -14,7 +14,7 @@
     <label>
       <p>{{'EMAIL_USER.STUDENT' | translate}} ( {{nbStud}} )</p>
     </label>
-    <ion-icon name="arrow-dropdown" size="large" slot="end"></ion-icon>
+    <ion-icon [name]="studIcon" size="large" slot="end"></ion-icon>
   </ion-item>
 
 
@@ -35,7 +35,7 @@
     <label>
       <p>{{'EMAIL_USER.PROF' | translate}} ( {{nbProf}} )</p>
     </label>
-    <ion-icon name="arrow-dropdown" size="large" slot="end"></ion-icon>
+    <ion-icon [name]="profIcon" size="large" slot="end"></ion-icon>
   </ion-item>
 
   <ion-list *ngIf="display_prof">
