@@ -4,6 +4,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { File } from '@ionic-native/file/ngx';
 import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
+import { Storage } from '@ionic/storage';
+
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-planning',
@@ -12,7 +16,6 @@ import { FileOpener } from '@ionic-native/file-opener/ngx';
 })
 export class PlanningPage implements OnInit {
 
-  public readonly docObject = { src: 'Planning.pdf', title: 'Planning de la semaine' };
 
   constructor(
     public navCtrl: NavController,
@@ -21,20 +24,46 @@ export class PlanningPage implements OnInit {
     private document: DocumentViewer,
     private platform: Platform,
     private file: File,
-    private fileOpener: FileOpener
+    private fileOpener: FileOpener,
+    private fileTransfer: FileTransfer,
+    private storage: Storage
   ) { }
 
+  public readonly docObject = { src: 'Planning.pdf', title: 'Planning de la semaine' };
+
   ngOnInit() {
+    this.downloadPDF();
   }
 
-  ionViewWillEnter() {
-    this.onClickOpenPdfItem(this.docObject);
+  async ionViewWillEnter() {
+    await this.downloadPDF();
+    this.displayPDF(this.docObject);
     this.navCtrl.navigateRoot('/nav/home');
   }
 
-  onClickOpenPdfItem(documentation) {
-    const filePath = this.file.applicationDirectory + 'www/assets';
+  async downloadPDF() {
+    let url;
+    let previous_url = await this.storage.get('url');
+    await firebase.firestore().collection('pdf').doc("1").get()
+      .then(doc => {
+        url = doc.data().url;
+        this.storage.set('url', url);
+      }).catch((error) => {
+        console.error(error);
+      });    
+    if (url != previous_url) {
+      this.fileTransfer.create().download(url, this.file.dataDirectory + 'Planning.pdf').then((entry) => {
+        console.log('download complete: ' + entry.toURL());
+      }, (error) => {
+        console.error(error);
+      });
+    } else {
+      console.log("Fichier déjà à jour")
+    }
+  }
 
+  displayPDF(documentation) {
+    const filePath = this.file.dataDirectory;
     if (this.platform.is('android')) {
       this.file.copyFile(filePath, documentation.src, this.file.dataDirectory, documentation.title).then(result => {
         this.fileOpener.open(result.nativeURL, 'application/pdf')
@@ -51,7 +80,6 @@ export class PlanningPage implements OnInit {
       this.document.viewDocument(`${filePath}/${documentation.src}`, 'application/pdf', options);
     }
   }
-
 }
 
 
