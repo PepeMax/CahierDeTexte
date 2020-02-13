@@ -73,9 +73,6 @@ export class SignupComponent implements OnInit {
     this.storage.set('password', password);
     this.storage.set('status', status);
 
-    this.storage.set('email', email);
-    this.storage.set('password', password);
-
     const loading = await this.loadingCtrl.create({
       backdropDismiss: false,
       spinner: "crescent",

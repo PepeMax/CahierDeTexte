@@ -107,12 +107,12 @@ export class SigninProfComponent implements OnInit {
         this.modalCtrl.dismiss();
         await alert.present();
       });
-    if (this.signinForm.get('saveIdentifier').value == true) {
-      this.identifier.mail = email;
-      this.identifier.password = password;
-      this.identifier.saveIdentifier = this.signinForm.get('saveIdentifier').value;
-    }
-    this.storage.set('identifier_student', this.identifier);
+      if (this.signinForm.get('saveIdentifier').value == true) {
+        this.identifier.mail = email;
+        this.identifier.password = password;
+        this.identifier.saveIdentifier = this.signinForm.get('saveIdentifier').value;
+      }
+      this.storage.set('identifier_student', this.identifier);
   }
 
 }
