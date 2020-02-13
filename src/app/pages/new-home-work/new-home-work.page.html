@@ -10,7 +10,7 @@
       <ion-item>
         <ion-label>{{'COMMON.SUBJECT' | translate}}<ion-text color="danger">{{'COMMON.STARS' | translate}}</ion-text>
         </ion-label>
-        <ion-select [(ngModel)]="name_homework" required="true" okText="Valider" cancelText="Annuler">
+        <ion-select [(ngModel)]="name_homework" required="true" okText="{{'COMMON.VALIDATE' | translate}}" cancelText="{{'COMMON.CANCEL' | translate}}">
           <ion-select-option value="si1">{{'NEWHOMEWORK.SI1' | translate}}</ion-select-option>
           <ion-select-option value="si2">{{'NEWHOMEWORK.SI2' | translate}}</ion-select-option>
           <ion-select-option value="si3">{{'NEWHOMEWORK.SI3' | translate}}</ion-select-option>
@@ -33,7 +33,7 @@
       <ion-item>
         <ion-label>{{'NEWHOMEWORK.TYPE' | translate}}<ion-text color="danger">{{'COMMON.STARS' | translate}}</ion-text>
         </ion-label>
-        <ion-select [(ngModel)]="type_homework" placeholder="">
+        <ion-select [(ngModel)]="type_homework" okText="{{'COMMON.VALIDATE' | translate}}" cancelText="{{'COMMON.CANCEL' | translate}}" placeholder="">
           <ion-select-option value="devoir">{{'NEWHOMEWORK.HOMEWORK' | translate}}</ion-select-option>
           <ion-select-option value="eval">{{'NEWHOMEWORK.EVAL' | translate}}</ion-select-option>
         </ion-select>
@@ -47,7 +47,7 @@
         <ion-label>{{'NEWHOMEWORK.TO_DO_DATE' | translate}}<ion-text color="danger">{{'COMMON.STARS' | translate}}
           </ion-text>
         </ion-label>
-        <ion-datetime [(ngModel)]="fordate_homework" placeholder="{{'COMMON.FUNNY_DATE' | translate}}" min={{today}} max="2021-12-31"
+        <ion-datetime [(ngModel)]="fordate_homework" cancelText="{{'COMMON.CANCEL' | translate}}" placeholder="{{'COMMON.FUNNY_DATE' | translate}}" min={{today}} max="2021-12-31"
           displayFormat="DD MMMM YYYY" [value]="today"
           monthNames="Janvier, Février, Mars, Avril, Mai, Juin, Juillet, Août, Septembre, Octobre, Novembre, Décembre">
         </ion-datetime>
