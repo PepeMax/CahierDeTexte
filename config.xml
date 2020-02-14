@@ -2,7 +2,7 @@
 <widget id="com.pepemax.cahierdetexte" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Cahier de Texte</name>
     <description>un cahier de texte pour la classe de BTS SIO en alternance du CFA Gustave Eiffeil</description>
-    <author email="hi@ionicframework.com" href="http://ionicframework.com/">DENOST Maxime et FERREIRA Hugo</author>
+    <author email="maxime.denost@laposte.net" href="">DENOST Maxime et FERREIRA Hugo</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
