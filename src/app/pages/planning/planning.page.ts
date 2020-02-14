@@ -32,7 +32,6 @@ export class PlanningPage implements OnInit {
   public readonly docObject = { src: 'Planning.pdf', title: 'Planning de la semaine' };
 
   ngOnInit() {
-    this.downloadPDF();
   }
 
   async ionViewWillEnter() {
@@ -58,7 +57,6 @@ export class PlanningPage implements OnInit {
         console.error(error);
       });
     } else {
-      console.log("Fichier déjà à jour")
     }
   }
 

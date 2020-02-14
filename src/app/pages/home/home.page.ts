@@ -5,7 +5,7 @@ import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth.service';
 import { AlertController } from '@ionic/angular';
 import { CallNumber } from '@ionic-native/call-number/ngx';
-import { HomeWorkPage } from '../home-work/home-work.page';
+import { PlanningPage } from '../planning/planning.page';
 
 @Component({
   selector: 'app-home',
@@ -22,11 +22,12 @@ export class HomePage implements OnInit {
     public alertController: AlertController,
     private modalCtrl: ModalController,
     private callNumber: CallNumber,
-    private homeworks: HomeWorkPage
+    private planning: PlanningPage
   ) { }
 
   ngOnInit() {
     this.modalCtrl.dismiss(null, null, "modalCheckCode")
+    this.planning.downloadPDF();
   }
 
   goSettings() {

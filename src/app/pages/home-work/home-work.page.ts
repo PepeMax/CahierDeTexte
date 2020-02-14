@@ -45,12 +45,18 @@ export class HomeWorkPage implements OnInit {
         this.badge = this.tab_homeworks.length;
         this.storage.set('badge', this.badge)
       });
+    // this.displayNewHomeWork()
   }
+
+  // displayNewHomeWork() {
+  //   let today: String = new Date().toISOString();
+  //   console.log(today);
+  // }
 
   public compareDate(a, b) {
     let d1 = new Date(a.fordate_homework);
     let d2 = new Date(b.fordate_homework);
-    
+
     if (d1.getTime() > d2.getTime()) {
       return 1
     }
