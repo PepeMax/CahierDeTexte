@@ -83,7 +83,7 @@ firebase.initializeApp(environment.firebase);
     ThreeDeeTouch,
     EmailComposer,
     PlanningPage,
-    LocalNotifications
+    LocalNotifications,
   ],
   bootstrap: [AppComponent]
 })

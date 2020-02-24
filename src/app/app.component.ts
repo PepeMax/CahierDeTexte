@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
 import { enableDarkTheme } from './components/helpers/utils';
 import { ThreeDeeTouch, ThreeDeeTouchQuickAction, ThreeDeeTouchForceTouch } from '@ionic-native/three-dee-touch/ngx';
+import { CallNumber } from '@ionic-native/call-number/ngx';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,7 @@ export class AppComponent {
     private translate: TranslateService,
     private storage: Storage,
     private threeDeeTouch: ThreeDeeTouch,
+    private callNumber: CallNumber,
 
   ) {
     this.initializeApp();
@@ -54,26 +56,16 @@ export class AppComponent {
 
     let actions: ThreeDeeTouchQuickAction[] = [
       {
-        type: 'checkin',
-        title: 'Check in',
-        subtitle: 'Quickly check in',
-        iconType: 'Compose'
-      },
-      {
-        type: 'share',
-        title: 'Share',
-        subtitle: 'Share like you care',
+        type: 'search',
+        title: 'Site Mr Giorgi',
         iconType: 'Share'
       },
       {
-        type: 'search',
-        title: 'Search',
-        iconType: 'Search'
+        type: 'contact',
+        title: 'CFA',
+        iconType: 'Contact'
       },
-      {
-        title: 'Show favorites',
-        iconTemplate: 'HeartTemplate'
-      }
+
     ];
 
     this.threeDeeTouch.configureQuickActions(actions);
@@ -81,8 +73,16 @@ export class AppComponent {
     this.threeDeeTouch.onHomeIconPressed()
       .subscribe((payload) => {
         // returns an object that is the button you presed
-        console.log('Pressed the ${payload.title} button')
-        console.log(payload.type)
+        if (payload.type == 'contact') {
+          this.callNumber.callNumber("0556917342", true)
+            .then(res => console.log('Launched dialer!', res))
+            .catch(err => console.log('Error launching dialer', err));
+        } else if (payload.type == 'share') {
+          window.open("http://pgiorgi.name/gpc", '_system', 'location=yes')
+        } else {
+          // hook up any other icons you may have and do something awesome (e.g. launch the Camera UI, then share the image to Twitter)
+          console.log(JSON.stringify(payload));
+        }
       });
 
   }
