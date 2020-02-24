@@ -19,12 +19,10 @@ import { File } from '@ionic-native/file/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 
 import { CallNumber } from '@ionic-native/call-number/ngx';
-import { Keyboard } from '@ionic-native/keyboard/ngx';
 
 //FireBase
 import { environment } from 'src/environments/environment';
 import { AuthService } from './services/auth.service';
-import { AngularFireAuthModule } from '@angular/fire/auth';
 import * as firebase from 'firebase';
 
 import { HandleErrorService } from './services/handle-error.service';
@@ -37,7 +35,9 @@ import { ThreeDeeTouch, ThreeDeeTouchQuickAction, ThreeDeeTouchForceTouch } from
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
 import { PlanningPage } from './pages/planning/planning.page';
-import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+
+import { FCM } from '@ionic-native/fcm/ngx'
+
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -63,7 +63,6 @@ firebase.initializeApp(environment.firebase);
     }),
     AppRoutingModule,
     IonicStorageModule.forRoot(),
-    AngularFireAuthModule,
     ComponentsModule,
   ],
   providers: [
@@ -78,12 +77,11 @@ firebase.initializeApp(environment.firebase);
     HandleErrorService,
     SlidesPage,
     CallNumber,
-    Keyboard,
     HomeWorkPage,
     ThreeDeeTouch,
     EmailComposer,
     PlanningPage,
-    LocalNotifications,
+    FCM,
   ],
   bootstrap: [AppComponent]
 })

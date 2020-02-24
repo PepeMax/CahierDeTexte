@@ -6,6 +6,8 @@ import { AuthService } from 'src/app/services/auth.service';
 import { AlertController } from '@ionic/angular';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { PlanningPage } from '../planning/planning.page';
+import { FCM } from '@ionic-native/fcm/ngx';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -22,9 +24,23 @@ export class HomePage implements OnInit {
     public alertController: AlertController,
     private modalCtrl: ModalController,
     private callNumber: CallNumber,
-    private planning: PlanningPage
-  ) { }
-
+    private planning: PlanningPage,
+    private fcm: FCM,
+    public plt: Platform
+  ) {
+    this.plt.ready()
+      .then(() => {
+        this.fcm.onNotification().subscribe(data => {
+          if (data.wasTapped) {
+            console.log("Received in background");
+          } else {
+            console.log("Received in foreground");
+          };
+        });
+        this.fcm.onTokenRefresh().subscribe(token => {
+        });
+      })
+  }
   ngOnInit() {
     this.modalCtrl.dismiss(null, null, "modalCheckCode")
     this.planning.downloadPDF();
@@ -82,7 +98,7 @@ export class HomePage implements OnInit {
     await alert.present();
 
   }
-  
+
   navigateEmailUser() {
     this.navCtrl.navigateForward('/email-user')
   }
