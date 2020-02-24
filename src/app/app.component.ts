@@ -84,7 +84,6 @@ export class AppComponent {
           console.log(JSON.stringify(payload));
         }
       });
-
   }
 
   changeLanguage(language) {

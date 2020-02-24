@@ -4,7 +4,6 @@ import { NavController, ToastController } from '@ionic/angular';
 
 import * as firebase from 'firebase/app';
 import { Storage } from '@ionic/storage';
-import { NotificationsService } from 'src/app/services/notifications.service';
 
 @Component({
   selector: 'app-home-work',
@@ -21,7 +20,6 @@ export class HomeWorkPage implements OnInit {
     public trans: TranslateService,
     public navCtrl: NavController,
     private storage: Storage,
-    private notifs: NotificationsService
   ) {
   }
 
@@ -47,7 +45,6 @@ export class HomeWorkPage implements OnInit {
         this.badge = this.tab_homeworks.length;
         this.storage.set('badge', this.badge)
       });
-      this.notifs.notif_NewHomeWork();
   }
 
   public compareDate(a, b) {
