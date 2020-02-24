@@ -51,7 +51,7 @@
         "LINK": "Liens utiles",
         "EMAIL_USER": "Adresses mail des utilisateurs",
         "TITLE_NEWS": "Conseil de classe",
-        "TEXT_NEWS": "Le conseil de classe aura lieu le 18 Février 2020 à 17h !"       
+        "TEXT_NEWS": "Le conseil de classe aura lieu le 18 Février 2020 à 17h !"
     },
     "NEWHOMEWORK": {
         "TITLE": "Nouveau devoir :",
@@ -153,5 +153,9 @@
         "TITLE": "Adresses mail",
         "STUDENT": "Élève(s)",
         "PROF": "Professeur(s)"
+    },
+    "NOTIFICATION": {
+        "NEW_HOMEWORK": "Askip y a un nouveau truc à faire",
+        "NEW_PLANNING": "Y a le nouveau Planning a Mila !!!"
     }
 }

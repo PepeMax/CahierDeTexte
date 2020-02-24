@@ -37,6 +37,7 @@ import { ThreeDeeTouch, ThreeDeeTouchQuickAction, ThreeDeeTouchForceTouch } from
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
 import { PlanningPage } from './pages/planning/planning.page';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -82,6 +83,7 @@ firebase.initializeApp(environment.firebase);
     ThreeDeeTouch,
     EmailComposer,
     PlanningPage,
+    LocalNotifications
   ],
   bootstrap: [AppComponent]
 })
