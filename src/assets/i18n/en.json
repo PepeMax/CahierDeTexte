@@ -125,7 +125,7 @@
         "TEXT2.3": "Swipe on the right to create your account",
         "TEXT3": "It's the last step to finally have homework! Or put some ...",
         "TEXT3.2": "!!! Attention !!!",
-        "TEXT3.3": "No space at the end of the email address." 
+        "TEXT3.3": "No space at the end of the email address."
     },
     "CHECKCODE": {
         "AUTH_CODE": "Authentication code",
@@ -151,10 +151,14 @@
         "ERROR_UNKOWN": "\nError unknown in the battalion",
         "ERROR_DISCONNECT_1": "You are no longer connected",
         "ERROR_DISCONNECT_2": "Log in now !!"
-        },
-        "EMAIL_USER": {
-            "TITLE": "Email adress",
-            "STUDENT": "Student(s)",
-            "PROF": "Professor(s)"
-        }
+    },
+    "EMAIL_USER": {
+        "TITLE": "Email adress",
+        "STUDENT": "Student(s)",
+        "PROF": "Professor(s)"
+    },
+    "NOTIFICATION": {
+        "NEW_HOMEWORK": "Askip y a un nouveau truc à faire",
+        "NEW_PLANNING": "Y a le nouveau Planning a Mila !!!"
+    }
 }

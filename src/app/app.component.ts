@@ -24,7 +24,7 @@ export class AppComponent {
     private statusBar: StatusBar,
     private translate: TranslateService,
     private storage: Storage,
-    private threeDeeTouch: ThreeDeeTouch
+    private threeDeeTouch: ThreeDeeTouch,
 
   ) {
     this.initializeApp();
@@ -42,7 +42,7 @@ export class AppComponent {
     });
     this.darkMode = await this.storage.get('valueDarkMode');
     enableDarkTheme(this.darkMode);
-    
+
     this.threeDeeTouch.isAvailable().then(isAvailable => console.log('3D Touch available? ' + isAvailable));
     this.threeDeeTouch.watchForceTouches()
       .subscribe((data: ThreeDeeTouchForceTouch) => {
@@ -84,6 +84,7 @@ export class AppComponent {
         console.log('Pressed the ${payload.title} button')
         console.log(payload.type)
       });
+
   }
 
   changeLanguage(language) {
