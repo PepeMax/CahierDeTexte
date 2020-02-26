@@ -35,6 +35,7 @@ export class HomeWorkPage implements OnInit {
       val.target.complete();
     }, 2000);
     this.tab_homeworks = [];
+    this.all_homeworks = [];
     this.getHomeworks();
   }
 
