@@ -14,7 +14,10 @@ export class HomeWorkPage implements OnInit {
 
   public homeworks;
   public tab_homeworks = [];
+  public all_homeworks = [];
   public badge;
+  private today = new Date().toISOString();
+  public display_all_homework = false;
 
   constructor(
     public trans: TranslateService,
@@ -39,12 +42,34 @@ export class HomeWorkPage implements OnInit {
     firebase.firestore().collection("homeworks").get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          this.tab_homeworks.push(doc.data());
+          if (doc.data().fordate_homework > this.today) {
+            this.tab_homeworks.push(doc.data());
+          }
+          this.all_homeworks.push(doc.data());
         });
         this.tab_homeworks.sort(this.compareDate);
-        this.badge = this.tab_homeworks.length;
+        this.all_homeworks.sort(this.compareDate);
+        if (this.display_all_homework == false) {
+          this.badge = this.tab_homeworks.length;
+        } else {
+          this.badge = this.all_homeworks.length;
+        }
         this.storage.set('badge', this.badge)
       });
+  }
+
+  display_last_homework() {
+    if (this.display_all_homework == false) {
+      this.display_all_homework = true;
+    } else if (this.display_all_homework == true) {
+      this.display_all_homework = false;
+    };
+    if (this.display_all_homework == false) {
+      this.badge = this.tab_homeworks.length;
+    } else {
+      this.badge = this.all_homeworks.length;
+    }
+    this.storage.set('badge', this.badge)
   }
 
   public compareDate(a, b) {

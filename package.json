@@ -83,7 +83,8 @@
     "protractor": "^5.4.3",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.4.3"
+    "typescript": "~3.4.3",
+    "cordova-plugin-ionic-keyboard": "^2.0.5"
   },
   "description": "An Ionic project",
   "cordova": {
@@ -114,7 +115,8 @@
         "FCM_VERSION": "18.0.0",
         "GRADLE_TOOLS_VERSION": "3.5.0",
         "GOOGLE_SERVICES_VERSION": "4.2.0"
-      }
+      },
+      "cordova-plugin-ionic-keyboard": {}
     },
     "platforms": [
       "android"

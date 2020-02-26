@@ -35,7 +35,8 @@
         "TYPE": "Type : ",
         "FOR_DATE": "Semaine du : ",
         "GIVE_DATE": "Donner le : ",
-        "INFOS": "Description  : "
+        "INFOS": "Description  : ",
+        "DISPLAY_LAST_HOMEWORK": "Afficher les devoirs précédents"
     },
     "HOME": {
         "TITLE": "Le Récap",
