@@ -35,7 +35,8 @@
         "TYPE": "Type : ",
         "FOR_DATE": "Week of  : ",
         "GIVE_DATE": "Give on : ",
-        "INFOS": "Description  : "
+        "INFOS": "Description  : ",
+        "DISPLAY_LAST_HOMEWORK": "Afficher les devoirs précédents"
     },
     "HOME": {
         "TITLE": "The Recap",
