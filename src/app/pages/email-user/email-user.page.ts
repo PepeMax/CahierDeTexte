@@ -57,17 +57,17 @@ export class EmailUserPage implements OnInit {
   public tab_Prof = [
     { name: " Virginie ARNAULD ", email: " v.ads@free.fr" },
     { name: " Frédérique BALUTEAU ", email: " frederique.baluteau@greta-cfa-aquitaine.fr" },
-    { name: " Hélèna Berger ", email: " helena.berger33@gmail.com" },
-    { name: " FORGES Cathy ", email: " forges.cathy@gmail.com" },
+    { name: " Hélèna BERGER ", email: " helena.berger33@gmail.com" },
+    { name: " Cathy FORGES ", email: " forges.cathy@gmail.com" },
     { name: " Edwige CLERMONT ", email: " edwigeclermont@free.fr" },
     { name: " Fernand GARRIDO ", email: " fernand.garrido@ac-bordeaux.fr" },
     { name: " Pascal GIORGI ", email: " p.giorgi@orange.fr" },
     { name: " Régis LAMOUROUX ", email: " regis.lamouroux@gmail.com" },
     { name: " Azeddine MAJNANI ", email: " azeddinemajnani@gmail.com" },
     { name: " Bertrand MEULEBROUCK ", email: " bmeulebrouck@yahoo.fr" },
-    { name: " Nebout Nelly ", email: " nelly.nebout@orange.fr" },
+    { name: "  Nelly NEBOUT ", email: " nelly.nebout@orange.fr" },
     { name: " Bertrand RABUSSIER ", email: " bertrand@rabussier.name" },
-    { name: " Didier Raymond ", email: " didierraymond@free.fr" },
+    { name: " Didier RAYMOND ", email: " didierraymond@free.fr" },
     { name: " Estelle SORNETTE CYBULA ", email: " sornette@netcourrier.com" }
   ]
 
