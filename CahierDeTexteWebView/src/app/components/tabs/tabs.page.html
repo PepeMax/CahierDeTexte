@@ -1,0 +1,29 @@
+<ion-tabs *ngIf="isProf">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="homework">
+      <ion-icon name="bookmarks"></ion-icon>
+      <ion-badge color="danger">{{badge}}</ion-badge>
+    </ion-tab-button>
+    <ion-tab-button tab="home">
+      <ion-icon name="home"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="newhomework">
+      <ion-icon name="add-circle-outline"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+
+<ion-tabs *ngIf="!isProf">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="homework">
+      <ion-icon name="bookmarks"></ion-icon>
+      <ion-badge color="danger">{{badge}}</ion-badge>
+    </ion-tab-button>
+    <ion-tab-button tab="home">
+      <ion-icon name="home"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="planning">
+      <ion-icon name="calendar"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

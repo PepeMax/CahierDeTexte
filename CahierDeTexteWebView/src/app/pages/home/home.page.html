@@ -1,0 +1,54 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>{{'HOME.TITLE' | translate }}</ion-title>
+    <ion-button color="dark" slot="end" fill="clear" (click)="disconnect()">
+      <ion-icon name="log-out"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <label>
+    <p class="text">L'appli est toujours en cours de développement donc on a besoin de vous pour corriger des bugs ou y
+      faire des
+      améliorations</p>
+    <p class="text">Pour ça nous avons fait un Google Sheets, on vous invite à la remplir pour que l'on fasse le
+      nécessaire</p>
+    <p class="text"><a
+        href="https://docs.google.com/spreadsheets/d/19nv4R5zGt4xDNypkheZcIgbFesTy-FgzAlTGo6G-6ds/edit?usp=sharing">Google
+        Sheets</a></p>
+  </label>
+</ion-content>
+
+<ion-footer>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button class="button" fill="outline" expand="block" color="dark" (click)="goSettings()">
+          {{'SETTINGS.TITLE' | translate }}</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="button" fill="outline" expand="block" color="dark" href="https://www.eiffel-bordeaux.org/">
+          {{'HOME.EIFFEL' | translate }}</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="button" fill="outline" expand="block" color="dark"
+          href="http://www.cfafl.fr/netypareo/index.php">{{'HOME.PAREO' | translate }}</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="button" fill="outline" expand="block" color="dark" href="http://pgiorgi.name/gpc">
+          {{'HOME.GIORGI' | translate }}</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="button" fill="outline" expand="block" color="dark" (click)="contact()">
+          {{'HOME.CALL_CFA' | translate }}</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="button" fill="outline" expand="block" color="dark" (click)="navigateEmailUser()">
+          {{'HOME.EMAIL_USER' | translate }}</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-footer>

@@ -1,0 +1,27 @@
+<ion-content>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-button color="medium" (click)="goLogin()">
+        <ion-icon name="arrow-dropright"></ion-icon>
+        &nbsp;&nbsp;&nbsp; {{'COMMON.SIGNIN' | translate }}
+      </ion-button>
+    </ion-row>
+    <br>
+    <ion-row class="ion-justify-content-center">
+      <ion-button color="medium" (click)="registerAccount()">
+        <ion-icon name="arrow-dropright"></ion-icon>
+        &nbsp;&nbsp;&nbsp; {{'COMMON.SIGNUP' | translate }}
+      </ion-button>
+    </ion-row>
+    <br>
+    <ion-row class="ion-justify-content-center">
+      <ion-icon color="primary" size="large" (click)=showInfos() name="information-circle-outline"></ion-icon>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
+<ion-footer no-border>
+  <ion-img src="./assets/img/herbe.png"></ion-img>
+</ion-footer>

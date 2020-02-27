@@ -1,0 +1,60 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>{{'SETTINGS.TITLE' | translate}}</ion-title>
+    <ion-button color="dark" slot="start" fill="clear" (click)="goBack()">
+      <ion-icon name="arrow-dropleft"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <br>
+    <ion-row justify-content-center>
+      <ion-avatar>
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+    </ion-row>
+    <br>
+    <ion-row justify-content-center>
+      <p *ngIf="!status">{{'SETTINGS.STATUS_STUD' | translate}}</p>
+      <p *ngIf="status">{{'SETTINGS.STATUS_PROF' | translate}}</p>
+    </ion-row>
+    <ion-row justify-content-center>
+      <h4>{{username}}</h4>
+    </ion-row>
+    <ion-row justify-content-center>
+      <ion-button class="testtest" size="small" fill="clear" (click)="resetPassword()">
+        {{'LOGIN.CHANGE_PASSWORD' | translate}}
+      </ion-button>
+    </ion-row>
+    <br>
+
+    <ion-row>
+      <ion-item class="item-select">
+        <ion-label>{{'SETTINGS.LANGUAGE' | translate}}</ion-label>
+        <ion-select (ionChange)="changeLanguage(event)" [(ngModel)]="language" interface="action-sheet"
+          cancelText="{{'COMMON.CANCEL' | translate}}" placeholder="{{'SETTINGS.FR_EN' | translate}}">
+          <ion-select-option value="fr">{{'SETTINGS.FR' | translate}}</ion-select-option>
+          <ion-select-option value="en">{{'SETTINGS.EN' | translate}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item class="item-select">
+        <ion-label>{{'SETTINGS.NIGHT' | translate}}</ion-label>
+        <ion-toggle *ngIf="darkMode" [(ngModel)]="darkMode" (ionChange)="changeDarkMode()" checked>
+        </ion-toggle>
+        <ion-toggle *ngIf="!darkMode" [(ngModel)]="darkMode" (ionChange)="changeDarkMode()"></ion-toggle>
+      </ion-item>
+    </ion-row>
+    <!-- <ion-row>
+      <ion-item class="item-select">
+        <ion-label>{{'SETTINGS.NOTIF' | translate}}</ion-label>
+        <ion-toggle></ion-toggle>
+      </ion-item>
+    </ion-row> -->
+  </ion-grid>
+
+</ion-content>

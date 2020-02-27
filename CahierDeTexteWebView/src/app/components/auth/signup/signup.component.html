@@ -1,0 +1,42 @@
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <h2 class="ion-text-center">{{'LOGIN.CREATE_ACCOUNT' | translate}}</h2>
+      <br>
+      <form class="ion-text-center" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+
+          <ion-label for="email">{{'LOGIN.MAIL' | translate}}</ion-label>
+          <ion-input type="text" id="email" class="form-control" formControlName="email"></ion-input>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="password">{{'LOGIN.PASSWORD' | translate}}</label>
+          <ion-input [type]="passwordType" id="password" class="form-control" formControlName="password" icon="none"
+            icon-align="right"></ion-input>
+          <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+        </div>
+        <br>
+        <div>
+          <ion-label for="status">{{'LOGIN.H4' | translate}}</ion-label>
+          <ion-select [(ngModel)]="statusInput" formControlName="status" placeholder="{{'COMMON.GOAT' | translate}}"
+            (ionChange)="setNameForStudent()">
+            <ion-select-option value='false'>{{'LOGIN.STUDENT' | translate}}</ion-select-option>
+            <ion-select-option value='true' selected="true">{{'LOGIN.PROF' | translate}}</ion-select-option>
+          </ion-select>
+        </div>
+        <br *ngIf="!isNotStudent">
+        <div *ngIf="!isNotStudent">
+          <ion-label>Votre Nom</ion-label>
+          <ion-input type="text" id="name" class="form-control itemform" formControlName="name"
+            placeholder="{{'COMMON.FUNNY_PLACEHOLDER' | translate}}"></ion-input>
+        </div>
+        <br>
+        <ion-button color="primary" type="submit" [disabled]="signupForm.invalid">
+          {{'LOGIN.CREATE_MY_ACCOUNT' | translate}}</ion-button>
+        <br><br>
+        <ion-text class="ion-text-center" color="danger">{{errorMessage}}</ion-text>
+      </form>
+    </ion-col>
+  </ion-row>
+</ion-grid>
