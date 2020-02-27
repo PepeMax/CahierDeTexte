@@ -26,7 +26,7 @@ import { InfoslyceeComponent } from './popover/infoslycee/infoslycee.component';
         InfoslyceeComponent
 
     ],
-        
+
     exports: [
         //auth
         SignupComponent,

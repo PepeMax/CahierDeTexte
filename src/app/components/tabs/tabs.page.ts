@@ -19,8 +19,8 @@ export class TabsPage {
   async ngOnInit() {
     this.isProf = await this.storage.get('status');
     this.badge = await this.storage.get('badge');
-    setInterval(async() => { this.badge = await this.storage.get('badge');}, 1000);
+    setInterval(async () => { this.badge = await this.storage.get('badge'); }, 1000);
   }
-  
+
 
 }
