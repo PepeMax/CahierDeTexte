@@ -34,7 +34,7 @@
     <ion-row>
       <ion-item class="item-select">
         <ion-label>{{'SETTINGS.LANGUAGE' | translate}}</ion-label>
-        <ion-select (ionChange)="changeLanguage(event)" [(ngModel)]="language" interface="action-sheet"
+        <ion-select (ionChange)="changeLanguage()" [(ngModel)]="language" interface="action-sheet"
           cancelText="{{'COMMON.CANCEL' | translate}}" placeholder="{{'SETTINGS.FR_EN' | translate}}">
           <ion-select-option value="fr">{{'SETTINGS.FR' | translate}}</ion-select-option>
           <ion-select-option value="en">{{'SETTINGS.EN' | translate}}</ion-select-option>
@@ -49,12 +49,6 @@
         <ion-toggle *ngIf="!darkMode" [(ngModel)]="darkMode" (ionChange)="changeDarkMode()"></ion-toggle>
       </ion-item>
     </ion-row>
-    <!-- <ion-row>
-      <ion-item class="item-select">
-        <ion-label>{{'SETTINGS.NOTIF' | translate}}</ion-label>
-        <ion-toggle></ion-toggle>
-      </ion-item>
-    </ion-row> -->
   </ion-grid>
 
 </ion-content>

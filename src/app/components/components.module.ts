@@ -5,7 +5,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { UserinfosComponent } from './userinfos/userinfos.component';
 //auth
 import { SigninProfComponent } from './auth/signinprof/signinprof.component';
 import { SigninStudentComponent } from './auth/signinstudent/signinstudent.component';
@@ -21,8 +20,6 @@ import { InfoslyceeComponent } from './popover/infoslycee/infoslycee.component';
         SigninStudentComponent,
         CheckodeComponent,
         //
-        UserinfosComponent,
-        //
         InfoslyceeComponent
 
     ],
@@ -33,7 +30,6 @@ import { InfoslyceeComponent } from './popover/infoslycee/infoslycee.component';
         SigninStudentComponent,
         CheckodeComponent,
         //
-        UserinfosComponent,
     ],
     entryComponents: [
         //auth
@@ -41,8 +37,6 @@ import { InfoslyceeComponent } from './popover/infoslycee/infoslycee.component';
         SigninProfComponent,
         SigninStudentComponent,
         CheckodeComponent,
-        //
-        UserinfosComponent,
         //
         InfoslyceeComponent,
     ],

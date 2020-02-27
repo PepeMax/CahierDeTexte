@@ -27,10 +27,9 @@ export class HomeloginPage implements OnInit {
     this.navCtrl.navigateRoot('/slides')
   }
 
-  async showInfos(ev: any) {
+  async showInfos() {
     const popover = await this.popoverController.create({
       component: InfoslyceeComponent,
-      event: ev,
       animated: false,
       translucent: true
     });

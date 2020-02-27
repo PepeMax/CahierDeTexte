@@ -21,7 +21,6 @@ import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 
 //FireBase
-import { environment } from 'src/environments/environment';
 import { AuthService } from './services/auth.service';
 import * as firebase from 'firebase';
 
@@ -36,7 +35,9 @@ import { EmailComposer } from '@ionic-native/email-composer/ngx';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
 import { PlanningPage } from './pages/planning/planning.page';
 
-import { FCM } from '@ionic-native/fcm/ngx'
+import { FCM } from '@ionic-native/fcm/ngx';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment'
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -64,6 +65,7 @@ firebase.initializeApp(environment.firebase);
     AppRoutingModule,
     IonicStorageModule.forRoot(),
     ComponentsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     StatusBar,
