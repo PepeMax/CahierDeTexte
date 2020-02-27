@@ -49,7 +49,7 @@ export class PlanningPage implements OnInit {
         this.storage.set('url', url);
       }).catch((error) => {
         console.error(error);
-      });    
+      });
     if (url != previous_url) {
       this.fileTransfer.create().download(url, this.file.dataDirectory + 'Planning.pdf').then((entry) => {
         console.log('download complete: ' + entry.toURL());

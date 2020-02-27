@@ -23,9 +23,9 @@ export class EmailUserPage implements OnInit {
   public display_stud: boolean = false;
   public display_prof: boolean = false;
 
-  public nbStud : number;
-  public nbProf : number;
-  
+  public nbStud: number;
+  public nbProf: number;
+
 
   public tab_Stud = [
     { name: "Antoine ALEXANDRE", email: "antoine.alexandre59@gmail.com" },
@@ -53,7 +53,7 @@ export class EmailUserPage implements OnInit {
     { name: "Malek SALHI", email: "malekprosen@gmail.com" },
     { name: "Lucas TAIEB", email: "taieblucas18@gmail.com" }
   ]
-  
+
   public tab_Prof = [
     { name: " Virginie ARNAULD ", email: " v.ads@free.fr" },
     { name: " Frédérique BALUTEAU ", email: " frederique.baluteau@greta-cfa-aquitaine.fr" },
@@ -101,14 +101,14 @@ export class EmailUserPage implements OnInit {
   }
 
   sendEmail(i) {
-     let email = {
-       to: this.tab_Stud[i].email,
-       subject: '',
-       body: 'Envoyé de l\' application "Cahier de texte"',
-       isHtml: false
-     }
-     
-     this.emailComposer.open(email);
+    let email = {
+      to: this.tab_Stud[i].email,
+      subject: '',
+      body: 'Envoyé de l\' application "Cahier de texte"',
+      isHtml: false
+    }
+
+    this.emailComposer.open(email);
   }
 
 }

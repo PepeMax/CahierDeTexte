@@ -19,7 +19,7 @@ export class AuthService {
     public alertController: AlertController,
     public trans: TranslateService,
     public navCtrl: NavController,
-    public components : ComponentsService
+    public components: ComponentsService
   ) { }
 
   public erreur;
@@ -84,12 +84,12 @@ export class AuthService {
 
   resetPasswordWithEmail(email) {
     firebase.auth().sendPasswordResetEmail(email)
-    .then(() => {
-      this.components.createToast(this.trans.instant("COMMON.RESET_PASSWORD_WITH_EMAIL"));
-    })
-    .catch((error) => {
-      this.components.createToast(this.trans.instant("COMMON.RESET_PASSWORD_FAIL"))
-    });
+      .then(() => {
+        this.components.createToast(this.trans.instant("COMMON.RESET_PASSWORD_WITH_EMAIL"));
+      })
+      .catch((error) => {
+        this.components.createToast(this.trans.instant("COMMON.RESET_PASSWORD_FAIL"))
+      });
   }
 
   async updateProfile(newUser): Promise<any> {
