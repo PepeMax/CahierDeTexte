@@ -1,0 +1,25 @@
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <h2>Vos renseignements</h2>
+      <br>
+      <form [formGroup]="setUserInfosForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <ion-label for="status">{{'LOGIN.H4' | translate }}</ion-label>
+          <ion-select formControlName="status" placeholder="Une chèvre">
+            <ion-select-option value="prof">{{'LOGIN.PROF' | translate }}</ion-select-option>
+            <ion-select-option value="student">{{'LOGIN.STUDENT' | translate }}</ion-select-option>
+          </ion-select>
+        </div>
+        <div *ngIf="student" class="form-group">
+          <label for="displayName">{{'COMMON.SURNAME' | translate }}</label>
+          <ion-input type="displayName" id="displayName" class="form-control" formControlName="displayName"></ion-input>
+        </div>
+        <br>
+        <ion-button color="primary" type="submit" [disabled]="setUserInfosForm.invalid">Sauvegarder mes infos
+        </ion-button>
+      </form>
+      <p class="text-danger">{{ errorMessage }}</p>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,61 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>{{'SLIDES.TITLE' | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen padding scroll-y="false">
+
+  <ion-slides #startSlide>
+
+    <ion-slide>
+      <img src="../../../assets/img/slide_application.png" />
+      <h2>{{'SLIDES.TITLE1' | translate}}</h2>
+      <br>
+      <p>{{'SLIDES.TEXT1' | translate}}</p>
+      <p>{{'SLIDES.TEXT1.2' | translate}}</p>
+      <br>
+      <br>
+      <p>{{'SLIDES.TEXT1.3' | translate}}</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="../../../assets/img/slide_developpement.png" />
+      <h2>{{'SLIDES.TITLE2' | translate}}</h2>
+      <br>
+      <p>{{'SLIDES.TEXT2' | translate}}</p>
+      <p>{{'SLIDES.TEXT2.2' | translate}}</p>
+      <br>
+      <br>
+      <br>
+      <p>{{'SLIDES.TEXT2.3' | translate}}</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="../../../assets/img/slide_fusee.png" />
+      <h2>{{'SLIDES.TITLE3' | translate}}</h2>
+      <p>{{'SLIDES.TEXT3' | translate}}</p>
+      <ion-text color="danger" >
+        <p>{{'SLIDES.TEXT3.2' | translate}}</p>
+        <p>{{'SLIDES.TEXT3.3' | translate}}</p>
+      </ion-text>
+    
+      <ion-button fill="outline" (click)='createNewUser()'>S'enregistrer</ion-button>
+
+      <br>
+      <br>
+      <br>
+
+      <ion-footer class="ion-text-center">
+        <ion-label color="medium">{{'LOGIN.ACCOUNT' | translate}}</ion-label>
+        <br>
+        <ion-label (click)="goRegister()" color="primary">&nbsp;&nbsp;{{'COMMON.SIGNIN' | translate}}</ion-label>
+      </ion-footer>
+      
+    </ion-slide>
+
+
+
+  </ion-slides>
+
+</ion-content>

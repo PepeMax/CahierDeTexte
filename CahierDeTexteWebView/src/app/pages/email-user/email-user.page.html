@@ -1,0 +1,53 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>{{'EMAIL_USER.TITLE' | translate}}</ion-title>
+    <ion-button color="dark" slot="start" fill="clear" (click)="goBack()">
+      <ion-icon name="arrow-dropleft"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- student -->
+  <ion-item (click)="display_student()">
+    <label>
+      <p>{{'EMAIL_USER.STUDENT' | translate}} ( {{nbStud}} )</p>
+    </label>
+    <ion-icon [name]="studIcon" size="large" slot="end"></ion-icon>
+  </ion-item>
+
+
+  <ion-list *ngIf="display_stud">
+    <ion-item *ngFor="let student of tab_Stud; let i = index" (click)="sendEmail(i)">
+      <ion-avatar slot="start">
+        <img src="{{avatar_Student}}">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{student.name}}</h2>
+        <h3>{{student.email}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- profs -->
+  <ion-item (click)="display_professor()">
+    <label>
+      <p>{{'EMAIL_USER.PROF' | translate}} ( {{nbProf}} )</p>
+    </label>
+    <ion-icon [name]="profIcon" size="large" slot="end"></ion-icon>
+  </ion-item>
+
+  <ion-list *ngIf="display_prof">
+    <ion-item *ngFor="let professor of tab_Prof; let i = index" (click)="sendEmail(i)">
+      <ion-avatar slot="start">
+        <img src="{{avatar_Professor}}">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{professor.name}}</h2>
+        <h3>{{professor.email}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
