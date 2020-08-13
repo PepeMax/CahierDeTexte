@@ -50,7 +50,7 @@
     "firebase": "^7.7.0",
     "mx.ferreyra.callnumber": "0.0.2",
     "rxjs": "^6.5.4",
-    "serialize-javascript": "^2.1.2",
+    "serialize-javascript": "^3.1.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
   },
